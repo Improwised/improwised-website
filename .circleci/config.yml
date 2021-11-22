@@ -1,0 +1,355 @@
+aliases:
+  - &restore-cache
+    keys:
+      - caching-dependencies-{{ .Branch }}-{{ checksum "app/package.json" }}
+      - caching-dependencies-{{ .Branch }}-
+
+  - &save-cache
+    paths:
+      - ./app/node_modules
+    key: caching-dependencies-{{ .Branch }}-{{ checksum "app/package.json" }}
+
+parameters:
+  channel:
+    type: string
+    default: ''
+    description: |
+      ID of channel if set, overrides webhook's default channel setting
+
+  success_only:
+    type: boolean
+    default: false
+    description: >
+      If `true`, notifications of failed jobs will not be sent.
+
+  fail_only:
+    type: boolean
+    default: false
+    description: |
+      If `true`, notifications successful jobs will not be sent
+
+  include_job_number_field:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the Job Number field in the message
+
+  include_project_field:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the Project field in the message
+
+  include_commit_description:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the commit description field in the message
+
+  include_commit_author:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the author name who made the commit
+
+  include_visit_job_action:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the Visit Job action in the message
+
+  include_branch_name:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the branch name of the project
+
+  include_commit_hash:
+    type: boolean
+    default: true
+    description: |
+      Whether or not to include the commit id of the commit
+
+  webhook:
+    type: string
+    default: '${SLACK_WEBHOOK}'
+    description: >
+      Enter either your Webhook value or use the CircleCI UI to add your token
+      under the 'SLACK_WEBHOOK' env var
+
+  success_message:
+    type: string
+    default: |
+      ':tada: ${CIRCLE_JOB} Succeeded!
+    description: |
+      Whether or not to include success message in the message
+
+  failure_message:
+    type: string
+    default: |
+      ':red_circle: ${CIRCLE_JOB} Failed!
+    description: |
+      Whether or not to include success message in the message
+
+version: 2.1
+
+orbs:
+  slack: circleci/slack@3.4.2
+
+jobs:
+  test:
+    docker:
+      - image: node:12
+
+    steps:
+      - checkout
+
+      - restore_cache: *restore-cache
+
+      - run:
+          name: install-dependencies
+          command: |
+            cd app/
+            npm install
+
+      - save_cache: *save-cache
+
+      - run:
+          name: run test
+          command: |
+            cd app/
+            npm run test -- -w 2
+            # ./node_modules/.bin/jest
+
+      - run:
+          name: Set git Commit Message
+          command: |
+            echo 'export GIT_COMMIT_DESC=$(git log --format=%B -n 1 $CIRCLE_SHA1)' >> $BASH_ENV
+            echo 'export SHORT_COMMIT_HASH=$(git rev-parse --short HEAD)' >> $BASH_ENV
+            source $BASH_ENV
+
+      - run:
+          command: |
+            echo 'export SLACK_BUILD_STATUS="fail"' >> $BASH_ENV
+          name: Slack - Setting Failure Condition
+          when: on_fail
+      - run:
+          command: |
+            echo 'export SLACK_BUILD_STATUS="success"' >> $BASH_ENV
+          name: Slack - Setting Success Condition
+          when: on_success
+      - run:
+          name: Slack - Sending Status Alert
+          shell: /bin/bash
+          when: always
+          command: >
+            if [ "$SLACK_BUILD_STATUS" = "success" ]; then
+              if [ << pipeline.parameters.fail_only >> = true ]; then
+                echo "The job completed successfully"
+                echo '"fail_only" is set to "true". No Slack notification sent.'
+              else
+                export PREFIX_LINK=https://github.com/pandio-com/$CIRCLE_PROJECT_REPONAME/commit/
+                export FULL_LINK=$PREFIX_LINK$SHORT_COMMIT_HASH
+                curl -X POST -H 'Content-type: application/json' \
+                  --data "{ \
+                            <<# pipeline.parameters.channel >>
+                            \"channel\": \"<< pipeline.parameters.channel >>\", \
+                            <</ pipeline.parameters.channel >>
+                            \"attachments\": [ \
+                              { \
+                                \"fallback\": \"<< pipeline.parameters.success_message >>\", \
+                                \"text\": \"<< pipeline.parameters.success_message >>\", \
+                                \"fields\": [ \
+                                  <<# pipeline.parameters.include_project_field >>
+                                  { \
+                                    \"title\": \"Project\", \
+                                    \"value\": \"$CIRCLE_PROJECT_REPONAME\", \
+                                    \"short\": true \
+                                  }, \
+                                  <</ pipeline.parameters.include_project_field >>
+                                  <<# pipeline.parameters.include_commit_description >>
+                                  { \
+                                    \"title\": \"Commit Description\", \
+                                    \"value\": \"$GIT_COMMIT_DESC\", \
+                                    \"short\": true \
+                                  }, \
+                                  <</ pipeline.parameters.include_commit_description >>
+                                  <<# pipeline.parameters.include_commit_hash >>
+                                  { \
+                                    \"title\": \"Commit ID\", \
+                                    \"value\": \"$FULL_LINK\", \
+                                    \"short\": true \
+                                  }, \
+                                  <</ pipeline.parameters.include_commit_hash >>
+                                  <<# pipeline.parameters.include_branch_name >>
+                                  { \
+                                    \"title\": \"Branch\", \
+                                    \"value\": \"$CIRCLE_BRANCH\", \
+                                    \"short\": true \
+                                  }, \
+                                  <</ pipeline.parameters.include_branch_name >>
+                                  <<# pipeline.parameters.include_commit_author >>
+                                  { \
+                                    \"title\": \"Author\", \
+                                    \"value\": \"$CIRCLE_USERNAME\", \
+                                    \"short\": true \
+                                  }, \
+                                  <</ pipeline.parameters.include_commit_author >>
+                                  <<# pipeline.parameters.include_job_number_field >>
+                                  { \
+                                    \"title\": \"Job Number\", \
+                                    \"value\": \"$CIRCLE_BUILD_NUM\", \
+                                    \"short\": true \
+                                  } \
+                                  <</ pipeline.parameters.include_job_number_field >>
+                                ], \
+                                \"actions\": [ \
+                                  <<# pipeline.parameters.include_visit_job_action >>
+                                  { \
+                                    \"type\": \"button\", \
+                                    \"text\": \"Visit Job\", \
+                                    \"url\": \"$CIRCLE_BUILD_URL\" \
+                                  } \
+                                  <</ pipeline.parameters.include_visit_job_action >>
+                                ], \
+                                \"color\": \"#1CBF43\" \
+                              } \
+                            ] \
+                          } " << pipeline.parameters.webhook >>
+                echo "Job completed successfully. Alert sent."
+              fi
+            else
+              if [ << pipeline.parameters.success_only >> = true ]; then
+                echo "The job failed"
+                echo '"success_only" is set to "true". No Slack notification sent.'
+              else
+                export PREFIX_LINK=https://github.com/pandio-com/$CIRCLE_PROJECT_REPONAME/commit/
+                export FULL_LINK=$PREFIX_LINK$SHORT_COMMIT_HASH
+                curl -X POST -H 'Content-type: application/json' \
+                  --data "{ \
+                    <<# pipeline.parameters.channel >>
+                    \"channel\": \"<< pipeline.parameters.channel >>\", \
+                    <</ pipeline.parameters.channel >>
+                    \"attachments\": [ \
+                      { \
+                        \"fallback\": \"<< pipeline.parameters.failure_message >>\", \
+                        \"text\": \"<< pipeline.parameters.failure_message >>\", \
+                        \"fields\": [ \
+                          <<# pipeline.parameters.include_project_field >>
+                          { \
+                            \"title\": \"Project\", \
+                            \"value\": \"$CIRCLE_PROJECT_REPONAME\", \
+                            \"short\": true \
+                          }, \
+                          <</ pipeline.parameters.include_project_field >>
+                          <<# pipeline.parameters.include_commit_description >>
+                          { \
+                            \"title\": \"Commit Description\", \
+                            \"value\": \"$GIT_COMMIT_DESC\", \
+                            \"short\": true \
+                          }, \
+                          <</ pipeline.parameters.include_commit_description >>
+                          <<# pipeline.parameters.include_commit_hash >>
+                          { \
+                            \"title\": \"Commit ID\", \
+                            \"value\": \"$SHORT_COMMIT_HASH\", \
+                            \"short\": true \
+                          }, \
+                          <</ pipeline.parameters.include_commit_hash >>
+                          <<# pipeline.parameters.include_branch_name >>
+                          { \
+                            \"title\": \"Branch\", \
+                            \"value\": \"$CIRCLE_BRANCH\", \
+                            \"short\": true \
+                          }, \
+                          <</ pipeline.parameters.include_branch_name >>
+                          <<# pipeline.parameters.include_commit_author >>
+                          { \
+                            \"title\": \"Author\", \
+                            \"value\": \"$CIRCLE_USERNAME\", \
+                            \"short\": true \
+                          }, \
+                          <</ pipeline.parameters.include_commit_author >>
+                          <<# pipeline.parameters.include_job_number_field >>
+                          { \
+                            \"title\": \"Job Number\", \
+                            \"value\": \"$CIRCLE_BUILD_NUM\", \
+                            \"short\": true \
+                          } \
+                          <</ pipeline.parameters.include_job_number_field >>
+                        ], \
+                        \"actions\": [ \
+                          <<# pipeline.parameters.include_visit_job_action >>
+                          { \
+                            \"type\": \"button\", \
+                            \"text\": \"Visit Job\", \
+                            \"url\": \"$CIRCLE_BUILD_URL\" \
+                          } \
+                          <</ pipeline.parameters.include_visit_job_action >>
+                        ], \
+                        \"color\": \"#ed5c5c\" \
+                      } \
+                    ] \
+                  } " << pipeline.parameters.webhook >>
+                echo "Job failed. Alert sent."
+              fi
+            fi
+  build_image:
+    docker:
+      - image: google/cloud-sdk
+
+    working_directory: ~/repo
+    environment:
+      - GOOGLE_PROJECT_ID: pandio-281116
+      - GOOGLE_COMPUTE_ZONE: us-central1
+    steps:
+      - checkout
+
+      - setup_remote_docker
+      - run:
+          name: Dump Google Cloud Credentials to file
+          command: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+
+      - run:
+          name: Configure gcloud
+          command: |
+            gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+
+      # build and push Docker image
+      - run: |
+          IMAGE=gcr.io/$GOOGLE_PROJECT_ID/$CIRCLE_PROJECT_REPONAME
+          SHORT_COMMIT_HASH=$(git rev-parse --short HEAD)
+          TAG=$CIRCLE_BRANCH-$SHORT_COMMIT_HASH
+
+          gcloud auth configure-docker --quiet
+          if [[ $CIRCLE_BRANCH = "develop" ]]; then
+            docker build -t $IMAGE:$TAG -f Dockerfile .
+          elif [[ $CIRCLE_BRANCH = "master" ]]; then
+            docker build -t $IMAGE:$TAG -f Dockerfile .
+          fi
+          docker push $IMAGE:$TAG
+          docker tag $IMAGE:$TAG $IMAGE:$CIRCLE_BRANCH
+          docker push $IMAGE:$CIRCLE_BRANCH
+          if [[ $CIRCLE_BRANCH = "master" ]]; then
+            docker tag $IMAGE:$TAG $IMAGE:latest
+            docker push $IMAGE:latest
+          fi
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - /.*/
+      - build_image:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - develop
+                - master
