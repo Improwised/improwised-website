@@ -1,0 +1,123 @@
+<template>
+  <div class="nav-container">
+    <div class="bar bar--sm visible-xs logo-style">
+      <div class="container">
+        <div class="row display_flex">
+          <div class="col-xs-6 col-sm-2 align_self_center">
+            <a href="/">
+              <img
+                class="logo logo-dark lazyload"
+                alt="Improwised Technologies Pvt Ltd"
+                data-src="/img/logo.png"
+              />
+            </a>
+          </div>
+          <div class="col-xs-6 col-sm-10 text-right align_self_center">
+            <a
+              href="#"
+              class="hamburger-toggle"
+              data-toggle-class="#menu1;hidden-xs"
+              title="toggle menu for small screen"
+            >
+              <i class="icon icon--sm stack-interface stack-menu"></i>
+            </a>
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </div>
+    <!--end bar-->
+    <nav
+      id="menu1"
+      class="bar bar--sm bar-1 hidden-xs hiddem-sm navigation-style"
+      data-scroll-class="366px:pos-fixed"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 hidden-xs logo-style">
+            <div class="bar__module">
+              <a href="/">
+                <img
+                  class="logo logo-dark lazyload"
+                  alt="Improwised Technologies Pvt Ltd"
+                  data-src="/img/logo.png"
+                />
+              </a>
+            </div>
+            <!--end module-->
+          </div>
+          <div
+            class="
+              col-md-9 col-sm-12
+              text-right text-left-xs text-left-sm
+              menu-style
+            "
+          >
+            <div class="bar__module">
+              <ul class="menu-horizontal text-left">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/about-improwised">About Us</a>
+                </li>
+                <li class="dropdown">
+                  <span class="dropdown__trigger">Services</span>
+                  <div class="dropdown__container">
+                    <div class="container">
+                      <div class="row">
+                        <div
+                          class="dropdown__content col-lg-3 col-md-4 col-sm-6"
+                        >
+                          <ul class="menu-vertical">
+                            <li>
+                              <a href="/cloud-infrastructure-services">
+                                Cloud Infrastructure
+                              </a>
+                            </li>
+                            <li>
+                              <a href="/software-product-modernization">
+                                Product Modernization
+                              </a>
+                            </li>
+                            <li>
+                              <a href="/web-software-development">
+                                Web Development
+                              </a>
+                            </li>
+                            <li>
+                              <a href="/technology-consulting">
+                                Technology Consulting
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!--end dropdown content-->
+                      </div>
+                      <!--end row-->
+                    </div>
+                  </div>
+                  <!--end dropdown container-->
+                </li>
+                <li>
+                  <a href="/case-studies">Case Studies</a>
+                </li>
+                <li>
+                  <a href="/careers">Careers</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <!--end module-->
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </nav>
+    <!--end bar-->
+  </div>
+</template>

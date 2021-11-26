@@ -1,0 +1,64 @@
+<template>
+  <footer class="footer-3 text-center-xs space--xs bg--dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <img
+            alt="Improwised Technologies Pvt Ltd"
+            class="logo lazyload"
+            data-src="/img/logo.png"
+          />
+          <ul class="list-inline list--hover">
+            <li>
+              <a href="/contact">
+                <span>Contact Us</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 text-right text-center-xs">
+          <ul class="social-list list-inline list--hover">
+            <li>
+              <a
+                href="https://www.facebook.com/improwised"
+                title="Improwised Technologies facebook page"
+              >
+                <i class="socicon socicon-facebook icon icon--xs"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/improwised"
+                title="Improwised Technologies twitter account"
+              >
+                <i class="socicon socicon-twitter icon icon--xs"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/improwised-technologies/"
+                title="Improwised Technologies linkedin page"
+              >
+                <i class="socicon socicon-linkedin icon icon--xs"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end of row-->
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Building scalable web application since 2011.</p>
+        </div>
+        <div class="col-sm-6 text-right text-center-xs">
+          <span
+            >&copy; <span class="update-year"></span> Improwised Technologies
+            Pvt. Ltd.</span
+          >
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </footer>
+</template>

@@ -1,31 +1,18 @@
+import head from "./config/head.js";
+
 require("dotenv").config(); // eslint-disable-line nuxt/no-cjs-in-config
 
 const CompressionPlugin = require("compression-webpack-plugin"); // eslint-disable-line nuxt/no-cjs-in-config
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: "app",
-    htmlAttrs: {
-      lang: "en",
-    },
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-  },
+  head: head(process.env.MODE),
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -50,6 +37,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
   ],
+
+  publicRuntimeConfig: {
+    MODE: process.env.MODE,
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
