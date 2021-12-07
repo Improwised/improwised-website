@@ -1,10 +1,19 @@
+// import axios from "axios";
 import head from "./config/head.js";
+
+// const slug = function (title) {
+//   return title
+//     .replace(/(^\w|\s\w)/g, (m) => m.toLowerCase())
+//     .replace(/ /g, "-");
+// };
 
 require("dotenv").config(); // eslint-disable-line nuxt/no-cjs-in-config
 
 const CompressionPlugin = require("compression-webpack-plugin"); // eslint-disable-line nuxt/no-cjs-in-config
 
 export default {
+  target: "static",
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: head(process.env.MODE),
 
@@ -12,7 +21,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "~/plugins/filters" }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -40,10 +49,13 @@ export default {
 
   publicRuntimeConfig: {
     MODE: process.env.MODE,
+    BASE_URL: process.env.BASE_URL,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -60,5 +72,35 @@ export default {
     cssSourceMap: true,
 
     plugins: [new CompressionPlugin()],
+
+    extend(config, ctx) {
+      config.devtool = "source-map";
+    },
   },
+
+  render: {
+    injectScripts: false,
+  },
+
+  // generate: {
+  //   routes: ['/users/1', '/users/2', '/users/3']
+  // },
+
+  // generate: {
+  //   routes: async () => {
+  //     const routes = [];
+
+  //     await axios.get(`${process.env.BASE_URL}/items/careers?fields=title&sort=title`).then((response) => {
+  //       const careers = response.data.data;
+  //       careers.forEach(career => routes.push(`/careers/${slug(career.title)}`));
+  //     });
+
+  //     await axios.get(`${process.env.BASE_URL}/items/services?fields=title&sort=title`).then((response) => {
+  //       const services = response.data.data;
+  //       services.forEach(career => routes.push(`/services/${slug(career.title)}`));
+  //     });
+
+  //     return routes;
+  //   }
+  // }
 };

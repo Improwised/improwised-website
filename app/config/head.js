@@ -10,7 +10,6 @@ const meta = [
   { charset: "utf-8" },
   { name: "viewport", content: "width=device-width, initial-scale=1" },
   { name: "format-detection", content: "telephone=no" },
-  { name: "description", content: constants.description },
   { name: "author", content: "Improwised Technologies Pvt. Ltd." },
   { name: "theme-color", content: "#FFFFFF" },
   { name: "application-name", content: "Improwised Technologies Pvt. Ltd." },

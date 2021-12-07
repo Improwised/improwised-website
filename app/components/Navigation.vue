@@ -71,24 +71,12 @@
                           class="dropdown__content col-lg-3 col-md-4 col-sm-6"
                         >
                           <ul class="menu-vertical">
-                            <li>
-                              <a href="/cloud-infrastructure-services">
-                                Cloud Infrastructure
-                              </a>
-                            </li>
-                            <li>
-                              <a href="/software-product-modernization">
-                                Product Modernization
-                              </a>
-                            </li>
-                            <li>
-                              <a href="/web-software-development">
-                                Web Development
-                              </a>
-                            </li>
-                            <li>
-                              <a href="/technology-consulting">
-                                Technology Consulting
+                            <li
+                              v-for="(service, index) in services"
+                              :key="index"
+                            >
+                              <a :href="`/services/${$slugify(service.title)}`">
+                                {{ service.title }}
                               </a>
                             </li>
                           </ul>
@@ -121,3 +109,18 @@
     <!--end bar-->
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      services: [],
+    };
+  },
+  beforeCreate() {
+    this.$axios.$get(this.$urls.servicesListWithTitleOnly).then((services) => {
+      this.services = services.data;
+    });
+  },
+};
+</script>
