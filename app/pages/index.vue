@@ -50,7 +50,11 @@
     <section class="text-center bg--secondary services">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-sm-12">
+          <div
+            v-for="(service, index) in services"
+            :key="index"
+            class="col-md-6 col-sm-12"
+          >
             <div
               class="
                 feature feature-3
@@ -58,77 +62,12 @@
                 text-center
               "
             >
-              <i class="icon icon--lg color--primary icon-Cloud-Settings"></i>
-              <a href="/cloud-infrastructure-services"
-                ><h4>Cloud Infrastructure</h4></a
-              >
-              <p>
-                Setting up and maintaining infrastructure to handle scale,
-                reliability and performance of application for in a cost
-                effective way.
-              </p>
+              <i :class="`icon icon--lg color--primary ${service.icon}`"></i>
+              <a :href="`/services/${$slugify(service.title)}`">
+                <h4>{{ service.title }}</h4>
+              </a>
+              <p>{{ service.short_description }}</p>
             </div>
-            <!--end feature-->
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div
-              class="
-                feature feature-3
-                boxed boxed--lg boxed--border
-                text-center
-              "
-            >
-              <i
-                class="icon icon--lg color--primary icon-Monitor-Analytics"
-              ></i>
-              <a href="/software-product-modernization"
-                ><h4>Product Modernization</h4></a
-              >
-              <p>
-                Product modernization of the legacy system bestow myriad of
-                benefits such as, improved longevity, performance and usability,
-                etc.
-              </p>
-            </div>
-            <!--end feature-->
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div
-              class="
-                feature feature-3
-                boxed boxed--lg boxed--border
-                text-center
-              "
-            >
-              <i class="icon icon--lg color--primary icon-Optimization"></i>
-              <a href="/web-software-development"><h4>Web Development</h4></a>
-              <p>
-                Our team has a long track record of engineering and maintaining
-                scalable web applications; especially Software-as-a-Service
-                (SaaS) applications.
-              </p>
-            </div>
-            <!--end feature-->
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div
-              class="
-                feature feature-3
-                boxed boxed--lg boxed--border
-                text-center
-              "
-            >
-              <i class="icon icon--lg color--primary icon-Idea-2"></i>
-              <a href="/technology-consulting"
-                ><h4>Technology Consulting</h4></a
-              >
-              <p>
-                We have passion for problem solving. We help startups and
-                businesses move faster, and be more effective by identifying
-                right tools and architecture for their software.
-              </p>
-            </div>
-            <!--end feature-->
           </div>
         </div>
         <!--end of row-->
@@ -150,82 +89,12 @@
     <section class="features-style">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div v-for="(whyus, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Conference icon--lg"></i>
+              <i :class="`icon ${whyus.icon} icon--lg`"></i>
               <div class="feature__body">
-                <h5>Customer first</h5>
-                <p>
-                  We place your interests first, even if it means recommending a
-                  ready-made software rather than hiring us to build a new one
-                  from scratch.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Repeat-2 icon--lg"></i>
-              <div class="feature__body">
-                <h5>Holistic approach</h5>
-                <p>
-                  We aim to ensure that all of your technical needs are met –
-                  from your server infrastructure to your databases to your
-                  code, while you focus on growing your business.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Repair icon--lg"></i>
-              <div class="feature__body">
-                <h5>Right tool for the job</h5>
-                <p>
-                  Every business is different, and technology is just means to
-                  an end. We help you select the right vendors, make informed
-                  build-or-buy decisions, and more.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Idea-3 icon--lg"></i>
-              <div class="feature__body">
-                <h5>Startup-minded team</h5>
-                <p>
-                  All our teams are responsible for their work from design to
-                  deployment and support. Additionally, we stay current on the
-                  latest technologies and help our clients benefit from the
-                  latest innovations in the industry.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Gears icon--lg"></i>
-              <div class="feature__body">
-                <h5>Process automation</h5>
-                <p>
-                  Utilizing automation early on has a compounding effect on
-                  everything. Continuous Delivery, Monitoring and Alerting,
-                  Infrastructure-as-code etc. allows us to move faster.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feature feature-5 boxed boxed--lg boxed--border">
-              <i class="icon icon-Monitor-Analytics icon--lg"></i>
-              <div class="feature__body">
-                <h5>Fully transparent</h5>
-                <p>
-                  We use tools like Slack to make sure communication between you
-                  and the tech team happens without any barriers, and everybody
-                  is always on the same page.
-                </p>
+                <h5>{{ whyus.title }}</h5>
+                <div v-html="whyus.description"></div>
               </div>
             </div>
           </div>
@@ -534,43 +403,13 @@
           <div class="col-md-8 col-sm-10">
             <div class="slider" data-paging="true">
               <ul class="slides">
-                <li>
+                <li v-for="(testimonial, index) in testimonials" :key="index">
                   <div class="testimonial">
                     <blockquote>
-                      &ldquo;Working with the Improwised team has been a
-                      pleasure. They helped us get our software and business off
-                      the ground. We could not have gotten to where we are today
-                      without their help!&rdquo;
+                      &ldquo;{{ testimonial.quote }}&rdquo;
                     </blockquote>
-                    <h5>Dave Stevens</h5>
-                    <span>CTO, chartlytics.com</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="testimonial">
-                    <blockquote>
-                      &ldquo;We've been working with Shailesh and the team at
-                      Improwised for almost 3 years. They are very
-                      knowledgeable, reliable and always ready to help. They are
-                      great to work with and are an essential part of our
-                      technical team.&rdquo;
-                    </blockquote>
-                    <h5>Deon</h5>
-                    <span>CTO, dateperfect.com</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="testimonial">
-                    <blockquote>
-                      &ldquo;Improwised Technologies team has planned and
-                      directed the WishYoo platform from its inception until
-                      becoming a real global platform. They have always taken
-                      care of quality to an extreme, repeatedly running checks
-                      on the code and architecture of external vendors to ensure
-                      the best and most efficient outcome.&rdquo;
-                    </blockquote>
-                    <h5>Ignacio Doncel</h5>
-                    <span>CEO, wishyoo.com</span>
+                    <h5>{{ testimonial.author }}</h5>
+                    <span>{{ testimonial.author_designation }}</span>
                   </div>
                 </li>
               </ul>
@@ -611,6 +450,18 @@
 import constants from "@/config/constants";
 
 export default {
+  layout: "theme",
+  async asyncData({ app, params }) {
+    const testimonials = await app.$axios.$get(app.$urls.testimonials);
+    const services = await app.$axios.$get(app.$urls.services);
+    const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
+
+    return {
+      testimonials: testimonials.data,
+      services: services.data,
+      whyUs: whyUs.data,
+    };
+  },
   head: {
     title: constants.title,
     meta: [
