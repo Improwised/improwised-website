@@ -1,11 +1,11 @@
-function titlecase(value) {
+export function titlecase(value) {
   if (!value) return value;
   return value
     .replace(/-/g, " ")
     .replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
 }
 
-function slugify(value) {
+export function slugify(value) {
   if (!value) return value;
   return value
     .replace(/(^\w|\s\w)/g, (m) => m.toLowerCase())
