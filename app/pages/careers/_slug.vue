@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container career">
+  <div v-if="career" class="main-container career">
     <section class="space--sm">
       <div class="container">
         <div class="row">
@@ -103,11 +103,11 @@ export default {
   },
   head() {
     return {
-      title: this.career.seo_title,
+      title: (this.career && this.career.seo_title) || "",
       meta: [
         {
           name: "description",
-          content: this.career.seo_description,
+          content: (this.career && this.career.seo_description) || "",
         },
       ],
     };

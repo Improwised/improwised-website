@@ -72,7 +72,7 @@
                         >
                           <ul class="menu-vertical">
                             <li
-                              v-for="(service, index) in services"
+                              v-for="(service, index) in $store.state.services"
                               :key="index"
                             >
                               <a :href="`/services/${$slugify(service.title)}`">
@@ -109,18 +109,3 @@
     <!--end bar-->
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      services: [],
-    };
-  },
-  beforeCreate() {
-    this.$axios.$get(this.$urls.servicesListWithTitleOnly).then((services) => {
-      this.services = services.data;
-    });
-  },
-};
-</script>

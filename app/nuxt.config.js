@@ -82,10 +82,6 @@ export default {
     },
   },
 
-  render: {
-    injectScripts: false,
-  },
-
   generate: {
     routes: async () => {
       const routes = [];
