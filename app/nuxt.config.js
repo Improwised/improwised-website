@@ -54,11 +54,12 @@ export default {
   publicRuntimeConfig: {
     MODE: process.env.MODE,
     BASE_URL: process.env.BASE_URL,
+    DATA_URL: process.env.DATA_URL,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.DATA_URL,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -88,7 +89,7 @@ export default {
       const routes = [];
 
       await axios
-        .get(`${process.env.BASE_URL}/items/careers?fields=title&sort=title`)
+        .get(`${process.env.DATA_URL}/items/careers?fields=title&sort=title`)
         .then((response) => {
           const careers = response.data.data;
           careers.forEach((career) =>
@@ -97,7 +98,7 @@ export default {
         });
 
       await axios
-        .get(`${process.env.BASE_URL}/items/services?fields=title&sort=title`)
+        .get(`${process.env.DATA_URL}/items/services?fields=title&sort=title`)
         .then((response) => {
           const services = response.data.data;
           services.forEach((career) =>
