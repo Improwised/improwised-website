@@ -1,11 +1,6 @@
-// import axios from "axios";
+import axios from "axios";
 import head from "./config/head.js";
-
-// const slug = function (title) {
-//   return title
-//     .replace(/(^\w|\s\w)/g, (m) => m.toLowerCase())
-//     .replace(/ /g, "-");
-// };
+import { slugify } from "./plugins/filters.js";
 
 require("dotenv").config(); // eslint-disable-line nuxt/no-cjs-in-config
 
@@ -45,7 +40,16 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    // sitemap
+    "@nuxtjs/sitemap",
   ],
+
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    defaults: {
+      lastmod: new Date(),
+    },
+  },
 
   publicRuntimeConfig: {
     MODE: process.env.MODE,
@@ -82,25 +86,29 @@ export default {
     injectScripts: false,
   },
 
-  // generate: {
-  //   routes: ['/users/1', '/users/2', '/users/3']
-  // },
+  generate: {
+    routes: async () => {
+      const routes = [];
 
-  // generate: {
-  //   routes: async () => {
-  //     const routes = [];
+      await axios
+        .get(`${process.env.BASE_URL}/items/careers?fields=title&sort=title`)
+        .then((response) => {
+          const careers = response.data.data;
+          careers.forEach((career) =>
+            routes.push(`/careers/${slugify(career.title)}`)
+          );
+        });
 
-  //     await axios.get(`${process.env.BASE_URL}/items/careers?fields=title&sort=title`).then((response) => {
-  //       const careers = response.data.data;
-  //       careers.forEach(career => routes.push(`/careers/${slug(career.title)}`));
-  //     });
+      await axios
+        .get(`${process.env.BASE_URL}/items/services?fields=title&sort=title`)
+        .then((response) => {
+          const services = response.data.data;
+          services.forEach((career) =>
+            routes.push(`/services/${slugify(career.title)}`)
+          );
+        });
 
-  //     await axios.get(`${process.env.BASE_URL}/items/services?fields=title&sort=title`).then((response) => {
-  //       const services = response.data.data;
-  //       services.forEach(career => routes.push(`/services/${slug(career.title)}`));
-  //     });
-
-  //     return routes;
-  //   }
-  // }
+      return routes;
+    },
+  },
 };
