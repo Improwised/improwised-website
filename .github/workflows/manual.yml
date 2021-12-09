@@ -22,6 +22,7 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
     defaults:
       run:
         shell: bash
@@ -39,3 +40,9 @@ jobs:
       run: npm run webpack:build
     - name: static generate
       run: npm run generate
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.PERSONAL_TOKEN }}
+        external_repository: improwised/improwised.github.com
+        publish_dir: ./public
