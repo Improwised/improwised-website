@@ -83,6 +83,7 @@ export default {
   },
 
   generate: {
+    dir: "public",
     routes: async () => {
       const routes = [];
 
