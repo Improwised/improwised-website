@@ -49,7 +49,7 @@
     </section>
     <section class="text-center bg--secondary services">
       <div class="container">
-        <div class="row">
+        <div v-if="services" class="row">
           <div
             v-for="(service, index) in services"
             :key="index"
@@ -88,7 +88,7 @@
     </section>
     <section class="features-style">
       <div class="container">
-        <div class="row">
+        <div v-if="whyUs" class="row">
           <div v-for="(whyus, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature feature-5 boxed boxed--lg boxed--border">
               <i :class="`icon ${whyus.icon} icon--lg`"></i>
@@ -402,7 +402,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-10">
             <div class="slider" data-paging="true">
-              <ul class="slides">
+              <ul v-if="testimonials" class="slides">
                 <li v-for="(testimonial, index) in testimonials" :key="index">
                   <div class="testimonial">
                     <blockquote>
