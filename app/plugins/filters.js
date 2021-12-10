@@ -40,7 +40,7 @@ export default function (context, inject) {
   inject("slugify", slugify);
   context.$slugify = slugify;
 
-  const assets = (id) => `${context.$config.BASE_URL}/assets/${id}`;
+  const assets = (id) => `${context.$config.DATA_URL}/assets/${id}`;
   urls.assets = assets;
 
   inject("urls", urls);

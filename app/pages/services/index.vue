@@ -1,15 +1,14 @@
 <template>
-  <div>redirect</div>
+  <div>services</div>
 </template>
 
 <script>
 export default {
   layout: "theme",
-  async asyncData({ app, params, redirect }) {
-    const services = await app.$axios.$get(app.$urls.services);
-    redirect(`/services/${app.$slugify(services.data[0].title)}`);
-
-    return {};
+  mounted() {
+    window.location.href = `/services/${this.$slugify(
+      this.$store.state.services[0].title
+    )}`;
   },
 };
 </script>
