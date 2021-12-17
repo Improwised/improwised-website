@@ -37,12 +37,12 @@
         type="text/css"
         media="all"
       />
-      <link
+      <!-- <link
         href="/theme/css/jquery.steps.css"
         rel="stylesheet"
         type="text/css"
         media="all"
-      />
+      /> -->
       <link
         href="/theme/css/theme.css"
         rel="stylesheet"
