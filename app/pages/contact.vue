@@ -16,11 +16,11 @@
         </div>
         <!--end of container-->
       </section>
-      <section class="switchable">
+      <section>
         <div class="container">
           <div class="row">
             <!--  -->
-            <div class="col-md-5 col-sm-5">
+            <div class="col-md-5">
               <div class="switchable__text">
                 <h3 class="fs-24">
                   304 - Pride Square, <br />
@@ -34,74 +34,71 @@
               </div>
             </div>
             <!--  -->
-            <div class="col-sm-6 col-xs-12">
-              <div class="row">
-                <div id="errorMessages"></div>
-                <div id="success">
-                  <div class="success-msg">
-                    <b
-                      >Message has been sent successfully. We will contact
-                      within 1 business day.</b
-                    >
-                  </div>
+            <div class="col-md-5 offset-md-1">
+              <div id="errorMessages"></div>
+              <div id="success">
+                <div class="success-msg">
+                  <b
+                    >Message has been sent successfully. We will contact within
+                    1 business day.</b
+                  >
                 </div>
-                <form
-                  id="contactus-submit"
-                  action="https://rnnmftp4t7.execute-api.us-west-2.amazonaws.com/production/api/contactus"
-                >
-                  <input
-                    id="sitekey"
-                    type="hidden"
-                    name="sitekey"
-                    value="6LfM73IUAAAAAFFFAv5jHjpT_UIjRZqD2xcijnwn"
-                  />
-                  <div class="col-sm-6 col-xs-12">
-                    <label for="name">Your Name:</label>
-                    <input
-                      id="name"
-                      type="text"
-                      class="validate-required"
-                      name="name"
-                      required="required"
-                    />
-                  </div>
-                  <div class="col-sm-6 col-xs-12">
-                    <label for="email">Email Address:</label>
-                    <input
-                      id="email"
-                      type="email"
-                      class="validate-required validate-email"
-                      name="email"
-                      required="required"
-                    />
-                  </div>
-                  <div class="col-xs-12">
-                    <label for="message">Message:</label>
-                    <textarea
-                      id="message"
-                      type="textarea"
-                      class="validate-required"
-                      name="message"
-                      rows="4"
-                      required="required"
-                    ></textarea>
-                  </div>
-                  <div class="col-xs-12">
-                    <div id="recaptcha"></div>
-                  </div>
-                  <div class="col-xs-12">
-                    <button
-                      id="btn-submit"
-                      type="submit"
-                      class="btn btn--primary type--uppercase"
-                      disabled="disabled"
-                    >
-                      Send Enquiry
-                    </button>
-                  </div>
-                </form>
               </div>
-              <!--end of row-->
+              <form
+                id="contactus-submit"
+                action="https://rnnmftp4t7.execute-api.us-west-2.amazonaws.com/production/api/contactus"
+              >
+                <input
+                  id="sitekey"
+                  type="hidden"
+                  name="sitekey"
+                  value="6LfM73IUAAAAAFFFAv5jHjpT_UIjRZqD2xcijnwn"
+                />
+                <div class="col-xs-12">
+                  <label for="name">Your Name:</label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="validate-required"
+                    name="name"
+                    required="required"
+                  />
+                </div>
+                <div class="col-xs-12">
+                  <label for="email">Email Address:</label>
+                  <input
+                    id="email"
+                    type="email"
+                    class="validate-required validate-email"
+                    name="email"
+                    required="required"
+                  />
+                </div>
+                <div class="col-xs-12">
+                  <label for="message">Message:</label>
+                  <textarea
+                    id="message"
+                    type="textarea"
+                    class="validate-required"
+                    name="message"
+                    rows="4"
+                    required="required"
+                  ></textarea>
+                </div>
+                <div class="col-xs-12">
+                  <div id="recaptcha"></div>
+                </div>
+                <div class="col-xs-12">
+                  <button
+                    id="btn-submit"
+                    type="submit"
+                    class="btn btn--primary type--uppercase"
+                    disabled="disabled"
+                  >
+                    Send Enquiry
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <!--end of row-->
