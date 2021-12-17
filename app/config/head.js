@@ -45,37 +45,31 @@ const devLinks = [
     href: "/css/bootstrap.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   {
     href: "/css/stack-interface.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   {
     href: "/css/socicon.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   {
     href: "/css/lightbox.min.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   {
     href: "/css/flickity.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   {
     href: "/css/iconsmind.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
   { href: "/css/theme.css", rel: "stylesheet", type: "text/css", media: "all" },
   { href: "/css/index.css", rel: "stylesheet", type: "text/css", media: "all" },
@@ -83,7 +77,6 @@ const devLinks = [
     href: "/css/font-rubiklato.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
   },
 ];
 
@@ -92,7 +85,7 @@ const prodLinks = [
     href: "/dist/index.min.css",
     rel: "stylesheet",
     type: "text/css",
-    media: "all",
+
     lazyload: true,
   },
 ];
@@ -106,22 +99,19 @@ const _link = [
   { href: "https://www.gstatic.com", rel: "preconnect" },
   { href: "https://script.hotjar.com", rel: "preconnect" },
   {
-    href: "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i",
+    href: "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i&display=swap",
     rel: "stylesheet",
     lazyload: true,
-    media: "all",
   },
   {
-    href: "https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CRubik:300,400,500",
+    href: "https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CRubik:300,400,500&display=swap",
     rel: "stylesheet",
     lazyload: true,
-    media: "all",
   },
   {
-    href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+    href: "https://fonts.googleapis.com/icon?family=Material+Icons&display=swap",
     rel: "stylesheet",
     lazyload: true,
-    media: "all",
   },
   {
     rel: "apple-touch-icon",
