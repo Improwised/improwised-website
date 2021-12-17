@@ -88,18 +88,18 @@
 
     <script src="/theme/js/jquery-3.1.1.min.js"></script>
     <script src="/theme/js/flickity.min.js"></script>
-    <script src="/theme/js/easypiechart.min.js"></script>
-    <script src="/theme/js/parallax.js"></script>
+    <!-- <script src="/theme/js/easypiechart.min.js"></script> -->
+    <!-- <script src="/theme/js/parallax.js"></script> -->
     <script src="/theme/js/typed.min.js"></script>
-    <script src="/theme/js/datepicker.js"></script>
-    <script src="/theme/js/isotope.min.js"></script>
-    <script src="/theme/js/ytplayer.min.js"></script>
+    <!-- <script src="/theme/js/datepicker.js"></script> -->
+    <!-- <script src="/theme/js/isotope.min.js"></script> -->
+    <!-- <script src="/theme/js/ytplayer.min.js"></script> -->
     <!-- <script src="/theme/js/lightbox.min.js"></script> -->
     <script src="/theme/js/granim.min.js"></script>
-    <script src="/theme/js/jquery.steps.min.js"></script>
-    <script src="/theme/js/countdown.min.js"></script>
-    <script src="/theme/js/twitterfetcher.min.js"></script>
-    <script src="/theme/js/spectragram.min.js"></script>
+    <!-- <script src="/theme/js/jquery.steps.min.js"></script> -->
+    <!-- <script src="/theme/js/countdown.min.js"></script> -->
+    <!-- <script src="/theme/js/twitterfetcher.min.js"></script> -->
+    <!-- <script src="/theme/js/spectragram.min.js"></script> -->
     <script src="/theme/js/smooth-scroll.min.js"></script>
     <script src="/theme/js/scripts.js"></script>
     <script src="/js/contactus.js"></script>
