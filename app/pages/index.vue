@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-sm-12">
             <h6 class="type--uppercase">We are Improwised Technologies.</h6>
-            <h1 class="hide">
+            <h1 class="d-none">
               We help you engineer great products. We help you build
               applications for the cloud. We help you make the most of next-gen
               tech. We help you realize your product ideas.
@@ -397,17 +397,18 @@
       </div>
       <!--end of container-->
     </section>
+
     <section class="text-center">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-sm-10">
+          <div class="col-lg-8 col-md-10">
             <div class="slider" data-paging="true">
               <ul v-if="testimonials" class="slides">
                 <li v-for="(testimonial, index) in testimonials" :key="index">
                   <div class="testimonial">
-                    <blockquote>
+                    <span class="h3">
                       &ldquo;{{ testimonial.quote }}&rdquo;
-                    </blockquote>
+                    </span>
                     <h5>{{ testimonial.author }}</h5>
                     <span>{{ testimonial.author_designation }}</span>
                   </div>
@@ -420,24 +421,25 @@
       </div>
       <!--end of container-->
     </section>
+
     <section
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
     >
       <div class="container">
         <div class="row">
-          <div class="cta cta--horizontal text-center-xs">
-            <div class="col-sm-9">
-              <h2 class="lead">
-                We will do our best to answer you within 24 hours or less.
-              </h2>
-            </div>
-            <div class="col-sm-3 text-right text-center-xs">
-              <a class="btn btn--primary type--uppercase" href="/contact">
-                <span class="btn__text"> Contact Us </span>
-              </a>
-            </div>
+          <!-- <div class="cta cta--horizontal text-center-xs"> -->
+          <div class="col-sm-9 d-flex align-items-center">
+            <h2 class="lead m-0">
+              We will do our best to answer you within 24 hours or less.
+            </h2>
           </div>
+          <div class="col-sm-3 text-right text-center-xs">
+            <a class="btn btn--primary type--uppercase" href="/contact">
+              <span class="btn__text"> Contact Us </span>
+            </a>
+          </div>
+          <!-- </div> -->
         </div>
         <!--end of row-->
       </div>

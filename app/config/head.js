@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import constants from "./constants.js";
 
 // ===================================
@@ -104,7 +106,7 @@ const _link = [
   { href: "https://www.gstatic.com", rel: "preconnect" },
   { href: "https://script.hotjar.com", rel: "preconnect" },
   {
-    href: "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons",
+    href: "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i",
     rel: "stylesheet",
     lazyload: true,
     media: "all",
@@ -223,7 +225,8 @@ export default function (mode) {
     title: constants.title,
     htmlAttrs,
     meta,
-    link: _link.concat(mode === "development" ? devLinks : prodLinks),
-    script: mode === "development" ? devScripts : prodScripts,
+    link: _link,
+    // link: _link.concat(mode === "development" ? devLinks : prodLinks),
+    // script: mode === "development" ? devScripts : prodScripts,
   };
 }

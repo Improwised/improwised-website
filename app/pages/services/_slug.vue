@@ -1,10 +1,10 @@
 <template>
   <div v-if="service" class="main-container career">
     <link rel="stylesheet" type="text/css" href="/css/markdown.css" />
-    <section class="space--xs serviceHeader">
+    <section class="text-center serviceHeader">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 text-center">
+          <div class="col-md-12">
             <h1>{{ service.title }}</h1>
           </div>
         </div>
@@ -15,7 +15,7 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="col-xs-12 col-md-10 offset-md-1">
             <article class="markdown-body">
               <div v-html="service.content_html" />
             </article>

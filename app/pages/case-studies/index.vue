@@ -29,7 +29,7 @@
             />
           </div>
         </div>
-        <div>
+        <div class="container p-0">
           <div class="row">
             <div class="col-md-6 col-sm-6 card-content">
               <h2>{{ caseStudie.title }}</h2>

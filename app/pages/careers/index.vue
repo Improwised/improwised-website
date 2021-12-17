@@ -11,15 +11,21 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="switchable bg--secondary">
+
+    <section class="bg--secondary">
       <div class="container currentOpening">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-md-12">
             <div class="heading-block">
               <h3>Current Openings</h3>
             </div>
           </div>
-          <div v-for="(career, index) in careers" :key="index" class="col-sm-4">
+
+          <div
+            v-for="(career, index) in careers"
+            :key="index"
+            class="col-sm-6 col-md-4"
+          >
             <div class="feature feature-1 boxed boxed--border">
               <span class="label">{{ career.employment_terms }}</span>
               <h5>{{ career.title }}</h5>
@@ -34,6 +40,7 @@
       </div>
       <!--end of container-->
     </section>
+
     <section>
       <div class="container-fluid">
         <div class="row">
