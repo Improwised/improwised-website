@@ -20,7 +20,7 @@
         <div class="container">
           <div class="row">
             <!--  -->
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div class="switchable__text">
                 <h3 class="fs-24">
                   304 - Pride Square, <br />
