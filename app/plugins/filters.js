@@ -13,24 +13,30 @@ export function slugify(value) {
 }
 
 const urls = {
-  services: `/items/services?fields=*.*&sort=title`,
-  servicesListWithTitleOnly: "/items/services?fields=title",
+  services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=title`,
+  servicesListWithTitleOnly: "/items/services?filter[status][_eq]=published&fields=title",
   service: (title) =>
-    `/items/services?filter[title]=${title}&single=1&fields=*.*`,
+    `/items/services?filter[status][_eq]=published&filter[title][_eq]=${title}&single=1&fields=*.*`,
 
-  careers: "/items/careers?fields=*.*&sort=title",
-  career: (title) =>
-    `/items/careers?filter[title]=${title}&single=1&fields=*.*`,
+  careers: "/items/pages?filter[slug][_eq]=careers&fields[]=*.*",
 
-  caseStudies: "/items/case-studies?fields=*.*",
+  jobOpenings: "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
+  job: (title) =>
+    `/items/careers?filter[status][_eq]=published&filter[title][_eq]=${title}&single=1&fields=*.*`,
 
-  aboutUs: "/items/about_us?fields=*.*",
+  caseStudies: "/items/case-studies?filter[status][_eq]=published&fields=*.*",
 
-  whyus: "/items/why_us?fields=*.*&sort=title",
+  aboutUs: "/items/about_us?filter[status][_eq]=published&fields=*.*",
 
-  testimonials: "/items/testimonials?fields=*.*&sort=author",
+  whyus: "/items/why_us?filter[status][_eq]=published&fields=*.*&sort=title",
 
-  whyUsHome: `/items/why_us_home?fields=*.*&sort=title`,
+  testimonials: "/items/testimonials?filter[status][_eq]=published&fields=*.*&sort=author",
+
+  whyUsHome: `/items/why_us_home?filter[status][_eq]=published&fields=*.*&sort=title`,
+
+  whoWeAre: `/items/blog?filter[slug][_eq]=who-we-are&fields[]=*.*,tags.tags_id.name`,
+  whatWeDo: `/items/blog?filter[slug][_eq]=what-we-do&fields[]=*.*,tags.tags_id.name`,
+  simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`
 };
 
 export default function (context, inject) {
