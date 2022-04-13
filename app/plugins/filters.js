@@ -36,7 +36,8 @@ const urls = {
 
   whoWeAre: `/items/blog?filter[slug][_eq]=who-we-are&fields[]=*.*,tags.tags_id.name`,
   whatWeDo: `/items/blog?filter[slug][_eq]=what-we-do&fields[]=*.*,tags.tags_id.name`,
-  simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`
+  simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
+  coreValues: `/items/blog?filter[tags][tags_id][_in]=1&sort=sort,-id&limit=3&fields[]=*.*`
 };
 
 export default function (context, inject) {

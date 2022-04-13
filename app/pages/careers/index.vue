@@ -185,7 +185,11 @@
               client we work, which you can see in core values
             </p>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div
+            v-for="(coreValue, index) in coreValues"
+            :key="index"
+            class="col-lg-4 col-md-6"
+          >
             <div
               class="
                 boxed boxed--border
@@ -194,52 +198,9 @@
                 box-shadow
               "
             >
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
+              <h4>{{ coreValue.title }}</h4>
+              <p>{{ coreValue.description | truncate(100, "...") }}</p>
+              <a v-if="coreValue.content && coreValue.content.length" href="#">
                 <span class="btn__text"> Read More </span>
               </a>
             </div>
@@ -386,16 +347,27 @@
 
 <script>
 export default {
+  filters: {
+    truncate(text, length, suffix) {
+      if (text.length > length) {
+        return text.substring(0, length) + suffix;
+      } else {
+        return text;
+      }
+    },
+  },
   layout: "theme",
   async asyncData({ app, params }) {
     const careers = await app.$axios.$get(app.$urls.careers);
     const whoWeAre = await app.$axios.$get(app.$urls.whoWeAre);
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
+    const coreValues = await app.$axios.$get(app.$urls.coreValues);
 
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
       whatWeDo: whatWeDo.data[0],
+      coreValues: coreValues.data,
     };
   },
   head() {
