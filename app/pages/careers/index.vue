@@ -248,136 +248,6 @@
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="m-0">Why you should join us?</h2>
-            <p class="mb-5">
-              We care about individual goal & their groth, please checkout why
-              you should join us
-            </p>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
-              <h4>Modern Aesthetic</h4>
-              <p>
-                Build a beautifully performant site with Stack's vast collection
-                of modular elements.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-        </div>
-      </div>
-    </section>
-
-    <section class="bg--secondary">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="m-0">Benefits & Perks</h2>
-            <p class="mb-5">Checkout befinits you get when you join us</p>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>Challenge & Opportunity</h4>
-              <p>
-                you will get so many challenges while working over hear. you
-                feel challenged.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>Learning & Development</h4>
-              <p>
-                Engaging speaker series, weekly Senior Leadership office hours,
-                annual career conversations, learning and development
-                opportunities such as TaskRabbit Youniversity, Growth Track: All
-                People Managers, LinkedIn Learning and department Company Wide
-                D&I training: Unconscious Bias, Inclusive Culture, Growth
-                Mindset.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-lg-4 col-md-6">
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>Office</h4>
-              <p>
-                Fun and inclusive environment, dog-friendly offices in San
-                Francisco, Austin, and London. Fully stocked fridges with snacks
-                and drinks, free lunch everyday, monthly birthday celebrations
-                and themed happy hours, bi-weekly company all-hands, and fun
-                swag.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="bg--dark">
       <div class="container">
         <div class="row">
@@ -511,41 +381,6 @@
         </div>
       </div>
     </section>
-
-    <section>
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-6 justify-content-center d-flex align-items-center"
-          >
-            <div>
-              <h2>{{ simpleHiringProcess.title }}</h2>
-              <div class="mb-5">
-                {{ simpleHiringProcess.description }}
-              </div>
-              <a
-                v-if="
-                  simpleHiringProcess.content &&
-                  simpleHiringProcess.content.length
-                "
-                href="#"
-              >
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="col-lg-6 justify-content-center d-flex align-items-center"
-          >
-            <img
-              :src="$urls.assets(simpleHiringProcess.image.id)"
-              :alt="simpleHiringProcess.image.title"
-              :title="simpleHiringProcess.image.title"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -556,15 +391,11 @@ export default {
     const careers = await app.$axios.$get(app.$urls.careers);
     const whoWeAre = await app.$axios.$get(app.$urls.whoWeAre);
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
-    const simpleHiringProcess = await app.$axios.$get(
-      app.$urls.simpleHiringProcess
-    );
 
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
       whatWeDo: whatWeDo.data[0],
-      simpleHiringProcess: simpleHiringProcess.data[0],
     };
   },
   head() {
