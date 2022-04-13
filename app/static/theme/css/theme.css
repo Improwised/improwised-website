@@ -9375,3 +9375,12 @@ footer.footer-7 {
     margin-right: auto;
   }
 }
+.testimonial__body
+{
+  padding: 5px 5px 20px 5px;
+}
+.testimonial__body h5
+{
+  font-size: 18px;
+  line-height: 18px;
+}
