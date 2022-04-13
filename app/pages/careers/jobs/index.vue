@@ -24,9 +24,7 @@
               <span class="label">{{ job.employment_terms }}</span>
               <h5>{{ job.title }}</h5>
               <p>{{ job.experience }} years of relevant experience</p>
-              <a :href="`/careers/jobs/${$slugify(job.title)}`"
-                >View &amp; Apply</a
-              >
+              <a :href="`/careers/jobs/${job.slug}`">View &amp; Apply</a>
             </div>
           </div>
         </div>

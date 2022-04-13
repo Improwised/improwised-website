@@ -42,6 +42,10 @@
               <h5>Educational Qualification:</h5>
               <div v-html="job.qualification"></div>
             </div>
+            <div v-if="job.pay_range" class="text-block">
+              <h5>Pay Range:</h5>
+              <div v-html="job.pay_range"></div>
+            </div>
           </div>
           <div class="col-lg-12">
             <br /><br />
