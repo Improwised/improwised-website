@@ -209,132 +209,33 @@
       </div>
     </section>
 
-    <section class="bg--dark">
+    <section>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="m-0">Listen from Team</h2>
+            <h2 class="m-0">Meet the Team</h2>
             <p class="mb-5">
               Our team is biggest advocate for ourself, listen directly from
               them.
             </p>
           </div>
-          <div class="col-md-6 col-lg-4">
+
+          <div
+            v-for="(meetTeamData, index) in meetTeam"
+            :key="index"
+            class="col-md-6 col-lg-4"
+          >
             <div class="testimonial testimonial-2">
               <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <p>
-                  Best. customer. service. Seriously, I opened a ticket and they
-                  were so helpful and really seemed to care about my experience.
-                </p>
-                <div class="testimonial__image m-0">
-                  <img alt="Image" src="img/avatar-round-1.png" />
-                  <h5>Gabby V.</h5>
-                  <span>Sydney, AU</span>
+                <img
+                  :src="$urls.assets(meetTeamData.image.id)"
+                  :alt="meetTeamData.name"
+                  :title="meetTeamData.name"
+                />
+
+                <div class="testimonial__image m-0 text-center">
+                  <h5>{{ meetTeamData.name }}</h5>
+                  <span>{{ meetTeamData.designation }}</span>
                 </div>
               </div>
             </div>
@@ -362,12 +263,14 @@ export default {
     const whoWeAre = await app.$axios.$get(app.$urls.whoWeAre);
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
     const coreValues = await app.$axios.$get(app.$urls.coreValues);
+    const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
 
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
       whatWeDo: whatWeDo.data[0],
       coreValues: coreValues.data,
+      meetTeam: meetTeam.data,
     };
   },
   head() {
