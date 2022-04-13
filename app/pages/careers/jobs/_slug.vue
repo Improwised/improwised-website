@@ -14,7 +14,7 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="">
+    <section>
       <div class="container">
         <div class="row jobPosition">
           <div class="col-md-8 col-sm-12 job-details">
