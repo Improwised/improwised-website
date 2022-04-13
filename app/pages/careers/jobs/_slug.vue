@@ -1,6 +1,6 @@
 <template>
   <div v-if="job" class="main-container career">
-    <section class="space--sm">
+    <section class="space--xs">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -14,7 +14,7 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="switchable">
+    <section class="">
       <div class="container">
         <div class="row jobPosition">
           <div class="col-md-8 col-sm-12 job-details">
