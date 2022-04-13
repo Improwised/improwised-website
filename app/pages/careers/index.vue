@@ -391,15 +391,11 @@ export default {
     const careers = await app.$axios.$get(app.$urls.careers);
     const whoWeAre = await app.$axios.$get(app.$urls.whoWeAre);
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
-    const simpleHiringProcess = await app.$axios.$get(
-      app.$urls.simpleHiringProcess
-    );
 
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
       whatWeDo: whatWeDo.data[0],
-      simpleHiringProcess: simpleHiringProcess.data[0],
     };
   },
   head() {
