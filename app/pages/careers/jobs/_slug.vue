@@ -1,13 +1,13 @@
 <template>
   <div v-if="job" class="main-container career">
-    <section class="space--xs">
+    <section class="hspecing">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <h1>{{ job.title }}</h1>
             <Breadcrumb />
             <!-- breadcrume -->
-            <hr />
+            <hr class="m-0" />
           </div>
         </div>
         <!--end of row-->
@@ -90,7 +90,20 @@
     </section>
   </div>
 </template>
+<style type="text/css">
+ul.bullets {
+  list-style: outside;
+  padding-left: 20px;
+}
 
+.career .hspecing {
+  padding: 3.85714286em 0 3.85714286em 0;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+</style>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
 
@@ -100,8 +113,8 @@ export default {
   },
   layout: "theme",
   async asyncData({ app, params }) {
-    const title = app.$titlecase(params && params.slug) || "";
-    console.log(app.$urls.job(title));
+    // const title = app.$titlecase(params && params.slug) || "";
+    const title = params.slug;
     const job = await app.$axios.$get(app.$urls.job(title));
 
     return { job: job.data[0] };

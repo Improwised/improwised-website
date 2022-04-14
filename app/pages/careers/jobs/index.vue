@@ -20,11 +20,11 @@
             :key="index"
             class="col-sm-6 col-md-4"
           >
-            <div class="feature feature-1 boxed boxed--border">
-              <span class="label">{{ job.employment_terms }}</span>
-              <h5>{{ job.title }}</h5>
+            <div class="feature boxed boxed--border" style="height: auto">
+              <div class="label">{{ job.employment_terms }}</div>
+              <h5 class="mt-15px">{{ job.title }}</h5>
               <p>{{ job.experience }} years of relevant experience</p>
-              <a :href="`/careers/jobs/${job.slug}`">View &amp; Apply</a>
+              <a :href="`/careers/jobs/${job.slug}`"> View &amp; Apply</a>
             </div>
           </div>
         </div>
@@ -54,6 +54,15 @@
   </div>
 </template>
 
+<style type="text/css">
+.feature h5.mt-15px {
+  margin-top: 15px;
+}
+
+.m-0 {
+  margin: 0;
+}
+</style>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
 

@@ -22,9 +22,9 @@ const urls = {
 
   jobOpenings: "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
   job: (title) =>
-    `/items/careers?filter[status][_eq]=published&filter[title][_eq]=${title}&single=1&fields=*.*`,
+    `/items/careers?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
-  caseStudies: "/items/case-studies?filter[status][_eq]=published&fields=*.*",
+  caseStudies: "/items/case-studies?filter[status][_eq]=published&fields=*.*&sort=title",
 
   aboutUs: "/items/about_us?filter[status][_eq]=published&fields=*.*",
 
