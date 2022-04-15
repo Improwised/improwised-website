@@ -1,13 +1,13 @@
 <template>
   <div v-if="job" class="main-container career">
-    <section class="space--xs">
+    <section class="hspecing">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <h1>{{ job.title }}</h1>
             <Breadcrumb />
             <!-- breadcrume -->
-            <hr />
+            <hr class="m-0" />
           </div>
         </div>
         <!--end of row-->
@@ -20,31 +20,40 @@
           <div class="col-md-8 col-sm-12 job-details">
             <div v-html="job.overview"></div>
             <br />
-            <div class="text-block">
+            <div v-if="job.objectives_of_this_role" class="text-block">
+              <h5>Objectives of this Role</h5>
+              <div v-html="job.objectives_of_this_role"></div>
+            </div>
+            <div v-if="job.responsibilities" class="text-block">
               <h5>Responsibilities</h5>
               <div v-html="job.responsibilities"></div>
             </div>
-            <div class="text-block">
-              <h5>This position require:</h5>
+            <div v-if="job.skills" class="text-block">
+              <h5>Skills and Qualifications</h5>
               <div v-html="job.skills"></div>
             </div>
           </div>
+
           <div class="col-md-offset-1 col-md-3 col-sm-12">
-            <div class="text-block">
-              <h5>Experience</h5>
-              <p>{{ job.experience }} years of relevant experience</p>
-            </div>
-            <div class="text-block">
-              <h5>Employment Terms</h5>
-              <p>{{ job.employment_terms }}</p>
-            </div>
-            <div class="text-block">
-              <h5>Educational Qualification:</h5>
-              <div v-html="job.qualification"></div>
-            </div>
             <div v-if="job.pay_range" class="text-block">
               <h5>Pay Range:</h5>
               <div v-html="job.pay_range"></div>
+            </div>
+            <div v-if="job.experience" class="text-block">
+              <h5>Experience</h5>
+              <p>{{ job.experience }}</p>
+            </div>
+            <div v-if="job.keyskills" class="text-block">
+              <h5>Keyskills</h5>
+              <p>{{ job.keyskills }}</p>
+            </div>
+            <div v-if="job.employment_terms" class="text-block">
+              <h5>Employment Terms</h5>
+              <p>{{ job.employment_terms }}</p>
+            </div>
+            <div v-if="job.qualification" class="text-block">
+              <h5>Educational Qualification:</h5>
+              <div v-html="job.qualification"></div>
             </div>
           </div>
           <div class="col-lg-12">
@@ -90,7 +99,20 @@
     </section>
   </div>
 </template>
+<style type="text/css">
+ul.bullets {
+  list-style: outside;
+  padding-left: 20px;
+}
 
+.career .hspecing {
+  padding: 3.85714286em 0 3.85714286em 0;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+</style>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
 
@@ -100,8 +122,8 @@ export default {
   },
   layout: "theme",
   async asyncData({ app, params }) {
-    const title = app.$titlecase(params && params.slug) || "";
-    console.log(app.$urls.job(title));
+    // const title = app.$titlecase(params && params.slug) || "";
+    const title = params.slug;
     const job = await app.$axios.$get(app.$urls.job(title));
 
     return { job: job.data[0] };

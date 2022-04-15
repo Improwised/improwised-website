@@ -208,6 +208,29 @@
         </div>
       </div>
     </section>
+    <section class="bg--dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="mb-5">Our Blog</h2>
+            <!-- <p class="mb-5">Read our blog from our company</p> -->
+          </div>
+          <div
+            v-for="(blog, index) in blogs"
+            :key="index"
+            class="col-lg-4 col-md-6"
+          >
+            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
+              <h4>{{ blog.title }}</h4>
+              <p>{{ blog.description | truncate(100, "...") }}</p>
+              <a v-if="blog.content && blog.content.length" href="#">
+                <span class="btn__text"> Read More </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="container">
@@ -264,6 +287,7 @@ export default {
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
     const coreValues = await app.$axios.$get(app.$urls.coreValues);
     const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
+    const blogs = await app.$axios.$get(app.$urls.blogs);
 
     return {
       careers: careers.data[0],
@@ -271,6 +295,7 @@ export default {
       whatWeDo: whatWeDo.data[0],
       coreValues: coreValues.data,
       meetTeam: meetTeam.data,
+      blogs: blogs.data,
     };
   },
   head() {

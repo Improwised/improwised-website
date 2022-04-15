@@ -48,7 +48,7 @@
   min-height: 500px;
   position: relative;
   align-items: center;
-  background: url(../case-studies.png);
+  background: url(/case-studies.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -130,3 +130,7 @@
 /* careers - end */
 
 /* ========================================================================== */
+.technologies .boxed
+{
+  padding: 15px 12px;
+}

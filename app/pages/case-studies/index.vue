@@ -56,7 +56,7 @@ export default {
     return { caseStudies: caseStudies.data };
   },
   head: {
-    title: "Case Studies | Top Software Development Company",
+    title: "Case Studies - Improwised Technologies Pvt. Ltd",
     meta: [
       {
         name: "description",
