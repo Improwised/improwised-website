@@ -23,7 +23,7 @@
             <div class="feature boxed boxed--border" style="height: auto">
               <div class="label">{{ job.employment_terms }}</div>
               <h5 class="mt-15px">{{ job.title }}</h5>
-              <p>{{ job.experience }} years of relevant experience</p>
+              <p>{{ job.experience }}</p>
               <a :href="`/careers/jobs/${job.slug}`"> View &amp; Apply</a>
             </div>
           </div>
