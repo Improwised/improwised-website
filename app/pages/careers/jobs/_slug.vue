@@ -40,10 +40,10 @@
               <div v-html="job.pay_range"></div>
             </div>
             <div v-if="job.experience" class="text-block">
-              <h5>Experience</h5>
+              <h5>Relevant Experience</h5>
               <p>{{ job.experience }}</p>
             </div>
-            <div v-if="job.keyskills" class="text-block">
+            <!-- <div v-if="job.keyskills" class="text-block">
               <h5>Keyskills</h5>
               <p>{{ job.keyskills }}</p>
             </div>
@@ -54,7 +54,7 @@
             <div v-if="job.qualification" class="text-block">
               <h5>Educational Qualification:</h5>
               <div v-html="job.qualification"></div>
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-12">
             <br /><br />

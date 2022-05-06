@@ -59,7 +59,7 @@ html, body {
 
 /* features */
 .features-style .feature{
-  min-height: 280px;
+  min-height: 210px;
 }
 
 .features-style .feature p{
@@ -86,8 +86,8 @@ html, body {
 }
 
 .technologies img{
-  margin: 0 5px 15px 5px;
-  max-height: 50px;
+  margin: 0 5px 8px 5px;
+  max-height: 40px;
 }
 
 .travisci {

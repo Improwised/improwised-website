@@ -23,7 +23,8 @@
             <div class="feature boxed boxed--border" style="height: auto">
               <div class="label">{{ job.employment_terms }}</div>
               <h5 class="mt-15px">{{ job.title }}</h5>
-              <p>{{ job.experience }}</p>
+              <p class="mb-0">{{ job.experience }}</p>
+              <p v-if="job.pay_range" class="mb-1">{{ job.pay_range }}</p>
               <a :href="`/careers/jobs/${job.slug}`"> View &amp; Apply</a>
             </div>
           </div>

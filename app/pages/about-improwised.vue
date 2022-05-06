@@ -4,7 +4,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-md-8">
-            <h1>About Us</h1>
+            <h1 class="">About Us</h1>
+            <Breadcrumb class="m-0" />
           </div>
         </div>
         <!--end of row-->
@@ -27,11 +28,18 @@
       </div>
       <!--end of container-->
     </section>
-    <div class="col-lg-12 text-center">
-      <h2>Why us?</h2>
-      <br />
-    </div>
-    <section class="whyUS">
+    <section class="text-center space--xs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="mb-0">Why us?</h2>
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <section class="whyUS space--xs">
       <div class="container">
         <div class="row">
           <div v-for="(why, index) in whyUs" :key="index" class="col-sm-6">
@@ -70,7 +78,11 @@
 </template>
 
 <script>
+import Breadcrumb from "@/components/breadcrumb.vue";
 export default {
+  components: {
+    Breadcrumb,
+  },
   layout: "theme",
   async asyncData({ app, params }) {
     const aboutUs = await app.$axios.$get(app.$urls.aboutUs);

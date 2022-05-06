@@ -42,6 +42,7 @@ export default {
     "@nuxtjs/axios",
     // sitemap
     "@nuxtjs/sitemap",
+    'vue-social-sharing/nuxt'
   ],
 
   sitemap: {

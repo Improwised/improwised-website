@@ -1,11 +1,12 @@
 <template>
   <div v-if="service" class="main-container career">
     <link rel="stylesheet" type="text/css" href="/css/markdown.css" />
-    <section class="text-center serviceHeader">
+    <section class="text-center serviceHeader space--sm">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <h1>{{ service.title }}</h1>
+            <Breadcrumb class="m-0" />
           </div>
         </div>
         <!--end of row-->
@@ -29,7 +30,11 @@
 </template>
 
 <script>
+import Breadcrumb from "@/components/breadcrumb.vue";
 export default {
+  components: {
+    Breadcrumb,
+  },
   layout: "theme",
   async asyncData({ app, params }) {
     const title = app.$titlecase(params && params.slug) || "";
