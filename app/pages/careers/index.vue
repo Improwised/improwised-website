@@ -36,54 +36,8 @@
       <!--end of container-->
     </section>
 
-    <!-- <section class="text-center heroUnit">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-10 col-md-8">
-            <h1>Careers</h1>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <section class="bg--secondary">
       <div class="container">
-        <!-- <div class="row">
-          <div class="col-lg-12">
-            <p class="m-0">Our Culture</p>
-            <h2>Who we are?</h2>
-            <p>
-              We proud to build products for our clients successfully, and
-              continuing to do so, if you love to work in cutting edge
-              technologies to resolve real problems, improwised is right place
-              for you, please check below openings where you can join use.
-            </p>
-            <p class="text-right">
-              <a href="https://www.linkedin.com/in/sdavara/" target="_blank">
-                CEO, Shailesh Davara
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <p class="m-0">Our Culture</p>
-            <h2>Who we are?</h2>
-            <p>
-              We proud to build products for our clients successfully, and
-              continuing to do so, if you love to work in cutting edge
-              technologies to resolve real problems, improwised is right place
-              for you, please check below openings where you can join use.
-            </p>
-            <p class="text-right">
-              <a href="https://www.linkedin.com/in/sdavara/" target="_blank">
-                CEO, Shailesh Davara
-              </a>
-            </p>
-          </div>
-        </div> -->
-
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center">
             <div>
@@ -104,24 +58,6 @@
               :title="whoWeAre.image.title"
             />
           </div>
-          <!-- <div class="col-lg-6">
-            <img src="/img/who-are-we.svg" />
-          </div> -->
-          <!-- <div class="col-lg-8 offset-lg-2">
-            <div>
-              <p class="m-0">Our Culture</p>
-              <h2>Who we are?</h2>
-              <p>
-                We proud to build products for our clients successfully, and
-                continuing to do so, if you love to work in cutting edge
-                technologies to resolve real problems, improwised is right place
-                for you, please check below openings where you can join use.
-              </p>
-              <a href="#">
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
-          </div> -->
         </div>
       </div>
       <h1></h1>
@@ -149,23 +85,6 @@
               </a>
             </div>
           </div>
-
-          <!-- <div class="col-lg-8 offset-lg-2">
-            <p class="m-0">Our Culture</p>
-            <h2>What we do?</h2>
-            <p>
-              We proud to build products for our clients successfully, and
-              continuing to do so, if you love to work in cutting edge
-              technologies to resolve real problems, improwised is right place
-              for you, please check below openings where you can join use.
-            </p>
-            <a href="#">
-              <span class="btn__text"> Read More </span>
-            </a>
-          </div> -->
-          <!-- <div class="col-lg-6">
-            <img src="/img/what-we-doing.svg" />
-          </div> -->
         </div>
       </div>
     </section>
