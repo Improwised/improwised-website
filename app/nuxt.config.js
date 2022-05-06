@@ -27,6 +27,12 @@ export default {
         fix: true,
       },
     ],
+    [
+      "nuxt-lazysizes",
+      {
+        fix: true,
+      },
+    ],
     // https://go.nuxtjs.dev/stylelint
     [
       "@nuxtjs/stylelint-module",
@@ -35,7 +41,15 @@ export default {
       },
     ],
   ],
+  lazySizes: {
+    extendAssetUrls: {
+      img: ['src', 'srcset', 'data-src', 'data-srcset'],
+      source: ['src', 'srcset', 'data-src', 'data-srcset'],
 
+      // Example for a custom component
+      AppImage: ['source-md-url', 'image-url']
+    }
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -43,6 +57,7 @@ export default {
     // sitemap
     "@nuxtjs/sitemap",
     'vue-social-sharing/nuxt'
+    
   ],
 
   sitemap: {

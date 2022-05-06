@@ -3,33 +3,7 @@
     <section class="text-center">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
-            <h6 class="type--uppercase">We are Improwised Technologies.</h6>
-            <h1 class="d-none">
-              We help you engineer great products. We help you build
-              applications for the cloud. We help you make the most of next-gen
-              tech. We help you realize your product ideas.
-            </h1>
-            <div class="typed-headline">
-              <span class="h1 inline-block">We help you</span>
-              <span
-                class="
-                  h1
-                  inline-block
-                  typed-text typed-text--cursor
-                  color--primary
-                "
-                data-typed-strings="engineer great products.,build applications for the cloud.,make the most of next-gen tech.,realize your product ideas."
-              ></span>
-            </div>
-            <p class="lead">Your remote technology team.</p>
-            <a
-              class="btn btn--primary type--uppercase inner-link"
-              href="/contact"
-            >
-              <span class="btn__text"> Get in touch with us </span>
-            </a>
-          </div>
+          <HomeTyped />
         </div>
         <!--end of row-->
       </div>
@@ -539,6 +513,8 @@
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
     >
+      <HomeCallToActionGranim />
+
       <div class="container">
         <div class="row">
           <!-- <div class="cta cta--horizontal text-center-xs"> -->
@@ -563,8 +539,14 @@
 
 <script>
 import constants from "@/config/constants";
+import HomeTyped from "@/components/HomeTyped.vue";
+import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
 
 export default {
+  components: {
+    HomeTyped,
+    HomeCallToActionGranim,
+  },
   layout: "theme",
   async asyncData({ app, params }) {
     const testimonials = await app.$axios.$get(app.$urls.testimonials);

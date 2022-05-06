@@ -193,17 +193,13 @@ const devScripts = [
   { src: "/js/flickity.min.js", body: true },
   { src: "/js/easypiechart.min.js", body: true },
   { src: "/js/parallax.js", body: true },
-  { src: "/js/typed.min.js", body: true },
   { src: "/js/datepicker.js", body: true },
   { src: "/js/isotope.min.js", body: true },
   { src: "/js/lightbox.min.js", body: true },
-  { src: "/js/granim.min.js", body: true },
   { src: "/js/twitterfetcher.min.js", body: true },
   { src: "/js/spectragram.min.js", body: true },
-  { src: "/js/smooth-scroll.min.js", body: true },
   { src: "/js/scripts.js", body: true },
-  { src: "/js/contactus.js", body: true },
-  { src: "/js/lazysizes.min.js", body: true },
+  { src: "/js/contactus.js", body: true }
 ];
 
 const prodScripts = [{ src: "/dist/index.min.js", async: true, body: true }];
