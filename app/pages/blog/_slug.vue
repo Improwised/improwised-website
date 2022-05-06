@@ -167,12 +167,6 @@
 
 <script>
 export default {
-  // method: {
-  //   getTagsName(id) {
-  //     // const tagsname = app.$axios.$get(app.$urls.tagsname(id));
-  //     return "hello";
-  //   },
-  // },
   filters: {
     truncate(text, length, suffix) {
       if (text.length > length) {
