@@ -1,3 +1,6 @@
+import Vue from "vue";
+const moment = require("moment");
+
 export function titlecase(value) {
   if (!value) return value;
   return value
@@ -11,26 +14,35 @@ export function slugify(value) {
     .replace(/(^\w|\s\w)/g, (m) => m.toLowerCase())
     .replace(/ /g, "-");
 }
+Vue.filter("formatDateTime", function (value) {
+  if (!value) return "-";
+
+  return `${moment(value).local().format("ddd, MMM DD, YYYY")}`;
+});
 
 const urls = {
   services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=title`,
-  servicesListWithTitleOnly: "/items/services?filter[status][_eq]=published&fields=title",
+  servicesListWithTitleOnly:
+    "/items/services?filter[status][_eq]=published&fields=title",
   service: (title) =>
     `/items/services?filter[status][_eq]=published&filter[title][_eq]=${title}&single=1&fields=*.*`,
 
   careers: "/items/pages?filter[slug][_eq]=careers&fields[]=*.*",
 
-  jobOpenings: "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
+  jobOpenings:
+    "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
   job: (title) =>
     `/items/careers?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
-  caseStudies: "/items/case-studies?filter[status][_eq]=published&fields=*.*&sort=title",
+  caseStudies:
+    "/items/case-studies?filter[status][_eq]=published&fields=*.*&sort=title",
 
   aboutUs: "/items/about_us?filter[status][_eq]=published&fields=*.*",
 
   whyus: "/items/why_us?filter[status][_eq]=published&fields=*.*&sort=title",
 
-  testimonials: "/items/testimonials?filter[status][_eq]=published&fields=*.*&sort=author",
+  testimonials:
+    "/items/testimonials?filter[status][_eq]=published&fields=*.*&sort=author",
 
   whyUsHome: `/items/why_us_home?filter[status][_eq]=published&fields=*.*&sort=title`,
 
@@ -39,7 +51,13 @@ const urls = {
   simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
   coreValues: `/items/blog?filter[tags][tags_id][_in]=1&sort=sort,-id&limit=3&fields[]=*.*`,
   meetTeam: `/items/team?fields=*.*`,
-  blogs: `/items/blog?filter[tags][tags_id][_in]=1&sort=sort,id&limit=6&fields[]=*.*`
+  blogs: `/items/blog?filter[tags][tags_id][_in]=1&sort=sort,id&limit=6&fields[]=*.*,tags.*`,
+  blog: (title) =>
+    `/items/blog?filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
+  blogothers: (title) =>
+    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}`,
+  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*`,
+  // userData: (id) => `/items/team?filter[id][_eq]=${id}&fields=*.*`,
 };
 
 export default function (context, inject) {

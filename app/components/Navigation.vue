@@ -95,6 +95,9 @@
                   <a href="/careers">Careers</a>
                 </li>
                 <li>
+                  <a href="/blog">Blogs</a>
+                </li>
+                <li>
                   <a href="/contact">Contact Us</a>
                 </li>
               </ul>

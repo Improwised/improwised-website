@@ -6,13 +6,59 @@
         <div class="row">
           <div class="col-sm-10 col-md-8">
             <h1>Case Studies</h1>
+            <Breadcrumb class="m-0" />
           </div>
         </div>
         <!--end of row-->
       </div>
       <!--end of container-->
     </section>
+
     <div class="container card-container">
+      <section class="space--sm pt-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div
+                  v-for="(caseStudie, index) in caseStudies"
+                  :key="index"
+                  class="col-lg-4 col-md-6"
+                >
+                  <article class="feature feature-1 case-block">
+                    <a href="#" class="block bg--secondary">
+                      <img
+                        :src="$urls.assets(caseStudie.image.id)"
+                        :alt="caseStudie.image.title"
+                        :title="caseStudie.image.title"
+                        width="340"
+                        height="245"
+                      />
+                    </a>
+                    <div class="feature__body boxed boxed--border">
+                      <h5>{{ caseStudie.title }}</h5>
+
+                      <p>
+                        {{ caseStudie.short_description }}
+                      </p>
+
+                      <a
+                        :href="$urls.assets(caseStudie.document.id)"
+                        target="_blank"
+                      >
+                        View Details
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+      <!-- 
       <section
         v-for="(caseStudie, index) in caseStudies"
         :key="index"
@@ -39,16 +85,29 @@
               </a>
             </div>
           </div>
-          <!--end of row-->
+         
         </div>
-        <!--end of container-->
-      </section>
+    
+      </section> -->
     </div>
   </div>
 </template>
 
 <script>
+import Breadcrumb from "@/components/breadcrumb.vue";
 export default {
+  components: {
+    Breadcrumb,
+  },
+  filters: {
+    truncate(text, length, suffix) {
+      if (text.length > length) {
+        return text.substring(0, length) + suffix;
+      } else {
+        return text;
+      }
+    },
+  },
   layout: "theme",
   async asyncData({ app, params }) {
     const caseStudies = await app.$axios.$get(app.$urls.caseStudies);
