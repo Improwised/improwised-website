@@ -190,14 +190,8 @@ const _link = [
 
 const devScripts = [
   { src: "/js/jquery-3.5.1.min.js", body: true },
-  { src: "/js/flickity.min.js", body: true },
-  { src: "/js/easypiechart.min.js", body: true },
   { src: "/js/parallax.js", body: true },
-  { src: "/js/datepicker.js", body: true },
   { src: "/js/isotope.min.js", body: true },
-  { src: "/js/lightbox.min.js", body: true },
-  { src: "/js/twitterfetcher.min.js", body: true },
-  { src: "/js/spectragram.min.js", body: true },
   { src: "/js/scripts.js", body: true },
   { src: "/js/contactus.js", body: true }
 ];

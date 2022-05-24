@@ -480,33 +480,30 @@
             <h2 class="mb-0">Testimonials</h2>
           </div>
         </div>
-        <!--end of row-->
       </div>
-      <!--end of container-->
     </section>
-
     <section class="text-center space--sm">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10">
-            <div class="slider" data-paging="true">
-              <ul v-if="testimonials" class="slides">
-                <li v-for="(testimonial, index) in testimonials" :key="index">
-                  <div class="testimonial">
-                    <span class="h3">
-                      &ldquo;{{ testimonial.quote }}&rdquo;
-                    </span>
-                    <h5>{{ testimonial.author }}</h5>
-                    <span>{{ testimonial.author_designation }}</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <CarouselBase class="w-screen carousel" :direction="direction">
+              <div
+                v-for="(testimonial, index) in testimonials"
+                :key="index"
+                class="carousel-cell"
+              >
+                <div class="testimonial">
+                  <span class="h3">
+                    &ldquo;{{ testimonial.quote }}&rdquo;
+                  </span>
+                  <h5>{{ testimonial.author }}</h5>
+                  <span>{{ testimonial.author_designation }}</span>
+                </div>
+              </div>
+            </CarouselBase>
           </div>
         </div>
-        <!--end of row-->
       </div>
-      <!--end of container-->
     </section>
 
     <section
@@ -541,11 +538,13 @@
 import constants from "@/config/constants";
 import HomeTyped from "@/components/HomeTyped.vue";
 import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
+import CarouselBase from "@/components/CarouselBase.vue"; // HomeTestimonialsSection
 
 export default {
   components: {
     HomeTyped,
     HomeCallToActionGranim,
+    CarouselBase,
   },
   layout: "theme",
   async asyncData({ app, params }) {
@@ -557,6 +556,11 @@ export default {
       testimonials: testimonials.data,
       services: services.data,
       whyUs: whyUs.data,
+    };
+  },
+  data() {
+    return {
+      direction: "left",
     };
   },
 
@@ -571,3 +575,8 @@ export default {
   },
 };
 </script>
+<style>
+.carousel-cell {
+  counter-increment: carousel-cell;
+}
+</style>

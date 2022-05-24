@@ -42,7 +42,7 @@
                 </div>
               </div>
               <!--end article title-->
-              <div class="article__body">
+              <div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
               <hr />
