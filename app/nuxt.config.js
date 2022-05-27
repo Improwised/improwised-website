@@ -16,13 +16,19 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/filters" }],
+  plugins: [{ src: "~/plugins/filters" },{ src: '~/plugins/vue-flickity', ssr: false }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     [
       "@nuxtjs/eslint-module",
+      {
+        fix: true,
+      },
+    ],
+    [
+      "nuxt-lazysizes",
       {
         fix: true,
       },
@@ -35,7 +41,15 @@ export default {
       },
     ],
   ],
+  lazySizes: {
+    extendAssetUrls: {
+      img: ['src', 'srcset', 'data-src', 'data-srcset'],
+      source: ['src', 'srcset', 'data-src', 'data-srcset'],
 
+      // Example for a custom component
+      AppImage: ['source-md-url', 'image-url']
+    }
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -43,6 +57,7 @@ export default {
     // sitemap
     "@nuxtjs/sitemap",
     'vue-social-sharing/nuxt'
+    
   ],
 
   sitemap: {

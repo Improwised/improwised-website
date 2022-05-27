@@ -8,20 +8,8 @@
         type="text/css"
       />
       <link href="/theme/css/socicon.css" rel="stylesheet" type="text/css" />
-      <!-- <link
-        href="/theme/css/lightbox.min.css"
-        rel="stylesheet"
-        type="text/css"
-
-      /> -->
       <link href="/theme/css/flickity.css" rel="stylesheet" type="text/css" />
       <link href="/theme/css/iconsmind.css" rel="stylesheet" type="text/css" />
-      <!-- <link
-        href="/theme/css/jquery.steps.css"
-        rel="stylesheet"
-        type="text/css"
-
-      /> -->
       <link href="/theme/css/theme.css" rel="stylesheet" type="text/css" />
 
       <link href="/css/custom.css" rel="stylesheet" type="text/css" />
@@ -35,48 +23,26 @@
     <div v-else>
       <link rel="stylesheet" href="/dist/index.min.css" lazyload />
     </div>
-
     <a id="start" rel="nofollow" href="javscript:void(0);"></a>
     <Navigation />
     <nuxt />
     <Footer />
-    <a
-      class="back-to-top inner-link"
-      href="#start"
-      data-scroll-class="100vh:active"
-      title="click & go to top of the page"
-    >
-      <i class="stack-interface stack-up-open-big"></i>
-    </a>
-
+    <backToTop />
     <script src="/theme/js/jquery-3.1.1.min.js"></script>
-    <script src="/theme/js/flickity.min.js"></script>
-    <!-- <script src="/theme/js/easypiechart.min.js"></script> -->
-    <!-- <script src="/theme/js/parallax.js"></script> -->
-    <script src="/theme/js/typed.min.js"></script>
-    <!-- <script src="/theme/js/datepicker.js"></script> -->
-    <!-- <script src="/theme/js/isotope.min.js"></script> -->
-    <!-- <script src="/theme/js/ytplayer.min.js"></script> -->
-    <!-- <script src="/theme/js/lightbox.min.js"></script> -->
-    <script src="/theme/js/granim.min.js"></script>
-    <!-- <script src="/theme/js/jquery.steps.min.js"></script> -->
-    <!-- <script src="/theme/js/countdown.min.js"></script> -->
-    <!-- <script src="/theme/js/twitterfetcher.min.js"></script> -->
-    <!-- <script src="/theme/js/spectragram.min.js"></script> -->
-    <script src="/theme/js/smooth-scroll.min.js"></script>
     <script src="/theme/js/scripts.js"></script>
     <script src="/js/contactus.js"></script>
-    <script src="/js/lazysizes.min.js"></script>
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/Navigation.vue";
 import Footer from "@/components/Footer.vue";
+import backToTop from "@/components/backToTop.vue";
 export default {
   components: {
     Navigation,
     Footer,
+    backToTop,
   },
   mounted() {
     if (this.$config.MODE !== "development") {
