@@ -4,15 +4,16 @@
 
 <script>
 import Granim from "granim";
-import Vue from "vue";
 
 export default {
   name: "GranimElement",
+  data() {
+    return {
+      GObj: Object,
+    };
+  },
   mounted() {
-    // Export $granimInstance globally as a Vue prototype
-    // you can acces it in other components with
-    // this.$granimInstance (see GranimButtons.vue)
-    Vue.prototype.$granimInstance = new Granim({
+    this.GObj = new Granim({
       element: this.$refs.granimCanvas,
       name: "basic-gradient",
       direction: "left-right",
