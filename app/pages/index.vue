@@ -503,31 +503,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <section class="text-center space--sm">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10">
-            <CarouselBase class="w-screen carousel" :direction="direction">
-              <div
-                v-for="(testimonial, index) in testimonials"
-                :key="index"
-                class="carousel-cell"
-              >
-                <div class="testimonial">
-                  <span class="h3">
-                    &ldquo;{{ testimonial.quote }}&rdquo;
-                  </span>
-                  <h5>{{ testimonial.author }}</h5>
-                  <span>{{ testimonial.author_designation }}</span>
-                </div>
-              </div>
-            </CarouselBase>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <section
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
