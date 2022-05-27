@@ -482,30 +482,27 @@
         </div>
       </div>
     </section>
-    <section class="text-center space--sm">
+    <section class="space--sm services">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-10">
-            <CarouselBase class="w-screen carousel" :direction="direction">
-              <div
-                v-for="(testimonial, index) in testimonials"
-                :key="index"
-                class="carousel-cell"
-              >
-                <div class="testimonial">
-                  <span class="h3">
-                    &ldquo;{{ testimonial.quote }}&rdquo;
-                  </span>
-                  <h5>{{ testimonial.author }}</h5>
-                  <span>{{ testimonial.author_designation }}</span>
-                </div>
+          <div
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="col-lg-4 col-md-6 mb-2"
+          >
+            <div class="testimonial hs_additional_support pull-up">
+              <div class="testimonial-text contentbox">
+                &ldquo;{{ testimonial.quote }}&rdquo;
               </div>
-            </CarouselBase>
+              <div class="testimonial-detail clearfix">
+                <h4 class="testimonial-name">{{ testimonial.author }}</h4>
+                <span>{{ testimonial.author_designation }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     <section
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
@@ -538,13 +535,11 @@
 import constants from "@/config/constants";
 import HomeTyped from "@/components/HomeTyped.vue";
 import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
-import CarouselBase from "@/components/CarouselBase.vue"; // HomeTestimonialsSection
 
 export default {
   components: {
     HomeTyped,
     HomeCallToActionGranim,
-    CarouselBase,
   },
   layout: "theme",
   async asyncData({ app, params }) {
@@ -575,8 +570,3 @@ export default {
   },
 };
 </script>
-<style>
-.carousel-cell {
-  counter-increment: carousel-cell;
-}
-</style>
