@@ -8,7 +8,6 @@
         type="text/css"
       />
       <link href="/theme/css/socicon.css" rel="stylesheet" type="text/css" />
-      <link href="/theme/css/flickity.css" rel="stylesheet" type="text/css" />
       <link href="/theme/css/iconsmind.css" rel="stylesheet" type="text/css" />
       <link href="/theme/css/theme.css" rel="stylesheet" type="text/css" />
 
