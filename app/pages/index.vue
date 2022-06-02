@@ -37,7 +37,7 @@
               "
             >
               <i :class="`icon icon--lg color--primary ${service.icon}`"></i>
-              <a :href="`/services/${$slugify(service.title)}`">
+              <a :href="`/services/${service.slug}`">
                 <h4>{{ service.title }}</h4>
               </a>
               <p>{{ service.short_description }}</p>
@@ -542,17 +542,34 @@ export default {
     HomeCallToActionGranim,
   },
   layout: "theme",
-  async asyncData({ app, params }) {
-    const testimonials = await app.$axios.$get(app.$urls.testimonials);
-    const services = await app.$axios.$get(app.$urls.services);
-    const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
 
-    return {
-      testimonials: testimonials.data,
-      services: services.data,
-      whyUs: whyUs.data,
-    };
+  async asyncData({ app, params, payload }) {
+    if (payload) {
+      return { testimonials: payload, services: payload, whyUs: payload };
+    } else {
+      const testimonials = await app.$axios.$get(app.$urls.testimonials);
+      const services = await app.$axios.$get(app.$urls.services);
+      const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
+
+      return {
+        testimonials: testimonials.data,
+        services: services.data,
+        whyUs: whyUs.data,
+      };
+    }
   },
+
+  // async asyncData({ app, params }) {
+  //   const testimonials = await app.$axios.$get(app.$urls.testimonials);
+  //   const services = await app.$axios.$get(app.$urls.services);
+  //   const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
+
+  //   return {
+  //     testimonials: testimonials.data,
+  //     services: services.data,
+  //     whyUs: whyUs.data,
+  //   };
+  // },
   data() {
     return {
       direction: "left",

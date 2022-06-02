@@ -2,7 +2,7 @@ import axios from "axios";
 import head from "./config/head.js";
 import {
     slugify
-} from "./plugins/filters.js";
+} from "./plugins/urlroutes.js";
 
 require("dotenv").config(); // eslint-disable-line nuxt/no-cjs-in-config
 
@@ -19,7 +19,7 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [{
-        src: "~/plugins/filters"
+        src: "~/plugins/urlroutes"
     }],
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -105,28 +105,7 @@ export default {
 
     generate: {
         dir: "public",
-        routes: async () => {
-            const routes = [];
-
-            await axios
-                .get(`${process.env.DATA_URL}/items/careers?fields=title&sort=title`)
-                .then((response) => {
-                    const careers = response.data.data;
-                    careers.forEach((career) =>
-                        routes.push(`/careers/${slugify(career.title)}`)
-                    );
-                });
-
-            await axios
-                .get(`${process.env.DATA_URL}/items/services?fields=title&sort=title`)
-                .then((response) => {
-                    const services = response.data.data;
-                    services.forEach((career) =>
-                        routes.push(`/services/${slugify(career.title)}`)
-                    );
-                });
-
-            return routes;
-        },
+        fallback: false,
+        interval:10
     },
 };

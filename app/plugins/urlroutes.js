@@ -14,18 +14,20 @@ export function slugify(value) {
     .replace(/(^\w|\s\w)/g, (m) => m.toLowerCase())
     .replace(/ /g, "-");
 }
+
 Vue.filter("formatDateTime", function (value) {
   if (!value) return "-";
 
   return `${moment(value).local().format("ddd, MMM DD, YYYY")}`;
 });
 
+
 const urls = {
   services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=title`,
   servicesListWithTitleOnly:
-    "/items/services?filter[status][_eq]=published&fields=title",
+    "/items/services?filter[status][_eq]=published&fields=title,slug",
   service: (title) =>
-    `/items/services?filter[status][_eq]=published&filter[title][_eq]=${title}&single=1&fields=*.*`,
+    `/items/services?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
   careers: "/items/pages?filter[slug][_eq]=careers&fields[]=*.*",
 

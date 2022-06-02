@@ -75,7 +75,7 @@
                               v-for="(service, index) in $store.state.services"
                               :key="index"
                             >
-                              <a :href="`/services/${$slugify(service.title)}`">
+                              <a :href="`/services/${service.slug}`">
                                 {{ service.title }}
                               </a>
                             </li>
