@@ -26,7 +26,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.15.1",
+    "core-js": "^3.22.8",
     "granim": "^2.0.0",
     "http-serve": "^1.0.1",
     "moment": "^2.29.3",
