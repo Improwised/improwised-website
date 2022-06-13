@@ -38,7 +38,7 @@
                     <div class="feature__body boxed boxed--border">
                       <h5>{{ caseStudie.title }}</h5>
 
-                      <p>
+                      <p class="word-break mb-3">
                         {{ caseStudie.short_description }}
                       </p>
 
@@ -58,37 +58,6 @@
         </div>
         <!--end of container-->
       </section>
-      <!-- 
-      <section
-        v-for="(caseStudie, index) in caseStudies"
-        :key="index"
-        :class="`imageblock switchable feature-large bg--secondary ${
-          index % 2 !== 0 ? 'switchable--switch' : ''
-        }`"
-      >
-        <div class="imageblock__content col-md-6 col-sm-6 pos-right">
-          <div class="background-image-holder">
-            <img
-              :src="$urls.assets(caseStudie.image.id)"
-              :alt="caseStudie.image.title"
-              :title="caseStudie.image.title"
-            />
-          </div>
-        </div>
-        <div class="container p-0">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 card-content">
-              <h2>{{ caseStudie.title }}</h2>
-              <p class="lead">{{ caseStudie.short_description }}</p>
-              <a :href="$urls.assets(caseStudie.document.id)" target="_blank">
-                View Details
-              </a>
-            </div>
-          </div>
-         
-        </div>
-    
-      </section> -->
     </div>
   </div>
 </template>
@@ -115,7 +84,7 @@ export default {
     return { caseStudies: caseStudies.data };
   },
   head: {
-    title: "Case Studies - Improwised Technologies Pvt. Ltd",
+    title: "Case Studies - Improwised Technologies Pvt. Ltd.",
     meta: [
       {
         name: "description",

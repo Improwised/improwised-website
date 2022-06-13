@@ -44,7 +44,10 @@
               <p class="m-0">Our Culture</p>
               <h2>{{ whoWeAre.title }}</h2>
               <div class="lead" v-html="whoWeAre.description"></div>
-              <a v-if="whoWeAre.content && whoWeAre.content.length" href="#">
+              <a
+                v-if="whoWeAre.content && whoWeAre.content.length"
+                :href="`/blog/${whoWeAre.slug}`"
+              >
                 <span class="btn__text"> Read More </span>
               </a>
             </div>
@@ -80,7 +83,10 @@
               <p class="m-0">Our Culture</p>
               <h2>{{ whatWeDo.title }}</h2>
               <div class="lead" v-html="whatWeDo.description"></div>
-              <a v-if="whatWeDo.content && whoWeAre.content.length" href="#">
+              <a
+                v-if="whatWeDo.content && whoWeAre.content.length"
+                :href="`/blog/${whatWeDo.slug}`"
+              >
                 <span class="btn__text"> Read More </span>
               </a>
             </div>
@@ -89,7 +95,6 @@
       </div>
     </section>
 
-    <!-- <img src="/img/team.jpg" alt="team" /> -->
     <div class="teamMarquee">
       <div></div>
     </div>
@@ -179,6 +184,8 @@
                   :src="$urls.assets(meetTeamData.image.id)"
                   :alt="meetTeamData.name"
                   :title="meetTeamData.name"
+                  height="138"
+                  width="100%"
                 />
 
                 <div class="testimonial__image m-0 text-center">
