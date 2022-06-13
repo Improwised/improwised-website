@@ -95,9 +95,99 @@
       </div>
     </section>
 
-    <div class="teamMarquee">
-      <div></div>
-    </div>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 mb-5 text-center">
+            <h2 class="">Our Gallery</h2>
+          </div>
+          <div class="col-lg-12">
+            <vue-glide
+              :autoplay="3000"
+              :keyboard="true"
+              :per-view="8"
+              :bound="true"
+              :rewind="true"
+              type="carousel"
+              :rewind-duration="0"
+              class="activeSlide activeNav anabledArrow"
+              :bullet="false"
+              :controls="true"
+            >
+              <vue-glide-slide
+                v-for="(img, idx) in images"
+                :key="idx"
+                class="mb-4"
+              >
+                <img
+                  :src="img.thumbnail"
+                  :alt="img.alt"
+                  class="open-tinybox imgbox"
+                  height="200"
+                  @click="index = idx"
+                />
+              </vue-glide-slide>
+              <div slot="control" data-glide-el="controls">
+                <button data-glide-dir="<">&lt;</button>
+                <button data-glide-dir=">">&gt;</button>
+              </div>
+            </vue-glide>
+
+            <hr />
+
+            <div class="filters text-center">
+              <span
+                class="filter"
+                :class="{ active: currentFilter === 'ALL' }"
+                @click="setFilter('ALL')"
+                >ALL</span
+              >
+              <span
+                class="filter"
+                :class="{ active: currentFilter === 'ART' }"
+                @click="setFilter('ART')"
+                >ART</span
+              >
+              <span
+                class="filter"
+                :class="{ active: currentFilter === 'WORKSHOPS' }"
+                @click="setFilter('WORKSHOPS')"
+                >WORKSHOPS</span
+              >
+              <span
+                class="filter"
+                :class="{ active: currentFilter === 'DOODLES' }"
+                @click="setFilter('DOODLES')"
+                >DOODLES</span
+              >
+            </div>
+
+            <client-only>
+              <Tinybox v-model="index" :images="images"></Tinybox>
+
+              <transition-group class="projects" name="projects">
+                <div v-for="(image, idx) in images" :key="idx" class="project">
+                  <div
+                    v-if="
+                      currentFilter === image.category ||
+                      currentFilter === 'ALL'
+                    "
+                    class=""
+                  >
+                    <img
+                      class="open-tinybox"
+                      :alt="image.alt"
+                      :src="image.thumbnail"
+                      @click="index = idx"
+                    />
+                  </div>
+                </div>
+              </transition-group>
+            </client-only>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="bg--secondary">
       <div class="container">
@@ -202,7 +292,15 @@
 </template>
 
 <script>
+import Tinybox from "vue-tinybox";
+import { Glide, GlideSlide } from "vue-glide-js";
+import "vue-glide-js/dist/vue-glide.css";
 export default {
+  components: {
+    Tinybox,
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide,
+  },
   filters: {
     truncate(text, length, suffix) {
       if (text.length > length) {
@@ -230,6 +328,112 @@ export default {
       blogs: blogs.data,
     };
   },
+  data() {
+    return {
+      currentFilter: "ALL",
+      images: [
+        {
+          alt: "Artwork",
+          src: "https://picsum.photos/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/300",
+        },
+        {
+          alt: "Charcoal",
+          src: "https://picsum.photos/seed/picsum/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/seed/picsum/300",
+        },
+        {
+          alt: "Sketching",
+          src: "https://picsum.photos/id/250/300",
+          category: "DOODLES",
+          thumbnail: "https://picsum.photos/id/250/300",
+        },
+        {
+          alt: "Acrillic",
+          src: "https://picsum.photos/200",
+          category: "WORKSHOPS",
+          thumbnail: "https://picsum.photos/200",
+        },
+        {
+          alt: "Artwork",
+          src: "https://picsum.photos/id/257/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/257/300",
+        },
+        {
+          alt: "Charcoal",
+          src: "https://picsum.photos/id/240/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/240/300",
+        },
+        {
+          alt: "Sketching",
+          src: "https://picsum.photos/id/235/300",
+          category: "DOODLES",
+          thumbnail: "https://picsum.photos/id/235/300",
+        },
+        {
+          alt: "Acrillic",
+          src: "https://picsum.photos/id/237/300",
+          category: "WORKSHOPS",
+          thumbnail: "https://picsum.photos/id/237/300",
+        },
+
+        {
+          alt: "Artwork",
+          src: "https://picsum.photos/id/241/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/241/300",
+        },
+        {
+          alt: "Charcoal",
+          src: "https://picsum.photos/id/242/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/242/300",
+        },
+        {
+          alt: "Sketching",
+          src: "https://picsum.photos/id/243/300",
+          category: "DOODLES",
+          thumbnail: "https://picsum.photos/id/243/300",
+        },
+        {
+          alt: "Acrillic",
+          src: "https://picsum.photos/id/230/300",
+          category: "WORKSHOPS",
+          thumbnail: "https://picsum.photos/id/230/300",
+        },
+        {
+          alt: "Artwork",
+          src: "https://picsum.photos/id/231/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/231/300",
+        },
+        {
+          alt: "Charcoal",
+          src: "https://picsum.photos/id/232/300",
+          category: "ART",
+          thumbnail: "https://picsum.photos/id/232/300",
+        },
+        {
+          alt: "Sketching",
+          src: "https://picsum.photos/id/247/300",
+          category: "DOODLES",
+          thumbnail: "https://picsum.photos/id/247/300",
+        },
+        {
+          alt: "Acrillic",
+          src: "https://picsum.photos/id/248/300",
+          category: "WORKSHOPS",
+          thumbnail: "https://picsum.photos/id/248/300",
+        },
+      ],
+
+      index: null,
+    };
+  },
   head() {
     return {
       title: (this.careers && this.careers.seo_title) || "",
@@ -240,6 +444,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    setFilter(filter) {
+      this.currentFilter = filter;
+    },
   },
 };
 </script>
