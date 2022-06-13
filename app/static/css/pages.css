@@ -49,7 +49,7 @@
   min-height: 400px;
   position: relative;
   align-items: center;
-  background: url(/case-studies.png);
+  background: url(../case-studies.png);
   /*background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/case-studies.png);*/
   background-size: cover;
   background-repeat: no-repeat;
@@ -176,12 +176,12 @@
 .author_block .post-img {
   max-width: 70px;
   max-height: 70px;;
-  
+
 }
 .author_block img
 {
   border-radius: 50%;
-  width: 100%; 
+  width: 100%;
 }
 .show-featured a:hover {
   text-decoration: none !important;

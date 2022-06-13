@@ -36,8 +36,15 @@
                 text-center
               "
             >
-              <i :class="`icon icon--lg color--primary ${service.icon}`"></i>
-              <a :href="`/services/${$slugify(service.title)}`">
+              <i
+                v-if="service.icon"
+                :class="`icon icon--lg color--primary ${service.icon}`"
+              ></i>
+              <i
+                v-else
+                :class="`icon icon--lg color--primary icon-Optimization`"
+              ></i>
+              <a :href="`/services/${service.slug}`">
                 <h4>{{ service.title }}</h4>
               </a>
               <p>{{ service.short_description }}</p>
@@ -65,7 +72,9 @@
         <div v-if="whyUs" class="row">
           <div v-for="(whyus, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature feature-5 boxed boxed--sm boxed--border">
-              <i :class="`icon ${whyus.icon} icon--lg`"></i>
+              <i v-if="whyus.icon" :class="`icon ${whyus.icon} icon--lg`"></i>
+              <i v-else :class="`icon icon-Gears icon--lg`"></i>
+
               <div class="feature__body">
                 <h5>{{ whyus.title }}</h5>
                 <div v-html="whyus.description"></div>
@@ -490,7 +499,7 @@
             :key="index"
             class="col-lg-4 col-md-6 mb-2"
           >
-            <div class="testimonial hs_additional_support pull-up">
+            <div class="testimonial testimonial-home">
               <div class="testimonial-text contentbox">
                 &ldquo;{{ testimonial.quote }}&rdquo;
               </div>
@@ -542,17 +551,34 @@ export default {
     HomeCallToActionGranim,
   },
   layout: "theme",
-  async asyncData({ app, params }) {
-    const testimonials = await app.$axios.$get(app.$urls.testimonials);
-    const services = await app.$axios.$get(app.$urls.services);
-    const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
 
-    return {
-      testimonials: testimonials.data,
-      services: services.data,
-      whyUs: whyUs.data,
-    };
+  async asyncData({ app, params, payload }) {
+    if (payload) {
+      return { testimonials: payload, services: payload, whyUs: payload };
+    } else {
+      const testimonials = await app.$axios.$get(app.$urls.testimonials);
+      const services = await app.$axios.$get(app.$urls.services);
+      const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
+
+      return {
+        testimonials: testimonials.data,
+        services: services.data,
+        whyUs: whyUs.data,
+      };
+    }
   },
+
+  // async asyncData({ app, params }) {
+  //   const testimonials = await app.$axios.$get(app.$urls.testimonials);
+  //   const services = await app.$axios.$get(app.$urls.services);
+  //   const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
+
+  //   return {
+  //     testimonials: testimonials.data,
+  //     services: services.data,
+  //     whyUs: whyUs.data,
+  //   };
+  // },
   data() {
     return {
       direction: "left",

@@ -125,7 +125,7 @@
 export default {
   layout: "theme",
   head: {
-    title: "Contact - Improwised Technologies Pvt. Ltd",
+    title: "Contact - Improwised Technologies Pvt. Ltd.",
     meta: [
       {
         name: "description",

@@ -69,7 +69,7 @@ export default {
     return { blogPageData: blogPageData.data };
   },
   head: {
-    title: "Blogs - Improwised Technologies Pvt. Ltd",
+    title: "Blogs - Improwised Technologies Pvt. Ltd.",
     meta: [
       {
         name: "description",

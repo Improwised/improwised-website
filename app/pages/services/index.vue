@@ -36,7 +36,8 @@ export default {
     Breadcrumb,
   },
   layout: "theme",
-  async asyncData({ app, params }) {
+  async asyncData({ app, params, redirect, env }) {
+    return redirect("/");
     const title = app.$titlecase(params && params.slug) || "";
     const service = await app.$axios.$get(app.$urls.service(title));
 
