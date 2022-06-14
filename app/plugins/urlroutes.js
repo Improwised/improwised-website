@@ -53,12 +53,12 @@ const urls = {
   simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
   coreValues: `/items/blog?filter[tags][tags_id][_eq]=2&&sort=sort,-id&limit=3&fields[]=*.*`,
   meetTeam: `/items/team?fields=*.*`,
-  blogs: `/items/blog?filter[tags][tags_id][_neq]=null&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
+  blogs: `/items/blog?filter[tags][tags_id][_neq]=2&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
   blog: (title) =>
     `/items/blog?filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
   blogothers: (title) =>
-    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=null`,
-  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=null`,
+    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
+  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
   // userData: (id) => `/items/team?filter[id][_eq]=${id}&fields=*.*`,
 };
 
