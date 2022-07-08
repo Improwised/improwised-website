@@ -44,22 +44,21 @@ const urls = {
   whyus: "/items/why_us?filter[status][_eq]=published&fields=*.*&sort=title",
 
   testimonials:
-    "/items/testimonials?filter[status][_eq]=published&fields=*.*&sort=author&limit=3",
+    "/items/testimonials?filter[status][_eq]=published&fields=*.*&sort=sort,-id&limit=3",
 
   whyUsHome: `/items/why_us_home?filter[status][_eq]=published&fields=*.*&sort=title`,
 
-  whoWeAre: `/items/blog?filter[slug][_eq]=who-we-are&fields[]=*.*,tags.tags_id.name`,
-  whatWeDo: `/items/blog?filter[slug][_eq]=what-we-do&fields[]=*.*,tags.tags_id.name`,
-  simpleHiringProcess: `/items/blog?filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
-  coreValues: `/items/blog?filter[tags][tags_id][_eq]=2&&sort=sort,-id&limit=3&fields[]=*.*`,
-  meetTeam: `/items/team?fields=*.*`,
-  blogs: `/items/blog?filter[tags][tags_id][_neq]=2&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
+  whoWeAre: `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=who-we-are&fields[]=*.*,tags.tags_id.name`,
+  whatWeDo: `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=what-we-do&fields[]=*.*,tags.tags_id.name`,
+  simpleHiringProcess: `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
+  coreValues: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_eq]=2&&sort=sort,-id&limit=3&fields[]=*.*`,
+  meetTeam: `/items/team?filter[status][_eq]=published&fields=*.*`,
+  blogs: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_neq]=2&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
   blog: (title) =>
-    `/items/blog?filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
+    `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
   blogothers: (title) =>
-    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=null`,
-  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=null`,
-
+    `/items/blog?filter[status][_eq]=published&sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
+  blogPageData: `/items/blog?filter[status][_eq]=published&sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
   gallery: `/items/gallery?filter[status][_eq]=published&fields[]=*.*&sort=sort,-id`,
 };
 
