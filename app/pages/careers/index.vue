@@ -95,9 +95,56 @@
       </div>
     </section>
 
-    <div class="teamMarquee">
-      <div></div>
-    </div>
+    <section v-if="images && images.length">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 mb-5 text-center">
+            <h2 class="">Our Gallery</h2>
+          </div>
+          <!---  :autoplay="3000" --->
+          <div class="col-lg-12">
+            <vue-glide
+              :autoplay="3000"
+              :keyboard="true"
+              :per-view="4"
+              :bound="true"
+              :rewind="false"
+              type="carousel"
+              :rewind-duration="0"
+              class="activeSlide activeNav anabledArrow"
+              :bullet="false"
+              :controls="true"
+            >
+              <vue-glide-slide
+                v-for="(img, idx) in images"
+                :key="idx"
+                class="mb-4"
+              >
+                <img
+                  :src="img.src"
+                  :alt="img.alt"
+                  class="open-tinybox imgbox"
+                  height="300"
+                  :data-title="index"
+                  @click="index = idx"
+                />
+              </vue-glide-slide>
+              <div slot="control" data-glide-el="controls">
+                <button data-glide-dir="<">&lt;</button>
+                <button data-glide-dir=">">&gt;</button>
+              </div>
+            </vue-glide>
+            <client-only>
+              <Tinybox
+                v-model="index"
+                :index="index"
+                :images="images"
+              ></Tinybox>
+            </client-only>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="bg--secondary">
       <div class="container">
@@ -202,7 +249,15 @@
 </template>
 
 <script>
+import Tinybox from "vue-tinybox";
+import { Glide, GlideSlide } from "vue-glide-js";
+import "vue-glide-js/dist/vue-glide.css";
 export default {
+  components: {
+    Tinybox,
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide,
+  },
   filters: {
     truncate(text, length, suffix) {
       if (text.length > length) {
@@ -220,7 +275,18 @@ export default {
     const coreValues = await app.$axios.$get(app.$urls.coreValues);
     const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
     const blogs = await app.$axios.$get(app.$urls.blogs);
-
+    const gallery = await app.$axios.$get(app.$urls.gallery);
+    const newGalleriesData = [];
+    if (gallery.data.length > 0) {
+      gallery.data.forEach((value, index) => {
+        const galleries = {
+          src: app.$urls.assets(value.src.id),
+          alt: value.src.id,
+          thumbnail: app.$urls.assets(value.src.id),
+        };
+        newGalleriesData.push(galleries);
+      });
+    }
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
@@ -228,6 +294,12 @@ export default {
       coreValues: coreValues.data,
       meetTeam: meetTeam.data,
       blogs: blogs.data,
+      images: newGalleriesData,
+    };
+  },
+  data() {
+    return {
+      index: null,
     };
   },
   head() {
@@ -240,6 +312,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    setFilter(filter) {
+      this.currentFilter = filter;
+    },
   },
 };
 </script>

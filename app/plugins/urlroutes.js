@@ -29,7 +29,7 @@ const urls = {
   service: (title) =>
     `/items/services?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
-  careers: "/items/pages?filter[slug][_eq]=careers&fields[]=*.*",
+  careers: "/items/pages?filter[status][_eq]=published&filter[slug][_eq]=careers&fields[]=*.*",
 
   jobOpenings:
     "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
@@ -57,9 +57,10 @@ const urls = {
   blog: (title) =>
     `/items/blog?filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
   blogothers: (title) =>
-    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
-  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
-  // userData: (id) => `/items/team?filter[id][_eq]=${id}&fields=*.*`,
+    `/items/blog?sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=null`,
+  blogPageData: `/items/blog?sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=null`,
+
+  gallery: `/items/gallery?filter[status][_eq]=published&fields[]=*.*&sort=sort,-id`,
 };
 
 export default function (context, inject) {
