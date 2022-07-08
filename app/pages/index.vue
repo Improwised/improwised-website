@@ -10,20 +10,18 @@
       <!--end of container-->
     </section>
 
-    <section id="services" class="text-center bg--secondary space--xs">
+    <section
+      v-if="services && services.length"
+      id="services"
+      class="text-center bg--secondary services space--xs"
+    >
       <div class="container">
-        <div class="row">
+        <div class="row mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Our Services</h2>
           </div>
         </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
-    <section class="text-center bg--secondary services space--xs">
-      <div class="container">
-        <div v-if="services" class="row">
+        <div class="row">
           <div
             v-for="(service, index) in services"
             :key="index"
@@ -56,20 +54,19 @@
       <!--end of container-->
     </section>
 
-    <section id="whyUs" class="text-center space--xs">
+    <section
+      v-if="whyUs && whyUs.length"
+      id="whyUs"
+      class="features-style space--xs text-center"
+    >
       <div class="container">
-        <div class="row">
+        <div class="row mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Why Us</h2>
           </div>
         </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
-    <section class="features-style space--xs">
-      <div class="container">
-        <div v-if="whyUs" class="row">
+
+        <div v-if="whyUs && whyUs.length" class="row">
           <div v-for="(whyus, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature feature-5 boxed boxed--sm boxed--border">
               <i v-if="whyus.icon" :class="`icon ${whyus.icon} icon--lg`"></i>
@@ -86,426 +83,386 @@
       </div>
       <!--end of container-->
     </section>
-    <section id="toolBox" class="text-center bg--secondary space--xs">
+
+    <section
+      id="toolBox"
+      class="bg--secondary text-center technologies space--xs"
+    >
       <div class="container">
-        <div class="row">
+        <div class="row mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Our Toolbox</h2>
           </div>
         </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
-    <section class="bg--secondary technologies space--xs">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12 mb-1">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Backend</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
+        <div class="row text-center justify-content-center">
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Backend</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
             </div>
-
-            <div class="row text-center justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/node.png"
-                    alt="node"
-                    title="Node.js"
-                    class="lazyload"
-                  />
-                  <h6>Node Js</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/php.png"
-                    alt="php"
-                    title="PHP"
-                    class="lazyload"
-                  />
-                  <h6>PHP</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/laravel.png"
-                    alt="laravel"
-                    title="Laravel"
-                    class="lazyload"
-                  />
-                  <h6>Laravel</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/python.png"
-                    alt="python"
-                    title="Python"
-                    class="lazyload"
-                  />
-                  <h6>Python</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/go.png"
-                    alt="go"
-                    title="Go"
-                    class="lazyload"
-                  />
-                  <h6>Go</h6>
-                </div>
-              </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/node.png"
+                alt="node"
+                title="Node.js"
+                class="lazyload"
+              />
+              <h6>Node Js</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/php.png"
+                alt="php"
+                title="PHP"
+                class="lazyload"
+              />
+              <h6>PHP</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/laravel.png"
+                alt="laravel"
+                title="Laravel"
+                class="lazyload"
+              />
+              <h6>Laravel</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/python.png"
+                alt="python"
+                title="Python"
+                class="lazyload"
+              />
+              <h6>Python</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/go.png"
+                alt="go"
+                title="Go"
+                class="lazyload"
+              />
+              <h6>Go</h6>
             </div>
           </div>
 
-          <div class="col-md-12 mb-1justify-content-center">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Databases</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/postgresql-icon.svg"
-                    alt="postgresql"
-                    class="lazyload"
-                    title="PostgreSQL"
-                  />
-                  <h6>PostgreSQL</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/mariadb-icon.svg"
-                    alt="mariadb"
-                    class="lazyload"
-                    title="MariaDB"
-                  />
-                  <h6>MariaDB</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/mysql-icon.svg"
-                    alt="mysql"
-                    class="lazyload"
-                    title="MySQL"
-                  />
-                  <h6>MySQL</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/mongodb-icon.svg"
-                    alt="mongodb"
-                    class="lazyload"
-                    title="MongoDB"
-                  />
-                  <h6>MongoDB</h6>
-                </div>
-              </div>
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Databases</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-md-12 mb-1 justify-content-center">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Infrastructure</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/linux.png"
-                    alt="linux"
-                    class="lazyload"
-                    title="Linux"
-                  />
-                  <h6>Linux</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/nginx.png"
-                    alt="nginx"
-                    class="lazyload"
-                    title="nginx"
-                  />
-                  <h6>Nginx</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/docker.png"
-                    alt="docker"
-                    class="lazyload"
-                    title="Docker"
-                  />
-                  <h6>Docker</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/kubernetes.svg"
-                    alt="kubernetes"
-                    title="kubernetes"
-                    class="lazyload"
-                  />
-                  <h6>Kubernetes</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/helm.png"
-                    alt="Helm"
-                    class="lazyload"
-                    title="Helm"
-                  />
-                  <h6>Helm</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/terraform.svg"
-                    alt="Terraforms"
-                    class="lazyload"
-                    title="Terraform"
-                  />
-                  <h6>Terraform</h6>
-                </div>
-              </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/postgresql-icon.svg"
+                alt="postgresql"
+                class="lazyload"
+                title="PostgreSQL"
+              />
+              <h6>PostgreSQL</h6>
             </div>
           </div>
-          <div class="col-md-12 mb-1 justify-content-center">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Cloud</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/amazon-web-services-icon.svg"
-                    alt="amazon_web_services"
-                    class="lazyload"
-                    title="Amazon Web Services"
-                  />
-                  <h6>Amazon Web Services</h6>
-                </div>
-              </div>
-
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/google_cloud_platform.png"
-                    alt="google_cloud_platform"
-                    class="lazyload"
-                    title="Google Cloud Platform"
-                  />
-                  <h6>Google Cloud Platform</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/digital_ocean.png"
-                    alt="digital_ocean"
-                    class="lazyload"
-                    title="DigitalOcean"
-                  />
-                  <h6>DigitalOcean</h6>
-                </div>
-              </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/mariadb-icon.svg"
+                alt="mariadb"
+                class="lazyload"
+                title="MariaDB"
+              />
+              <h6>MariaDB</h6>
             </div>
           </div>
-          <div class="col-md-12 mb-1 justify-content-center">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Frontend</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/js.png"
-                    alt="js"
-                    class="lazyload"
-                    title="JavaScript"
-                  />
-                  <h6>JavaScript</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/bootstrap.png"
-                    alt="bootstrap"
-                    class="lazyload"
-                    title="Bootstrap"
-                  />
-                  <h6>Bootstrap</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/angular.png"
-                    alt="angular"
-                    class="lazyload"
-                    title="Angular.js"
-                  />
-                  <h6>Angular.js</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/react.png"
-                    alt="react"
-                    class="lazyload"
-                    title="React"
-                  />
-                  <h6>React</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/vuejs.png"
-                    alt="vuejs"
-                    class="lazyload"
-                    title="Vue.js"
-                  />
-                  <h6>Vue.js</h6>
-                </div>
-              </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/mysql-icon.svg"
+                alt="mysql"
+                class="lazyload"
+                title="MySQL"
+              />
+              <h6>MySQL</h6>
             </div>
           </div>
-          <div class="col-md-12 mb-1 justify-content-center">
-            <div class="row mb-2">
-              <div class="col-sm-12">
-                <h3 class="mb-0"><strong>Other</strong></h3>
-                <div class="dlab-separator-outer">
-                  <div class="dlab-separator style-liner"></div>
-                </div>
-              </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/mongodb-icon.svg"
+                alt="mongodb"
+                class="lazyload"
+                title="MongoDB"
+              />
+              <h6>MongoDB</h6>
             </div>
+          </div>
 
-            <div class="row justify-content-center">
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/github.png"
-                    alt="github"
-                    class="lazyload"
-                    title="Github"
-                  />
-                  <h6>Github</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/gitlab.png"
-                    alt="gitlab"
-                    class="lazyload"
-                    title="GitLab"
-                  />
-                  <h6>GitLab</h6>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/redis.png"
-                    alt="redis"
-                    class="lazyload"
-                    title="Redis"
-                  />
-                  <h6>Redis</h6>
-                </div>
-              </div>
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Infrastructure</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/linux.png"
+                alt="linux"
+                class="lazyload"
+                title="Linux"
+              />
+              <h6>Linux</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/nginx.png"
+                alt="nginx"
+                class="lazyload"
+                title="nginx"
+              />
+              <h6>Nginx</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/docker.png"
+                alt="docker"
+                class="lazyload"
+                title="Docker"
+              />
+              <h6>Docker</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/kubernetes.svg"
+                alt="kubernetes"
+                title="kubernetes"
+                class="lazyload"
+              />
+              <h6>Kubernetes</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/helm.png"
+                alt="Helm"
+                class="lazyload"
+                title="Helm"
+              />
+              <h6>Helm</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/terraform.svg"
+                alt="Terraforms"
+                class="lazyload"
+                title="Terraform"
+              />
+              <h6>Terraform</h6>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Cloud</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/amazon-web-services-icon.svg"
+                alt="amazon_web_services"
+                class="lazyload"
+                title="Amazon Web Services"
+              />
+              <h6>Amazon Web Services</h6>
+            </div>
+          </div>
 
-              <div class="col-sm-2">
-                <div class="boxed boxed--border text-center">
-                  <img
-                    data-src="img/technologies/circleci-icon.svg"
-                    alt="circle ci"
-                    title="circle ci"
-                    class="lazyload"
-                  />
-                  <h6>Circle ci</h6>
-                </div>
-              </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/google_cloud_platform.png"
+                alt="google_cloud_platform"
+                class="lazyload"
+                title="Google Cloud Platform"
+              />
+              <h6>Google Cloud Platform</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/digital_ocean.png"
+                alt="digital_ocean"
+                class="lazyload"
+                title="DigitalOcean"
+              />
+              <h6>DigitalOcean</h6>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Frontend</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/js.png"
+                alt="js"
+                class="lazyload"
+                title="JavaScript"
+              />
+              <h6>JavaScript</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/bootstrap.png"
+                alt="bootstrap"
+                class="lazyload"
+                title="Bootstrap"
+              />
+              <h6>Bootstrap</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/angular.png"
+                alt="angular"
+                class="lazyload"
+                title="Angular.js"
+              />
+              <h6>Angular.js</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/react.png"
+                alt="react"
+                class="lazyload"
+                title="React"
+              />
+              <h6>React</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/vuejs.png"
+                alt="vuejs"
+                class="lazyload"
+                title="Vue.js"
+              />
+              <h6>Vue.js</h6>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <h3 class="mb-0"><strong>Other</strong></h3>
+            <div class="dlab-separator-outer">
+              <div class="dlab-separator style-liner"></div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/github.png"
+                alt="github"
+                class="lazyload"
+                title="Github"
+              />
+              <h6>Github</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/gitlab.png"
+                alt="gitlab"
+                class="lazyload"
+                title="GitLab"
+              />
+              <h6>GitLab</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/redis.png"
+                alt="redis"
+                class="lazyload"
+                title="Redis"
+              />
+              <h6>Redis</h6>
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/circleci-icon.svg"
+                alt="circle ci"
+                title="circle ci"
+                class="lazyload"
+              />
+              <h6>Circle ci</h6>
             </div>
           </div>
         </div>
       </div>
-      <!--end of row-->
-
-      <!--end of container-->
     </section>
-    <section class="text-center space--xs">
+
+    <section
+      v-if="testimonials && testimonials.length"
+      class="space--sm text-center services"
+    >
       <div class="container">
-        <div class="row">
+        <div class="row mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Testimonials</h2>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="space--sm services">
-      <div class="container">
         <div class="row">
           <div
             v-for="(testimonial, index) in testimonials"
             :key="index"
             class="col-lg-4 col-md-6 mb-2"
           >
-            <div class="testimonial testimonial-home">
-              <div class="testimonial-text contentbox">
-                &ldquo;{{ testimonial.quote }}&rdquo;
-              </div>
-              <div class="testimonial-detail clearfix">
-                <h4 class="testimonial-name">{{ testimonial.author }}</h4>
-                <span>{{ testimonial.author_designation }}</span>
+            <div
+              class="testimonial testimonial-home boxed boxed--sm boxed--border"
+            >
+              <div class="verticle-middle">
+                <div class="testimonial-text contentbox">
+                  &ldquo;{{ testimonial.quote }}&rdquo;
+                </div>
+                <div class="testimonial-detail clearfix">
+                  <h4 class="testimonial-name">{{ testimonial.author }}</h4>
+                  <span>{{ testimonial.author_designation }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -568,17 +525,6 @@ export default {
     }
   },
 
-  // async asyncData({ app, params }) {
-  //   const testimonials = await app.$axios.$get(app.$urls.testimonials);
-  //   const services = await app.$axios.$get(app.$urls.services);
-  //   const whyUs = await app.$axios.$get(app.$urls.whyUsHome);
-
-  //   return {
-  //     testimonials: testimonials.data,
-  //     services: services.data,
-  //     whyUs: whyUs.data,
-  //   };
-  // },
   data() {
     return {
       direction: "left",

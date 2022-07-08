@@ -14,7 +14,10 @@
       <!--end of container-->
     </section>
 
-    <section v-if="blogPageData" class="space--sm services">
+    <section
+      v-if="blogPageData && blogPageData.length"
+      class="space--sm services"
+    >
       <div class="container">
         <div class="row">
           <div
@@ -25,12 +28,17 @@
             <article class="feature feature-3 boxed boxed--border">
               <div class="feature__body">
                 <h4>{{ blogData.title }}</h4>
-                <p>{{ blogData.description | truncate(100, "...") }}</p>
-                <span class="font-14">{{
+                <p>{{ blogData.description }}</p>
+
+                <br />
+                <span class="font-14 float-left">{{
                   blogData.date_created | formatDateTime
                 }}</span>
-                <br />
-                <a :href="`/blog/${blogData.slug}`" class="float-right">
+                <a
+                  v-if="blogData.content && blogData.content.length"
+                  :href="`/blog/${blogData.slug}`"
+                  class="float-right"
+                >
                   Read More
                 </a>
               </div>

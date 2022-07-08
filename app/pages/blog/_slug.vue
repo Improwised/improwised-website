@@ -1,10 +1,10 @@
 <template>
-  <div v-if="blog" class="main-container">
+  <div class="main-container">
     <section class="space--xs">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12">
-            <article>
+            <article v-if="blog">
               <div class="article__title text-left">
                 <h1 v-if="blog.title" class="h2">{{ blog.title }}</h1>
                 <div class="show-featured author_block">
@@ -43,16 +43,21 @@
               </div>
               <!--end article title-->
               <div>
+                <div v-if="blog.description">
+                  <p>{{ blog.description }}</p>
+                </div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
               <hr />
               <div class="article__share mt-0">
                 <h4>
-                  Tags :
-                  <span class="text-muted font-16">
+                  <span class="text-muted font-20">
                     <span v-for="(blogtag, index) in blog.tags" :key="index">
-                      <span>{{ blogtag.tags_id.name }}</span>
-                      <span v-if="index + 1 < blog.tags.length">, </span>
+                      <span class="badge badge-secondary">
+                        {{ blogtag.tags_id.name }}</span
+                      >
+                      <span v-if="index + 1 < blog.tags.length"> </span>
+                      <!-- <span v-if="index + 1 < blog.tags.length">, </span> -->
                     </span>
                   </span>
                 </h4>
@@ -60,7 +65,7 @@
               <hr />
               <div class="article__share mt-0">
                 <ul class="social-list list-inline list--hover blog_social">
-                  <span class="h4 d-inline"> Share : </span>
+                  <!-- <span class="h4 d-inline"> Share : </span> -->
                   <li class="list-inline-item mr-0">
                     <ShareNetwork
                       network="email"
@@ -116,6 +121,9 @@
                 </ul>
               </div>
             </article>
+            <div v-else>
+              <h3>No Records Found</h3>
+            </div>
             <!--end item-->
           </div>
         </div>
@@ -125,7 +133,7 @@
     </section>
 
     <section
-      v-if="blogothers"
+      v-if="blogothers && blogothers.length"
       class="space--sm services boxed--border bg--secondary"
     >
       <div class="container">
@@ -142,12 +150,17 @@
             <article class="feature feature-3 boxed boxed--border">
               <div class="feature__body">
                 <h4>{{ blogother.title }}</h4>
-                <p>{{ blogother.description | truncate(100, "...") }}</p>
-                <span class="font-14">{{
+                <p>{{ blogother.description }}</p>
+
+                <br />
+                <span class="font-14 float-left">{{
                   blogother.date_created | formatDateTime
                 }}</span>
-                <br />
-                <a :href="`/blog/${blogother.slug}`" class="float-right">
+                <a
+                  v-if="blogother.content && blogother.content.length"
+                  :href="`/blog/${blogother.slug}`"
+                  class="float-right"
+                >
                   Read More
                 </a>
               </div>

@@ -37,7 +37,7 @@ export default {
   },
   layout: "theme",
   async asyncData({ app, params }) {
-    const title = params && params.slug || "";
+    const title = (params && params.slug) || "";
     const service = await app.$axios.$get(app.$urls.service(title));
 
     return { service: service.data[0] };

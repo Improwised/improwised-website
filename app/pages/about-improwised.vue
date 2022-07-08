@@ -12,7 +12,7 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="text-center">
+    <section v-if="aboutUs" class="text-center">
       <div class="container">
         <div class="row">
           <div
@@ -28,19 +28,14 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="text-center space--xs">
+
+    <section v-if="whyUs && whyUs.length" class="whyUS space--xs">
       <div class="container">
-        <div class="row">
+        <div class="row text-center mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Why us?</h2>
           </div>
         </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
-    <section class="whyUS space--xs">
-      <div class="container">
         <div class="row">
           <div v-for="(why, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature boxed boxed--lg boxed--border">

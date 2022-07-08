@@ -1,6 +1,6 @@
 <template>
   <div class="main-container careers">
-    <section class="">
+    <section v-if="careers" class="">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center">
@@ -36,7 +36,7 @@
       <!--end of container-->
     </section>
 
-    <section class="bg--secondary">
+    <section v-if="whoWeAre" class="bg--secondary">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center">
@@ -66,7 +66,7 @@
       <h1></h1>
     </section>
 
-    <section>
+    <section v-if="whatWeDo">
       <div class="container">
         <div class="row">
           <div
@@ -114,6 +114,7 @@
               class="activeSlide activeNav anabledArrow"
               :bullet="false"
               :controls="true"
+              :breakpoints="breakpoints"
             >
               <vue-glide-slide
                 v-for="(img, idx) in images"
@@ -125,7 +126,7 @@
                   :alt="img.alt"
                   class="open-tinybox imgbox"
                   height="300"
-                  :data-title="index"
+                  width="100%"
                   @click="index = idx"
                 />
               </vue-glide-slide>
@@ -146,7 +147,10 @@
       </div>
     </section>
 
-    <section class="bg--secondary">
+    <section
+      v-if="coreValues && coreValues.length"
+      class="bg--secondary services"
+    >
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -161,28 +165,29 @@
             :key="index"
             class="col-lg-4 col-md-6"
           >
-            <div
-              class="
-                boxed boxed--border
-                bg-white bg--secondary
-                boxed--lg
-                box-shadow
-              "
-            >
-              <h4>{{ coreValue.title }}</h4>
-              <p>{{ coreValue.description | truncate(100, "...") }}</p>
-              <a
-                v-if="coreValue.content && coreValue.content.length"
-                :href="`/blog/${coreValue.slug}`"
-              >
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
+            <article class="feature feature-3 boxed boxed--border">
+              <div class="feature__body">
+                <h4>{{ coreValue.title }}</h4>
+                <p>{{ coreValue.description }}</p>
+
+                <br />
+                <span class="font-14 float-left">{{
+                  coreValue.date_created | formatDateTime
+                }}</span>
+                <a
+                  v-if="coreValue.content && coreValue.content.length"
+                  :href="`/blog/${coreValue.slug}`"
+                  class="float-right"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
-    <section class="bg--dark">
+    <section v-if="blogs && blogs.length" class="bg--dark services">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -194,22 +199,30 @@
             :key="index"
             class="col-lg-4 col-md-6"
           >
-            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
-              <h4>{{ blog.title }}</h4>
-              <p>{{ blog.description | truncate(100, "...") }}</p>
-              <a
-                v-if="blog.content && blog.content.length"
-                :href="`/blog/${blog.slug}`"
-              >
-                <span class="btn__text"> Read More </span>
-              </a>
-            </div>
+            <article class="feature feature-3 boxed boxed--border">
+              <div class="feature__body">
+                <h4>{{ blog.title }}</h4>
+                <p>{{ blog.description }}</p>
+
+                <br />
+                <span class="font-14 float-left">{{
+                  blog.date_created | formatDateTime
+                }}</span>
+                <a
+                  v-if="blog.content && blog.content.length"
+                  :href="`/blog/${blog.slug}`"
+                  class="float-right"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section v-if="meetTeam && meetTeam.length">
       <div class="container">
         <div class="row justify-enter">
           <div class="col-lg-12">
@@ -223,7 +236,7 @@
           <div
             v-for="(meetTeamData, index) in meetTeam"
             :key="index"
-            class="col-md-3 col-xs-3 col-sm-3 col-lg-2"
+            class="col-sm-4 col-md-3 col-xs-4 col-lg-2 col-6"
           >
             <div class="testimonial testimonial-2">
               <div class="testimonial__body boxed boxed--border bg--secondary">
@@ -250,12 +263,13 @@
 
 <script>
 import Tinybox from "vue-tinybox";
-import { Glide, GlideSlide } from "vue-glide-js";
+import { Glide, GlideSlide, Breakpoints } from "vue-glide-js";
 import "vue-glide-js/dist/vue-glide.css";
 export default {
   components: {
     Tinybox,
     [Glide.name]: Glide,
+    [Glide.Breakpoints]: Breakpoints,
     [GlideSlide.name]: GlideSlide,
   },
   filters: {
@@ -300,8 +314,27 @@ export default {
   data() {
     return {
       index: null,
+      breakpoints: {
+        600: { perView: 1 },
+        1200: { perView: 2 },
+        /* 650: { perView: 1 },
+        600: { perView: 1 },
+        700: {
+          perView: 3,
+        },
+        900: {
+          perView: 2,
+        },
+        1000: { perView: 3 },
+        1200: { perView: 4 },
+        800: {
+          perView: 2,
+        },
+      */
+      },
     };
   },
+
   head() {
     return {
       title: (this.careers && this.careers.seo_title) || "",
