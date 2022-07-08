@@ -95,19 +95,20 @@
       </div>
     </section>
 
-    <section>
+    <section v-if="images && images.length">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 mb-5 text-center">
             <h2 class="">Our Gallery</h2>
           </div>
+          <!---  :autoplay="3000" --->
           <div class="col-lg-12">
             <vue-glide
               :autoplay="3000"
               :keyboard="true"
-              :per-view="8"
+              :per-view="4"
               :bound="true"
-              :rewind="true"
+              :rewind="false"
               type="carousel"
               :rewind-duration="0"
               class="activeSlide activeNav anabledArrow"
@@ -120,10 +121,11 @@
                 class="mb-4"
               >
                 <img
-                  :src="img.thumbnail"
+                  :src="img.src"
                   :alt="img.alt"
                   class="open-tinybox imgbox"
-                  height="200"
+                  height="300"
+                  :data-title="index"
                   @click="index = idx"
                 />
               </vue-glide-slide>
@@ -132,57 +134,12 @@
                 <button data-glide-dir=">">&gt;</button>
               </div>
             </vue-glide>
-
-            <hr />
-
-            <div class="filters text-center">
-              <span
-                class="filter"
-                :class="{ active: currentFilter === 'ALL' }"
-                @click="setFilter('ALL')"
-                >ALL</span
-              >
-              <span
-                class="filter"
-                :class="{ active: currentFilter === 'ART' }"
-                @click="setFilter('ART')"
-                >ART</span
-              >
-              <span
-                class="filter"
-                :class="{ active: currentFilter === 'WORKSHOPS' }"
-                @click="setFilter('WORKSHOPS')"
-                >WORKSHOPS</span
-              >
-              <span
-                class="filter"
-                :class="{ active: currentFilter === 'DOODLES' }"
-                @click="setFilter('DOODLES')"
-                >DOODLES</span
-              >
-            </div>
-
             <client-only>
-              <Tinybox v-model="index" :images="images"></Tinybox>
-
-              <transition-group class="projects" name="projects">
-                <div v-for="(image, idx) in images" :key="idx" class="project">
-                  <div
-                    v-if="
-                      currentFilter === image.category ||
-                      currentFilter === 'ALL'
-                    "
-                    class=""
-                  >
-                    <img
-                      class="open-tinybox"
-                      :alt="image.alt"
-                      :src="image.thumbnail"
-                      @click="index = idx"
-                    />
-                  </div>
-                </div>
-              </transition-group>
+              <Tinybox
+                v-model="index"
+                :index="index"
+                :images="images"
+              ></Tinybox>
             </client-only>
           </div>
         </div>
@@ -318,7 +275,18 @@ export default {
     const coreValues = await app.$axios.$get(app.$urls.coreValues);
     const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
     const blogs = await app.$axios.$get(app.$urls.blogs);
-
+    const gallery = await app.$axios.$get(app.$urls.gallery);
+    const newGalleriesData = [];
+    if (gallery.data.length > 0) {
+      gallery.data.forEach((value, index) => {
+        const galleries = {
+          src: app.$urls.assets(value.src.id),
+          alt: value.src.id,
+          thumbnail: app.$urls.assets(value.src.id),
+        };
+        newGalleriesData.push(galleries);
+      });
+    }
     return {
       careers: careers.data[0],
       whoWeAre: whoWeAre.data[0],
@@ -326,111 +294,11 @@ export default {
       coreValues: coreValues.data,
       meetTeam: meetTeam.data,
       blogs: blogs.data,
+      images: newGalleriesData,
     };
   },
   data() {
     return {
-      currentFilter: "ALL",
-      images: [
-        {
-          alt: "Artwork",
-          src: "https://picsum.photos/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/300",
-        },
-        {
-          alt: "Charcoal",
-          src: "https://picsum.photos/seed/picsum/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/seed/picsum/300",
-        },
-        {
-          alt: "Sketching",
-          src: "https://picsum.photos/id/250/300",
-          category: "DOODLES",
-          thumbnail: "https://picsum.photos/id/250/300",
-        },
-        {
-          alt: "Acrillic",
-          src: "https://picsum.photos/200",
-          category: "WORKSHOPS",
-          thumbnail: "https://picsum.photos/200",
-        },
-        {
-          alt: "Artwork",
-          src: "https://picsum.photos/id/257/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/257/300",
-        },
-        {
-          alt: "Charcoal",
-          src: "https://picsum.photos/id/240/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/240/300",
-        },
-        {
-          alt: "Sketching",
-          src: "https://picsum.photos/id/235/300",
-          category: "DOODLES",
-          thumbnail: "https://picsum.photos/id/235/300",
-        },
-        {
-          alt: "Acrillic",
-          src: "https://picsum.photos/id/237/300",
-          category: "WORKSHOPS",
-          thumbnail: "https://picsum.photos/id/237/300",
-        },
-
-        {
-          alt: "Artwork",
-          src: "https://picsum.photos/id/241/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/241/300",
-        },
-        {
-          alt: "Charcoal",
-          src: "https://picsum.photos/id/242/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/242/300",
-        },
-        {
-          alt: "Sketching",
-          src: "https://picsum.photos/id/243/300",
-          category: "DOODLES",
-          thumbnail: "https://picsum.photos/id/243/300",
-        },
-        {
-          alt: "Acrillic",
-          src: "https://picsum.photos/id/230/300",
-          category: "WORKSHOPS",
-          thumbnail: "https://picsum.photos/id/230/300",
-        },
-        {
-          alt: "Artwork",
-          src: "https://picsum.photos/id/231/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/231/300",
-        },
-        {
-          alt: "Charcoal",
-          src: "https://picsum.photos/id/232/300",
-          category: "ART",
-          thumbnail: "https://picsum.photos/id/232/300",
-        },
-        {
-          alt: "Sketching",
-          src: "https://picsum.photos/id/247/300",
-          category: "DOODLES",
-          thumbnail: "https://picsum.photos/id/247/300",
-        },
-        {
-          alt: "Acrillic",
-          src: "https://picsum.photos/id/248/300",
-          category: "WORKSHOPS",
-          thumbnail: "https://picsum.photos/id/248/300",
-        },
-      ],
-
       index: null,
     };
   },
