@@ -140,34 +140,8 @@
         <div class="row text-center mb-3">
           <div class="col-sm-12"><h2>Recent Blogs</h2></div>
         </div>
-        <div class="row">
-          <div
-            v-for="(blogother, index) in blogothers"
-            :key="index"
-            class="col-lg-4 col-md-6"
-            data-masonry-filter="Marketing"
-          >
-            <article class="feature feature-3 boxed boxed--border">
-              <div class="feature__body">
-                <h4>{{ blogother.title }}</h4>
-                <p>{{ blogother.description }}</p>
+        <Blog :blogsdata="blogothers" />
 
-                <br />
-                <span class="font-14 float-left">{{
-                  blogother.date_created | formatDateTime
-                }}</span>
-                <a
-                  v-if="blogother.content && blogother.content.length"
-                  :href="`/blog/${blogother.slug}`"
-                  class="float-right"
-                >
-                  Read More
-                </a>
-              </div>
-            </article>
-          </div>
-          <!--end item-->
-        </div>
         <!--end of masonry container-->
       </div>
 
@@ -179,7 +153,11 @@
 </template>
 
 <script>
+import Blog from "@/components/Blog.vue";
 export default {
+  components: {
+    Blog,
+  },
   filters: {
     truncate(text, length, suffix) {
       if (text.length > length) {

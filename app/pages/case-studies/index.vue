@@ -25,7 +25,17 @@
                   :key="index"
                   class="col-lg-4 col-sm-6 col-md-6 col-xs-12"
                 >
-                  <article class="feature feature-1 case-block">
+                  <article
+                    class="
+                      feature feature-1
+                      case-block
+                      boxed boxed--border
+                      pt-0
+                      pr-0
+                      pl-0
+                      pb-0
+                    "
+                  >
                     <a href="#" class="block bg--secondary">
                       <img
                         :src="$urls.assets(caseStudie.image.id)"
@@ -35,7 +45,7 @@
                         height="245"
                       />
                     </a>
-                    <div class="feature__body boxed boxed--border">
+                    <div class="feature__body p-3">
                       <h5>{{ caseStudie.title }}</h5>
 
                       <p class="word-break mb-3">

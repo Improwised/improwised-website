@@ -19,47 +19,26 @@
       class="space--sm services"
     >
       <div class="container">
-        <div class="row">
-          <div
-            v-for="(blogData, index) in blogPageData"
-            :key="index"
-            class="col-lg-4 col-md-6"
-          >
-            <article class="feature feature-3 boxed boxed--border">
-              <div class="feature__body">
-                <h4>{{ blogData.title }}</h4>
-                <p>{{ blogData.description }}</p>
-
-                <br />
-                <span class="font-14 float-left">{{
-                  blogData.date_created | formatDateTime
-                }}</span>
-                <a
-                  v-if="blogData.content && blogData.content.length"
-                  :href="`/blog/${blogData.slug}`"
-                  class="float-right"
-                >
-                  Read More
-                </a>
-              </div>
-            </article>
-          </div>
-          <!--end item-->
-        </div>
-        <!--end of masonry container-->
+        <Blog :blogsdata="blogPageData" />
       </div>
-      <!--end masonry-->
 
       <!--end of container-->
+    </section>
+    <section v-else class="space--sm services">
+      <div class="container">
+        <h3 class="text-center">No Records Found.</h3>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import Blog from "@/components/Blog.vue";
 export default {
   components: {
     Breadcrumb,
+    Blog,
   },
   filters: {
     truncate(text, length, suffix) {

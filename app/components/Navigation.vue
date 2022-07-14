@@ -3,7 +3,7 @@
     <div class="bar bar--sm visible-xs logo-style">
       <div class="container">
         <div class="row display_flex">
-          <div class="col-xs-6 col-sm-2 col-md-6 align_self_center">
+          <div class="col col-sm-2 col-md-6 align_self_center">
             <a href="/">
               <img
                 class="logo logo-dark lazyload"
@@ -12,7 +12,7 @@
               />
             </a>
           </div>
-          <div class="col-xs-6 col-sm-10 col-md-6 text-right align_self_center">
+          <div class="col col-sm-10 col-md-6 text-right align_self_center">
             <a
               href="#"
               class="hamburger-toggle"

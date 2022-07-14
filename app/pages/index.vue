@@ -13,10 +13,10 @@
     <section
       v-if="services && services.length"
       id="services"
-      class="text-center bg--secondary services space--xs"
+      class="bg--secondary services space--xs"
     >
       <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-5 text-center">
           <div class="col-sm-12">
             <h2 class="mb-0">Our Services</h2>
           </div>
@@ -57,10 +57,10 @@
     <section
       v-if="whyUs && whyUs.length"
       id="whyUs"
-      class="features-style space--xs text-center"
+      class="features-style space--xs"
     >
       <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-5 text-center">
           <div class="col-sm-12">
             <h2 class="mb-0">Why Us</h2>
           </div>
