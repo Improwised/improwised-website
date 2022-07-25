@@ -1,21 +1,21 @@
 <template>
   <div class="row">
     <div
-      v-for="(blogdata, index) in blogsdata"
+      v-for="(blogs, index) in blogList"
       :key="index"
       class="col-lg-4 col-md-6"
     >
       <article class="feature feature-3 blog-feature boxed boxed--border">
         <div class="feature__body">
-          <h4>{{ blogdata.title }}</h4>
-          <p class="pb-4">{{ blogdata.description }}</p>
+          <h4>{{ blogs.title }}</h4>
+          <p class="pb-4">{{ blogs.description }}</p>
 
           <span class="font-14 float-left">{{
-            blogdata.date_created | formatDateTime
+            blogs.date_created | formatDateTime
           }}</span>
           <a
-            v-if="blogdata.content && blogdata.content.length"
-            :href="`/blog/${blogdata.slug}`"
+            v-if="blogs.content && blogs.content.length"
+            :href="`/blog/${blogs.slug}`"
             class="float-right"
           >
             Read More
@@ -28,9 +28,8 @@
 
 <script>
 export default {
-  layout: "theme",
   props: {
-    blogsdata: {
+    blogList: {
       type: Array,
       required: true,
     },

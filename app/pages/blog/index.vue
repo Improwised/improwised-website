@@ -14,12 +14,9 @@
       <!--end of container-->
     </section>
 
-    <section
-      v-if="blogPageData && blogPageData.length"
-      class="space--sm services"
-    >
+    <section v-if="blogList && blogList.length" class="space--sm services">
       <div class="container">
-        <Blog :blogsdata="blogPageData" />
+        <Blog :blog-list="blogList" />
       </div>
 
       <!--end of container-->
@@ -51,9 +48,9 @@ export default {
   },
   layout: "theme",
   async asyncData({ app, params }) {
-    const blogPageData = await app.$axios.$get(app.$urls.blogPageData);
+    const blogList = await app.$axios.$get(app.$urls.blogPageData);
 
-    return { blogPageData: blogPageData.data };
+    return { blogList: blogList.data };
   },
   head: {
     title: "Blogs - Improwised Technologies Pvt. Ltd.",

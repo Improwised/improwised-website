@@ -140,10 +140,10 @@
             </p>
           </div>
         </div>
-        <Blog :blogsdata="coreValues" />
+        <Blog :blog-list="coreValues" />
       </div>
     </section>
-    <section v-if="blogs && blogs.length" class="bg--secondary services">
+    <section v-if="blogList && blogList.length" class="bg--secondary services">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -151,46 +151,7 @@
             <!-- <p class="mb-5">Read our blog from our company</p> -->
           </div>
         </div>
-        <Blog :blogsdata="blogs" />
-      </div>
-    </section>
-
-    <section v-if="meetTeam && meetTeam.length">
-      <div class="container">
-        <div class="row justify-enter">
-          <div class="col-lg-12">
-            <h2 class="m-0">Meet the Team</h2>
-            <p class="mb-5">
-              Our team is biggest advocate for ourself, listen directly from
-              them.
-            </p>
-          </div>
-
-          <div
-            v-for="(meetTeamData, index) in meetTeam"
-            :key="index"
-            class="col-sm-4 col-md-3 col-xs-4 col-lg-2 col-6"
-          >
-            <!-- -->
-
-            <div class="testimonial testimonial-2">
-              <div class="testimonial__body boxed boxed--border bg--secondary">
-                <img
-                  :src="$urls.assets(meetTeamData.image.id)"
-                  :alt="meetTeamData.name"
-                  :title="meetTeamData.name"
-                  height="auto"
-                  width="100%"
-                />
-
-                <div class="testimonial__image m-0 text-center">
-                  <h5>{{ meetTeamData.name }}</h5>
-                  <span>{{ meetTeamData.designation }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Blog :blog-list="blogList" />
       </div>
     </section>
   </div>
@@ -226,8 +187,7 @@ export default {
     const whoWeAre = await app.$axios.$get(app.$urls.whoWeAre);
     const whatWeDo = await app.$axios.$get(app.$urls.whatWeDo);
     const coreValues = await app.$axios.$get(app.$urls.coreValues);
-    const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
-    const blogs = await app.$axios.$get(app.$urls.blogs);
+    const blogList = await app.$axios.$get(app.$urls.blogs);
     const gallery = await app.$axios.$get(app.$urls.gallery);
     const newGalleriesData = [];
     if (gallery.data.length > 0) {
@@ -245,9 +205,9 @@ export default {
       whoWeAre: whoWeAre.data[0],
       whatWeDo: whatWeDo.data[0],
       coreValues: coreValues.data,
-      meetTeam: meetTeam.data,
-      blogs: blogs.data,
-      images: newGalleriesData.concat(newGalleriesData),
+      blogList: blogList.data,
+      images: newGalleriesData,
+      // images: newGalleriesData.concat(newGalleriesData),
     };
   },
   data() {
@@ -308,10 +268,5 @@ export default {
       ],
     };
   },
-  // methods: {
-  //   setFilter(filter) {
-  //     this.currentFilter = filter;
-  //   },
-  // },
 };
 </script>

@@ -133,14 +133,14 @@
     </section>
 
     <section
-      v-if="blogothers && blogothers.length"
+      v-if="blogList && blogList.length"
       class="space--sm services boxed--border bg--secondary"
     >
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col-sm-12"><h2>Recent Blogs</h2></div>
         </div>
-        <Blog :blogsdata="blogothers" />
+        <Blog :blog-list="blogList" />
 
         <!--end of masonry container-->
       </div>
@@ -172,8 +172,8 @@ export default {
     const title = params.slug;
     //  const tagsname = "";
     const blog = await app.$axios.$get(app.$urls.blog(title));
-    const blogothers = await app.$axios.$get(app.$urls.blogothers(title));
-    return { blog: blog.data[0], blogothers: blogothers.data };
+    const blogList = await app.$axios.$get(app.$urls.blogothers(title));
+    return { blog: blog.data[0], blogList: blogList.data };
   },
   data() {
     if (process.client) {

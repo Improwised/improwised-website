@@ -400,14 +400,20 @@ button[data-glide-dir="<"] {
   object-fit: cover;
   padding: 0 5px;
 }
+
+.blog-feature p {
+  min-height: 100%;
+}
+
+.team_img
+{
+  margin-bottom: 15px;
+}
+
 @media screen and (max-width: 991px) {
-
   .imgbox {
-
     height: 150px;
     max-height: auto;
   }
 }
-.blog-feature p {
-  min-height: 100%;
-}
+
