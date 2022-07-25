@@ -14,44 +14,28 @@
       <!--end of container-->
     </section>
 
-    <section v-if="blogPageData" class="space--sm services">
+    <section v-if="blogList && blogList.length" class="space--sm services">
       <div class="container">
-        <div class="row">
-          <div
-            v-for="(blogData, index) in blogPageData"
-            :key="index"
-            class="col-lg-4 col-md-6"
-          >
-            <article class="feature feature-3 boxed boxed--border">
-              <div class="feature__body">
-                <h4>{{ blogData.title }}</h4>
-                <p>{{ blogData.description | truncate(100, "...") }}</p>
-                <span class="font-14">{{
-                  blogData.date_created | formatDateTime
-                }}</span>
-                <br />
-                <a :href="`/blog/${blogData.slug}`" class="float-right">
-                  Read More
-                </a>
-              </div>
-            </article>
-          </div>
-          <!--end item-->
-        </div>
-        <!--end of masonry container-->
+        <Blog :blog-list="blogList" />
       </div>
-      <!--end masonry-->
 
       <!--end of container-->
+    </section>
+    <section v-else class="space--sm services">
+      <div class="container">
+        <h3 class="text-center">No Records Found.</h3>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import Blog from "@/components/Blog.vue";
 export default {
   components: {
     Breadcrumb,
+    Blog,
   },
   filters: {
     truncate(text, length, suffix) {
@@ -64,9 +48,9 @@ export default {
   },
   layout: "theme",
   async asyncData({ app, params }) {
-    const blogPageData = await app.$axios.$get(app.$urls.blogPageData);
+    const blogList = await app.$axios.$get(app.$urls.blogPageData);
 
-    return { blogPageData: blogPageData.data };
+    return { blogList: blogList.data };
   },
   head: {
     title: "Blogs - Improwised Technologies Pvt. Ltd.",

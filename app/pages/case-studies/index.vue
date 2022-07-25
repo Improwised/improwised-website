@@ -15,7 +15,7 @@
     </section>
 
     <div class="container card-container">
-      <section class="space--sm pt-0">
+      <section v-if="caseStudies && caseStudies.length" class="space--sm pt-0">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -23,19 +23,29 @@
                 <div
                   v-for="(caseStudie, index) in caseStudies"
                   :key="index"
-                  class="col-lg-4 col-md-6"
+                  class="col-lg-4 col-sm-6 col-md-6 col-xs-12"
                 >
-                  <article class="feature feature-1 case-block">
+                  <article
+                    class="
+                      feature feature-1
+                      case-block
+                      boxed boxed--border
+                      pt-0
+                      pr-0
+                      pl-0
+                      pb-0
+                    "
+                  >
                     <a href="#" class="block bg--secondary">
                       <img
                         :src="$urls.assets(caseStudie.image.id)"
                         :alt="caseStudie.image.title"
                         :title="caseStudie.image.title"
-                        width="340"
+                        width="100%"
                         height="245"
                       />
                     </a>
-                    <div class="feature__body boxed boxed--border">
+                    <div class="feature__body p-3">
                       <h5>{{ caseStudie.title }}</h5>
 
                       <p class="word-break mb-3">

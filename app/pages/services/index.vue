@@ -1,5 +1,5 @@
 <template>
-  <div v-if="service" class="main-container career">
+  <div class="main-container career">
     <link rel="stylesheet" type="text/css" href="/css/markdown.css" />
     <section class="text-center serviceHeader space--sm">
       <div class="container">

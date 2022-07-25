@@ -1,10 +1,10 @@
 <template>
-  <div v-if="blog" class="main-container">
+  <div class="main-container">
     <section class="space--xs">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12">
-            <article>
+            <article v-if="blog">
               <div class="article__title text-left">
                 <h1 v-if="blog.title" class="h2">{{ blog.title }}</h1>
                 <div class="show-featured author_block">
@@ -43,16 +43,21 @@
               </div>
               <!--end article title-->
               <div>
+                <div v-if="blog.description">
+                  <p>{{ blog.description }}</p>
+                </div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
               <hr />
               <div class="article__share mt-0">
                 <h4>
-                  Tags :
-                  <span class="text-muted font-16">
+                  <span class="text-muted font-20">
                     <span v-for="(blogtag, index) in blog.tags" :key="index">
-                      <span>{{ blogtag.tags_id.name }}</span>
-                      <span v-if="index + 1 < blog.tags.length">, </span>
+                      <span class="badge badge-secondary">
+                        {{ blogtag.tags_id.name }}</span
+                      >
+                      <span v-if="index + 1 < blog.tags.length"> </span>
+                      <!-- <span v-if="index + 1 < blog.tags.length">, </span> -->
                     </span>
                   </span>
                 </h4>
@@ -60,7 +65,7 @@
               <hr />
               <div class="article__share mt-0">
                 <ul class="social-list list-inline list--hover blog_social">
-                  <span class="h4 d-inline"> Share : </span>
+                  <!-- <span class="h4 d-inline"> Share : </span> -->
                   <li class="list-inline-item mr-0">
                     <ShareNetwork
                       network="email"
@@ -116,6 +121,9 @@
                 </ul>
               </div>
             </article>
+            <div v-else>
+              <h3>No Records Found</h3>
+            </div>
             <!--end item-->
           </div>
         </div>
@@ -125,36 +133,15 @@
     </section>
 
     <section
-      v-if="blogothers"
+      v-if="blogList && blogList.length"
       class="space--sm services boxed--border bg--secondary"
     >
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col-sm-12"><h2>Recent Blogs</h2></div>
         </div>
-        <div class="row">
-          <div
-            v-for="(blogother, index) in blogothers"
-            :key="index"
-            class="col-lg-4 col-md-6"
-            data-masonry-filter="Marketing"
-          >
-            <article class="feature feature-3 boxed boxed--border">
-              <div class="feature__body">
-                <h4>{{ blogother.title }}</h4>
-                <p>{{ blogother.description | truncate(100, "...") }}</p>
-                <span class="font-14">{{
-                  blogother.date_created | formatDateTime
-                }}</span>
-                <br />
-                <a :href="`/blog/${blogother.slug}`" class="float-right">
-                  Read More
-                </a>
-              </div>
-            </article>
-          </div>
-          <!--end item-->
-        </div>
+        <Blog :blog-list="blogList" />
+
         <!--end of masonry container-->
       </div>
 
@@ -166,7 +153,11 @@
 </template>
 
 <script>
+import Blog from "@/components/Blog.vue";
 export default {
+  components: {
+    Blog,
+  },
   filters: {
     truncate(text, length, suffix) {
       if (text.length > length) {
@@ -181,8 +172,8 @@ export default {
     const title = params.slug;
     //  const tagsname = "";
     const blog = await app.$axios.$get(app.$urls.blog(title));
-    const blogothers = await app.$axios.$get(app.$urls.blogothers(title));
-    return { blog: blog.data[0], blogothers: blogothers.data };
+    const blogList = await app.$axios.$get(app.$urls.blogothers(title));
+    return { blog: blog.data[0], blogList: blogList.data };
   },
   data() {
     if (process.client) {

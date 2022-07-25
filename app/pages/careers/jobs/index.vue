@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-    <section class="bg--secondary">
+    <section v-if="jobOpenings && jobOpenings.length" class="bg--secondary">
       <div class="container currentOpening">
         <div class="row">
           <div

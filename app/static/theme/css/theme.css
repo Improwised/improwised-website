@@ -8358,6 +8358,7 @@ iframe[src*='google.com/maps'] {
 }
 .testimonial .testimonial__image {
   margin-bottom: 1.85714286em;
+  line-height: 1px;
 }
 @media all and (min-width: 1025px) {
   .testimonial-1 .switchable__text {
@@ -9388,14 +9389,16 @@ footer.footer-7 {
 }
 .testimonial__body
 {
-  padding: 5px 5px 20px 5px;
+  padding: 5px 5px 10px 5px;
 }
 .testimonial__body h5
 {
   font-size: 18px;
   line-height: 18px;
+  margin-bottom: 5px !important;
 }
 .testimonial__body span
 {
   font-size: 14px;
+  line-height: 20px;
 }

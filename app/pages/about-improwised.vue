@@ -12,7 +12,7 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="text-center">
+    <section v-if="aboutUs" class="text-center">
       <div class="container">
         <div class="row">
           <div
@@ -28,19 +28,52 @@
       </div>
       <!--end of container-->
     </section>
-    <section class="text-center space--xs">
+    <section v-if="meetTeam && meetTeam.length" class="bg--secondary">
       <div class="container">
-        <div class="row">
+        <div class="row justify-enter">
+          <div class="col-lg-12 mb-5 text-center">
+            <h2 class="m-0">Meet the Team</h2>
+            <!-- <p class="mb-5">
+              Our team is biggest advocate for ourself, listen directly from
+              them.
+            </p> -->
+          </div>
+
+          <div
+            v-for="(meetTeamData, index) in meetTeam"
+            :key="index"
+            class="col-sm-4 col-md-3 col-xs-4 col-lg-2 col-6"
+          >
+            <!-- -->
+
+            <div class="testimonial testimonial-2">
+              <div class="testimonial__body boxed boxed--border bg--secondary">
+                <img
+                  :src="$urls.assets(meetTeamData.image.id)"
+                  :alt="meetTeamData.name"
+                  :title="meetTeamData.name"
+                  height="auto"
+                  width="100%"
+                  class="team_img"
+                />
+
+                <div class="testimonial__image m-0 text-center">
+                  <h5>{{ meetTeamData.name }}</h5>
+                  <!-- <span>{{ meetTeamData.designation }}</span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section v-if="whyUs && whyUs.length" class="whyUS space--xs">
+      <div class="container">
+        <div class="row text-center mb-5">
           <div class="col-sm-12">
             <h2 class="mb-0">Why us?</h2>
           </div>
         </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
-    <section class="whyUS space--xs">
-      <div class="container">
         <div class="row">
           <div v-for="(why, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature boxed boxed--lg boxed--border">
@@ -87,8 +120,12 @@ export default {
   async asyncData({ app, params }) {
     const aboutUs = await app.$axios.$get(app.$urls.aboutUs);
     const whyUs = await app.$axios.$get(app.$urls.whyus);
-
-    return { aboutUs: aboutUs.data, whyUs: whyUs.data };
+    const meetTeam = await app.$axios.$get(app.$urls.meetTeam);
+    return {
+      aboutUs: aboutUs.data,
+      whyUs: whyUs.data,
+      meetTeam: meetTeam.data,
+    };
   },
   head() {
     return {

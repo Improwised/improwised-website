@@ -3,7 +3,7 @@
     <div class="bar bar--sm visible-xs logo-style">
       <div class="container">
         <div class="row display_flex">
-          <div class="col-xs-6 col-sm-2 align_self_center">
+          <div class="col col-sm-2 col-md-6 align_self_center">
             <a href="/">
               <img
                 class="logo logo-dark lazyload"
@@ -12,7 +12,7 @@
               />
             </a>
           </div>
-          <div class="col-xs-6 col-sm-10 text-right align_self_center">
+          <div class="col col-sm-10 col-md-6 text-right align_self_center">
             <a
               href="#"
               class="hamburger-toggle"
@@ -35,7 +35,7 @@
     >
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-12 hidden-xs logo-style">
+          <div class="col-xs-6 col-md-5 col-sm-3 hidden-xs logo-style">
             <div class="bar__module">
               <a href="/">
                 <img
@@ -49,7 +49,7 @@
           </div>
           <div
             class="
-              col-md-9 col-sm-12
+              col-xs-6 col-md-7 col-sm-9
               text-right text-left-xs text-left-sm
               menu-style
             "
@@ -64,7 +64,10 @@
                 </li>
                 <li class="dropdown">
                   <span class="dropdown__trigger">Services</span>
-                  <div class="dropdown__container">
+                  <div
+                    v-if="$store.state.services && $store.state.services.length"
+                    class="dropdown__container"
+                  >
                     <div class="container">
                       <div class="row">
                         <div
