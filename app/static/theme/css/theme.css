@@ -9396,9 +9396,11 @@ footer.footer-7 {
   font-size: 18px;
   line-height: 18px;
   margin-bottom: 5px !important;
+  font-weight: normal;
 }
 .testimonial__body span
 {
   font-size: 14px;
   line-height: 20px;
 }
+.markdown-body  * { font-family: 'Helvetica', sans-serif; }

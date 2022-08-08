@@ -116,21 +116,26 @@ body {
   border-bottom: 1px solid #eaecef;
   margin-bottom: 3.71428571em;
 }
-
+.case-block img {
+  object-fit: cover;
+}
 /* responsive */
 @media screen and (max-width: 1199px) {
   .technologies .feature {
     min-height: 330px;
   }
-
+  .case-block img {
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+  }
   /* .feature.feature-5 {
     min-height: 310px;
   } */
 }
-
 @media screen and (max-width: 991px) {
   .case-block img {
-    height: 160px;
+    height: auto;
     max-height: 100%;
   }
   .imgbox {
@@ -417,3 +422,44 @@ button[data-glide-dir="<"] {
   }
 }
 
+
+.casestudies-home {
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  height: 100%;
+
+  transition: all 0.5s;
+  display: flex;
+
+}
+
+.blog-feature {
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  height: 100%;
+
+  transition: all 0.5s;
+
+  display: flex;
+}
+.blog_sub_details_right
+{
+  position: absolute;
+  bottom:0;
+  right:12px;
+}
+
+.blog_sub_details_left
+{
+  position: absolute;
+  bottom:0;
+  //left:12px;
+}

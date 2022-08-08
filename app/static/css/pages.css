@@ -260,14 +260,14 @@
 {
   font-size: 13px;
 }
-.case-block .feature__body
+/* .case-block .feature__body
 {
   min-height: 300px;;
-}
+} */
 .case-block .feature__body a
 {
     position: absolute;
-    bottom: 12px;
+    bottom: 1px;
 }
 .typed-element {
 

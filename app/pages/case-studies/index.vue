@@ -15,27 +15,33 @@
     </section>
 
     <div class="container card-container">
-      <section v-if="caseStudies && caseStudies.length" class="space--sm pt-0">
+      <section
+        v-if="caseStudies && caseStudies.length"
+        class="space--sm text-center pt-0"
+      >
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div
-                  v-for="(caseStudie, index) in caseStudies"
-                  :key="index"
-                  class="col-lg-4 col-sm-6 col-md-6 col-xs-12"
-                >
-                  <article
-                    class="
-                      feature feature-1
-                      case-block
-                      boxed boxed--border
-                      pt-0
-                      pr-0
-                      pl-0
-                      pb-0
-                    "
-                  >
+            <div
+              v-for="(caseStudie, index) in caseStudies"
+              :key="index"
+              class="col-lg-4 col-md-6 mb-4"
+            >
+              <div
+                class="
+                  casestudies-home
+                  boxed boxed--border
+                  text-left
+                  feature feature-1
+                  case-block
+                  pt-0
+                  pr-0
+                  pl-0
+                  pb-0
+                  mb-0
+                "
+              >
+                <div class="verticle-middle text-left">
+                  <div class="contentbox">
                     <a href="#" class="block bg--secondary">
                       <img
                         :src="$urls.assets(caseStudie.image.id)"
@@ -45,28 +51,27 @@
                         height="245"
                       />
                     </a>
-                    <div class="feature__body p-3">
-                      <h5>{{ caseStudie.title }}</h5>
+                  </div>
 
-                      <p class="word-break mb-3">
-                        {{ caseStudie.short_description }}
-                      </p>
+                  <div class="feature__body p-3">
+                    <h5>{{ caseStudie.title }}</h5>
 
-                      <a
-                        :href="$urls.assets(caseStudie.document.id)"
-                        target="_blank"
-                      >
-                        View Details
-                      </a>
-                    </div>
-                  </article>
+                    <p class="word-break mb-4">
+                      {{ caseStudie.short_description }}
+                    </p>
+
+                    <a
+                      :href="$urls.assets(caseStudie.document.id)"
+                      target="_blank"
+                    >
+                      View Details
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!--end of row-->
         </div>
-        <!--end of container-->
       </section>
     </div>
   </div>
