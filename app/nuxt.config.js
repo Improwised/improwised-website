@@ -44,6 +44,7 @@ export default {
                 fix: true,
             },
         ],
+        '@nuxt/image',
     ],
     lazySizes: {
         extendAssetUrls: {
@@ -106,6 +107,10 @@ export default {
     generate: {
         dir: "public",
         fallback: false,
-        interval:10
+        interval: 2000
     },
+
+    image: {
+      domains: ['data.improwised.com']
+    }
 };

@@ -43,12 +43,16 @@
                 <div class="verticle-middle text-left">
                   <div class="contentbox">
                     <a href="#" class="block bg--secondary">
-                      <img
+                      <nuxt-img
                         :src="$urls.assets(caseStudie.image.id)"
                         :alt="caseStudie.image.title"
                         :title="caseStudie.image.title"
                         width="100%"
                         height="245"
+                        loading="lazy"
+                        :format="
+                          caseStudie.image.filename_download.split('.')[1]
+                        "
                       />
                     </a>
                   </div>

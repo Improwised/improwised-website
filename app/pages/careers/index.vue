@@ -24,10 +24,14 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <img
+            <nuxt-img
               :src="$urls.assets(careers.image.id)"
               :alt="careers.image.title"
               :title="careers.image.title"
+              format="webp"
+              width="540px"
+              height="540px"
+              loading="lazy"
             />
           </div>
         </div>
@@ -55,10 +59,14 @@
           <div
             class="col-lg-6 justify-content-center d-flex align-items-center"
           >
-            <img
+            <nuxt-img
               :src="$urls.assets(whoWeAre.image.id)"
               :alt="whoWeAre.image.title"
               :title="whoWeAre.image.title"
+              format="webp"
+              width="406px"
+              height="306px"
+              loading="lazy"
             />
           </div>
         </div>
@@ -72,10 +80,14 @@
           <div
             class="col-lg-6 justify-content-center d-flex align-items-center"
           >
-            <img
+            <nuxt-img
               :src="$urls.assets(whatWeDo.image.id)"
               :alt="whatWeDo.image.title"
               :title="whatWeDo.image.title"
+              format="webp"
+              width="406px"
+              height="306px"
+              loading="lazy"
             />
           </div>
           <div class="col-lg-6 d-flex align-items-center">
@@ -108,10 +120,13 @@
           <div class="col-lg-12">
             <VueSlickCarousel v-bind="settings">
               <div v-for="(img, idx) in images" :key="idx">
-                <img
+                <nuxt-img
                   :src="img.src"
                   :alt="img.alt"
-                  class="open-tinybox imgbox"
+                  format="jpeg"
+                  width="459px"
+                  height="300px"
+                  loading="lazy"
                   @click="index = idx"
                 />
               </div>
@@ -121,7 +136,7 @@
               <Tinybox
                 v-model="index"
                 :index="index"
-                :images="images"
+                :images="staticImages"
               ></Tinybox>
             </client-only>
           </div>
@@ -256,7 +271,6 @@ export default {
       },
     };
   },
-
   head() {
     return {
       title: (this.careers && this.careers.seo_title) || "",
@@ -267,6 +281,25 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    staticImages() {
+      const images = [];
+      this.images &&
+        this.images.length &&
+        this.images.forEach(({ src, alt, thumbnail }) => {
+          images.push({
+            src: this.$img(src, { width: 918, height: 600, format: "jpeg" }),
+            alt,
+            thumbnail: this.$img(src, {
+              width: 88,
+              height: 88,
+              format: "jpeg",
+            }),
+          });
+        });
+      return images;
+    },
   },
 };
 </script>

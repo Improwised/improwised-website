@@ -48,15 +48,15 @@
 
             <div class="testimonial testimonial-2">
               <div class="testimonial__body boxed boxed--border bg--secondary">
-                <img
+                <nuxt-img
                   :src="$urls.assets(meetTeamData.image.id)"
                   :alt="meetTeamData.name"
                   :title="meetTeamData.name"
-                  height="auto"
-                  width="100%"
-                  class="team_img"
+                  format="jpeg"
+                  width="148px"
+                  height="185px"
+                  loading="lazy"
                 />
-
                 <div class="testimonial__image m-0 text-center">
                   <h5>{{ meetTeamData.name }}</h5>
                   <!-- <span>{{ meetTeamData.designation }}</span> -->
