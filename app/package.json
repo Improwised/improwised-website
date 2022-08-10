@@ -39,7 +39,7 @@
     "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.7",
+    "@babel/eslint-parser": "^7.18.9",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@nuxt/image": "^0.7.1",
