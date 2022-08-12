@@ -27,23 +27,13 @@
               class="col-lg-4 col-md-6 mb-4"
             >
               <div
-                class="
-                  casestudies-home
-                  boxed boxed--border
-                  text-left
-                  feature feature-1
-                  case-block
-                  pt-0
-                  pr-0
-                  pl-0
-                  pb-0
-                  mb-0
-                "
+                class="casestudies-home boxed boxed--border text-left feature feature-1 case-block pt-0 pr-0 pl-0 pb-0 mb-0"
               >
                 <div class="verticle-middle text-left">
                   <div class="contentbox">
                     <a href="#" class="block bg--secondary">
                       <nuxt-img
+                        v-if="caseStudie.image"
                         :src="$urls.assets(caseStudie.image.id)"
                         :alt="caseStudie.image.title"
                         :title="caseStudie.image.title"
@@ -65,6 +55,7 @@
                     </p>
 
                     <a
+                      v-if="caseStudie.document"
                       :href="$urls.assets(caseStudie.document.id)"
                       target="_blank"
                     >
