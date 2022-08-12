@@ -16,11 +16,7 @@
       <div class="container">
         <div class="row">
           <div
-            class="
-              col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2
-              text-left
-              lead
-            "
+            class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-left lead"
             v-html="aboutUs.content"
           ></div>
         </div>
@@ -49,6 +45,7 @@
             <div class="testimonial testimonial-2">
               <div class="testimonial__body boxed boxed--border bg--secondary">
                 <nuxt-img
+                  v-if="meetTeamData.image"
                   :src="$urls.assets(meetTeamData.image.id)"
                   :alt="meetTeamData.name"
                   :title="meetTeamData.name"

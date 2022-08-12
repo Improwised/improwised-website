@@ -25,6 +25,7 @@
           </div>
           <div class="col-lg-6">
             <nuxt-img
+              v-if="careers.image"
               :src="$urls.assets(careers.image.id)"
               :alt="careers.image.title"
               :title="careers.image.title"
@@ -60,6 +61,7 @@
             class="col-lg-6 justify-content-center d-flex align-items-center"
           >
             <nuxt-img
+              v-if="whoWeAre.image"
               :src="$urls.assets(whoWeAre.image.id)"
               :alt="whoWeAre.image.title"
               :title="whoWeAre.image.title"
@@ -81,6 +83,7 @@
             class="col-lg-6 justify-content-center d-flex align-items-center"
           >
             <nuxt-img
+              v-if="whatWeDo.image"
               :src="$urls.assets(whatWeDo.image.id)"
               :alt="whatWeDo.image.title"
               :title="whatWeDo.image.title"
@@ -121,6 +124,7 @@
             <VueSlickCarousel v-bind="settings">
               <div v-for="(img, idx) in images" :key="idx">
                 <nuxt-img
+                  v-if="img"
                   :src="img.src"
                   :alt="img.alt"
                   format="jpeg"

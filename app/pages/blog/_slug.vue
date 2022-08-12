@@ -11,10 +11,18 @@
                   <div class="post-img">
                     <a href="#">
                       <img
-                        src="https://facttradingco.com/images/testimonials/pic2.jpg"
-                        alt=""
-                        class=""
-                    /></a>
+                        v-if="blog.user_created.avatar"
+                        :src="$urls.assets(blog.user_created.id)"
+                        :alt="blog.user_created.first_name"
+                        :title="blog.user_created.first_name"
+                      />
+                      <img
+                        v-else
+                        src="/img/avatar-round-1.png"
+                        alt="User"
+                        title="User"
+                      />
+                    </a>
                   </div>
                   <div class="post-desc w-100">
                     <a
