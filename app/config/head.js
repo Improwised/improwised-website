@@ -10,8 +10,13 @@ const htmlAttrs = {
 
 // ===================================
 
-const meta = [{
+const meta = [
+    {
         charset: "utf-8"
+    },
+    {
+      "http-equiv":"Content-Language",
+      content: "en"
     },
     {
         name: "viewport",

@@ -28,11 +28,7 @@
             class="col-md-6 col-sm-12"
           >
             <div
-              class="
-                feature feature-3
-                boxed boxed--lg boxed--border
-                text-center
-              "
+              class="feature feature-3 boxed boxed--lg boxed--border text-center"
             >
               <i
                 v-if="service.icon"
@@ -469,6 +465,7 @@
         </div>
       </div>
     </section>
+
     <section
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
@@ -508,7 +505,6 @@ export default {
     HomeCallToActionGranim,
   },
   layout: "theme",
-
   async asyncData({ app, params, payload }) {
     if (payload) {
       return { testimonials: payload, services: payload, whyUs: payload };
@@ -531,14 +527,70 @@ export default {
     };
   },
 
-  head: {
-    title: constants.title,
-    meta: [
-      {
-        name: "description",
-        content: constants.description,
-      },
-    ],
+  head() {
+    return {
+      title: constants.title,
+      meta: [
+        {
+          name: "description",
+          content: constants.description,
+        },
+        {
+          name: "title",
+          content: constants.title,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: constants.title,
+        },
+        {
+          property: "og:description",
+          content: constants.description,
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: constants.title,
+        },
+        {
+          property: "twitter:description",
+          content: constants.description,
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
+      ],
+    };
   },
 };
 </script>

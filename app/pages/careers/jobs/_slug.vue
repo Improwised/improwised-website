@@ -99,20 +99,6 @@
     </section>
   </div>
 </template>
-<style type="text/css">
-ul.bullets {
-  list-style: outside;
-  padding-left: 20px;
-}
-
-.career .hspecing {
-  padding: 3.85714286em 0 3.85714286em 0;
-}
-
-.m-0 {
-  margin: 0 !important;
-}
-</style>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
 
@@ -136,8 +122,76 @@ export default {
           name: "description",
           content: (this.job && this.job.seo_description) || "",
         },
+        {
+          name: "title",
+          content: (this.job && this.job.seo_title) || "",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: (this.job && this.job.seo_title) || "",
+        },
+        {
+          property: "og:description",
+          content: (this.job && this.job.seo_description) || "",
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: (this.job && this.job.seo_title) || "",
+        },
+        {
+          property: "twitter:description",
+          content: (this.job && this.job.seo_description) || "",
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
       ],
     };
   },
 };
 </script>
+<style type="text/css">
+ul.bullets {
+  list-style: outside;
+  padding-left: 20px;
+}
+
+.career .hspecing {
+  padding: 3.85714286em 0 3.85714286em 0;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+</style>

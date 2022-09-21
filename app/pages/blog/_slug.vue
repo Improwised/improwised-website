@@ -202,6 +202,60 @@ export default {
           name: "description",
           content: (this.blog && this.blog.seo_description) || "",
         },
+        {
+          name: "title",
+          content: (this.blog && this.blog.seo_title) || "",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: (this.blog && this.blog.seo_title) || "",
+        },
+        {
+          property: "og:description",
+          content: (this.blog && this.blog.seo_description) || "",
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: (this.blog && this.blog.seo_title) || "",
+        },
+        {
+          property: "twitter:description",
+          content: (this.blog && this.blog.seo_description) || "",
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
       ],
     };
   },

@@ -52,14 +52,72 @@ export default {
 
     return { blogList: blogList.data };
   },
-  head: {
-    title: "Blogs - Improwised Technologies Pvt. Ltd.",
-    meta: [
-      {
-        name: "description",
-        content: "Our Blog",
-      },
-    ],
+  head() {
+    const blogTitle = "Blogs - Improwised Technologies Pvt. Ltd.";
+    const blogDescription = "Our Blog";
+    return {
+      title: "Blogs - Improwised Technologies Pvt. Ltd.",
+      meta: [
+        {
+          name: "description",
+          content: blogDescription,
+        },
+        {
+          name: "title",
+          content: blogTitle,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: blogTitle,
+        },
+        {
+          property: "og:description",
+          content: blogDescription,
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: blogTitle,
+        },
+        {
+          property: "twitter:description",
+          content: blogDescription,
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
+      ],
+    };
   },
 };
 </script>

@@ -55,15 +55,6 @@
   </div>
 </template>
 
-<style type="text/css">
-.feature h5.mt-15px {
-  margin-top: 15px;
-}
-
-.m-0 {
-  margin: 0;
-}
-</style>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
 
@@ -76,14 +67,82 @@ export default {
     const jobOpenings = await app.$axios.$get(app.$urls.jobOpenings);
     return { jobOpenings: jobOpenings.data };
   },
-  head: {
-    title: "Job openings | Improwised Technologies",
-    meta: [
-      {
-        name: "description",
-        content: "Job openings at Improwised Technologies Pvt. Ltd. | Rajkot",
-      },
-    ],
+  head() {
+    const jobTitle = "Job openings - Improwised Technologies Pvt. Ltd.";
+    const jobDescription =
+      "Job openings at Improwised Technologies Pvt. Ltd. | Rajkot";
+    return {
+      title: "Job openings - Improwised Technologies Pvt. Ltd.",
+      meta: [
+        {
+          name: "description",
+          content: jobDescription,
+        },
+        {
+          name: "title",
+          content: jobTitle,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: jobTitle,
+        },
+        {
+          property: "og:description",
+          content: jobDescription,
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: jobTitle,
+        },
+        {
+          property: "twitter:description",
+          content: jobDescription,
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
+      ],
+    };
   },
 };
 </script>
+<style type="text/css">
+.feature h5.mt-15px {
+  margin-top: 15px;
+}
+
+.m-0 {
+  margin: 0;
+}
+</style>
