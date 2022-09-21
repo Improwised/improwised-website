@@ -267,6 +267,22 @@ const prodScripts = [{
     body: true
 }];
 
+const structuredLdJsonData = {
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Improwised Technologies Pvt. Ltd.",
+  "alternateName": "Improwised Technologies",
+  "url": "https://www.improwised.com/",
+  "logo": "https://www.improwised.com/img/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/improwised",
+    "https://twitter.com/improwised",
+    "https://www.linkedin.com/company/improwised-technologies/",
+    "https://www.improwised.com/",
+    "https://github.com/Improwised/"
+  ]
+};
+
 // ===================================
 
 export default function(mode) {
@@ -275,6 +291,7 @@ export default function(mode) {
         htmlAttrs,
         meta,
         link: _link,
+        script: [{ type: 'application/ld+json', json: structuredLdJsonData}]
         // link: _link.concat(mode === "development" ? devLinks : prodLinks),
         // script: mode === "development" ? devScripts : prodScripts,
     };
