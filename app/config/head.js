@@ -62,10 +62,7 @@ const meta = [
         name: "msapplication-square310x310logo",
         content: "/img/favicon/mstile-310x310.png",
     },
-    {
-      name: "google-site-verification",
-      content: "ZF0lIV_8agJBfN0GOuaIRSfswr6auLLeDRC9qpHrIYo",
-    },
+
 ];
 
 // ===================================
