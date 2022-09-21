@@ -64,7 +64,11 @@ export default {
         'vue-social-sharing/nuxt'
 
     ],
-
+    robots: {
+      UserAgent: '*',
+      Disallow: '',
+      Sitemap: process.env.BASE_URL + '/sitemap.xml'
+    },
     sitemap: {
         hostname: process.env.BASE_URL,
         defaults: {
