@@ -68,11 +68,11 @@ export default {
     return { jobOpenings: jobOpenings.data };
   },
   head() {
-    const jobTitle = "Job openings | Improwised Technologies";
+    const jobTitle = "Job openings - Improwised Technologies Pvt. Ltd.";
     const jobDescription =
       "Job openings at Improwised Technologies Pvt. Ltd. | Rajkot";
     return {
-      title: "Job openings | Improwised Technologies",
+      title: "Job openings - Improwised Technologies Pvt. Ltd.",
       meta: [
         {
           name: "description",
