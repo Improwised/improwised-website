@@ -124,22 +124,80 @@
 <script>
 export default {
   layout: "theme",
-  head: {
-    title: "Contact - Improwised Technologies Pvt. Ltd.",
-    meta: [
-      {
-        name: "description",
-        content:
-          "We are open from 10am - 7pm on weekdays. For any further info please feel free to Contact us on careers@improwised.com.",
-      },
-    ],
-    script: [
-      {
-        src: "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit",
-        async: true,
-        body: true,
-      },
-    ],
+  head() {
+    const contactTitle = "Contact - Improwised Technologies Pvt. Ltd.";
+    const contactDescription =
+      "We are open from 10am - 7pm on weekdays. For any further info please feel free to Contact us on careers@improwised.com.";
+    return {
+      title: contactTitle,
+      meta: [
+        {
+          name: "description",
+          content: contactDescription,
+        },
+        {
+          name: "title",
+          content: contactTitle,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: contactTitle,
+        },
+        {
+          property: "og:description",
+          content: contactDescription,
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: contactTitle,
+        },
+        {
+          property: "twitter:description",
+          content: contactDescription,
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      script: [
+        {
+          src: "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit",
+          async: true,
+          body: true,
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
+      ],
+    };
   },
 };
 </script>

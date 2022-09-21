@@ -93,15 +93,73 @@ export default {
 
     return { caseStudies: caseStudies.data };
   },
-  head: {
-    title: "Case Studies - Improwised Technologies Pvt. Ltd.",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Case Studies | Case Studies Listing Services | Technology Case Studies | Marketing Case Studies | Cloud Infrastructure Case Studies | Cloud Computing Services Case Studies | Technology Consulting Services Case Studies",
-      },
-    ],
+  head() {
+    const caseStudiesTitle = "Case Studies - Improwised Technologies Pvt. Ltd.";
+    const caseStudiesDescription =
+      "Case Studies | Case Studies Listing Services | Technology Case Studies | Marketing Case Studies | Cloud Infrastructure Case Studies | Cloud Computing Services Case Studies | Technology Consulting Services Case Studies";
+    return {
+      title: caseStudiesTitle,
+      meta: [
+        {
+          name: "description",
+          content: caseStudiesDescription,
+        },
+        {
+          name: "title",
+          content: caseStudiesTitle,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: process.env.BASE_URL + this.$route.path,
+        },
+        {
+          property: "og:title",
+          content: caseStudiesTitle,
+        },
+        {
+          property: "og:description",
+          content: caseStudiesDescription,
+        },
+        {
+          property: "og:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+        {
+          property: "twitter:card",
+          content: "summary",
+        },
+        {
+          property: "twitter:site",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:creator",
+          content: "@improwised",
+        },
+        {
+          property: "twitter:title",
+          content: caseStudiesTitle,
+        },
+        {
+          property: "twitter:description",
+          content: caseStudiesDescription,
+        },
+        {
+          property: "twitter:image",
+          content: process.env.BASE_URL + "/img/logo.png",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: process.env.BASE_URL + this.$route.path,
+        },
+      ],
+    };
   },
 };
 </script>

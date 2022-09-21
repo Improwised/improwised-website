@@ -22,13 +22,7 @@
         <div>
           <span class="h1 inline-block">We help you</span>
           <span
-            class="
-              h1
-              inline-block
-              typed-text typed-text--cursor
-              color--primary
-              typing
-            "
+            class="h1 inline-block typed-text typed-text--cursor color--primary typing"
           ></span>
         </div>
       </vue-typed-js>
