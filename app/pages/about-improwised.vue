@@ -183,7 +183,6 @@ export default {
       ],
       link: [
         {
-          hid: "canonical",
           rel: "canonical",
           href: process.env.BASE_URL + this.$route.path,
         },
