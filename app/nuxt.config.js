@@ -107,9 +107,7 @@ export default {
             config.devtool = "source-map";
         },
     },
-    server: {
-      host: '0.0.0.0' // default: localhost
-    },
+
     generate: {
         dir: "public",
         fallback: false,
