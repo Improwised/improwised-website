@@ -21,7 +21,6 @@ Vue.filter("formatDateTime", function (value) {
   return `${moment(value).local().format("ddd, MMM DD, YYYY")}`;
 });
 
-
 const urls = {
   services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=title`,
   servicesListWithTitleOnly:
@@ -29,7 +28,8 @@ const urls = {
   service: (title) =>
     `/items/services?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
-  careers: "/items/pages?filter[status][_eq]=published&filter[slug][_eq]=careers&fields[]=*.*",
+  careers:
+    "/items/pages?filter[status][_eq]=published&filter[slug][_eq]=careers&fields[]=*.*",
 
   jobOpenings:
     "/items/careers?filter[status][_eq]=published&fields=*.*&sort=title",
@@ -56,7 +56,8 @@ const urls = {
   blogs: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_neq]=2&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
   blog: (title) =>
     `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
-  blogothers: (title) => `/items/blog?filter[status][_eq]=published&sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
+  blogothers: (title) =>
+    `/items/blog?filter[status][_eq]=published&sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
   blogPageData: `/items/blog?filter[status][_eq]=published&sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
   gallery: `/items/gallery?filter[status][_eq]=published&fields[]=*.*&sort=sort,-id`,
 };
