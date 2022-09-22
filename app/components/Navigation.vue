@@ -48,11 +48,7 @@
             <!--end module-->
           </div>
           <div
-            class="
-              col-xs-6 col-md-7 col-sm-9
-              text-right text-left-xs text-left-sm
-              menu-style
-            "
+            class="col-xs-6 col-md-7 col-sm-9 text-right text-left-xs text-left-sm menu-style"
           >
             <div class="bar__module">
               <ul class="menu-horizontal text-left">
