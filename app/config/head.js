@@ -31,6 +31,14 @@ const meta = [
         content: "Improwised Technologies Pvt. Ltd."
     },
     {
+      name: "copyright",
+      content: "Improwised Technologies Pvt. Ltd."
+    },
+    {
+      name: "robots",
+      content: "index, follow"
+    },
+    {
         name: "theme-color",
         content: "#FFFFFF"
     },
