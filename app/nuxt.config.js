@@ -45,6 +45,7 @@ export default {
             },
         ],
         '@nuxt/image',
+        '@/modules/sitemapRouteGenerator'
     ],
     lazySizes: {
         extendAssetUrls: {
