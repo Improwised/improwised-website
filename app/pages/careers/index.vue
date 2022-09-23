@@ -10,9 +10,6 @@
               <a class="btn btn--primary type--uppercase" href="/careers/jobs">
                 <span class="btn__text">Job Openings</span>
               </a>
-              <a class="btn" href="/careers/internship-program">
-                <span class="btn__text">Internship Program</span>
-              </a>
               <span class="block type--fine-print">
                 If you don't find your role, we will still hear you,
                 <a
@@ -117,7 +114,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 mb-5 text-center">
-            <h2 class="">Our Gallery</h2>
+            <h2 class="">Life at Improwised Technologies</h2>
           </div>
           <!---  :autoplay="3000" --->
           <div class="col-lg-12">

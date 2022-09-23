@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-md-8">
-            <h1 class="">About Us</h1>
+            <h1 class="">Our Story</h1>
             <Breadcrumb class="m-0" />
           </div>
         </div>
@@ -50,8 +50,6 @@
                   :alt="meetTeamData.name"
                   :title="meetTeamData.name"
                   format="jpeg"
-                  width="148px"
-                  height="185px"
                   loading="lazy"
                 />
                 <div class="testimonial__image m-0 text-center">
