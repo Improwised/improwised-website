@@ -3,7 +3,7 @@
     <section v-if="careers" class="">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 d-flex align-items-center">
+          <div class="col-lg-6 d-flex align-items-center md-order-2">
             <div>
               <h1>{{ careers.title }}</h1>
               <div class="lead" v-html="careers.description"></div>
@@ -20,7 +20,7 @@
               </span>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 md-order-1">
             <nuxt-img
               v-if="careers.image"
               :src="$urls.assets(careers.image.id)"
@@ -28,7 +28,7 @@
               :title="careers.image.title"
               format="webp"
               width="540px"
-              height="540px"
+              height="auto"
               loading="lazy"
             />
           </div>
@@ -41,7 +41,7 @@
     <section v-if="whoWeAre" class="bg--secondary">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 d-flex align-items-center">
+          <div class="col-lg-6 d-flex align-items-center md-order-2">
             <div>
               <p class="m-0">Our Culture</p>
               <h2>{{ whoWeAre.title }}</h2>
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div
-            class="col-lg-6 justify-content-center d-flex align-items-center"
+            class="col-lg-6 justify-content-center d-flex align-items-center md-order-1"
           >
             <nuxt-img
               v-if="whoWeAre.image"
@@ -64,7 +64,7 @@
               :title="whoWeAre.image.title"
               format="webp"
               width="406px"
-              height="306px"
+              height="auto"
               loading="lazy"
             />
           </div>
@@ -86,7 +86,7 @@
               :title="whatWeDo.image.title"
               format="webp"
               width="406px"
-              height="306px"
+              height="auto"
               loading="lazy"
             />
           </div>
@@ -125,9 +125,8 @@
                   :src="img.src"
                   :alt="img.alt"
                   format="jpeg"
-                  width="459px"
-                  height="300px"
                   loading="lazy"
+                  class="card-img-top"
                   @click="index = idx"
                 />
               </div>
@@ -254,15 +253,16 @@ export default {
             },
           },
           {
-            breakpoint: 600,
+            breakpoint: 900,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 2,
             },
           },
+
           {
-            breakpoint: 480,
+            breakpoint: 600,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
