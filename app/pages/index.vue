@@ -100,23 +100,12 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/node.png"
-                alt="node"
-                title="Node.js"
+                data-src="img/technologies/go.png"
+                alt="go"
+                title="Go"
                 class="lazyload"
               />
-              <h6>Node Js</h6>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                data-src="img/technologies/php.png"
-                alt="php"
-                title="PHP"
-                class="lazyload"
-              />
-              <h6>PHP</h6>
+              <h6>Go</h6>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -133,23 +122,23 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
+                data-src="img/technologies/node.png"
+                alt="node"
+                title="Node.js"
+                class="lazyload"
+              />
+              <h6>Node Js</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
                 data-src="img/technologies/python.png"
                 alt="python"
                 title="Python"
                 class="lazyload"
               />
               <h6>Python</h6>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                data-src="img/technologies/go.png"
-                alt="go"
-                title="Go"
-                class="lazyload"
-              />
-              <h6>Go</h6>
             </div>
           </div>
 
@@ -195,6 +184,17 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
+                data-src="img/technologies/redis.png"
+                alt="redis"
+                class="lazyload"
+                title="Redis"
+              />
+              <h6>Redis</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
                 data-src="img/technologies/mongodb-icon.svg"
                 alt="mongodb"
                 class="lazyload"
@@ -219,17 +219,6 @@
                 title="Linux"
               />
               <h6>Linux</h6>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                data-src="img/technologies/nginx.png"
-                alt="nginx"
-                class="lazyload"
-                title="nginx"
-              />
-              <h6>Nginx</h6>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -274,6 +263,17 @@
                 title="Terraform"
               />
               <h6>Terraform</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/nginx.png"
+                alt="nginx"
+                class="lazyload"
+                title="nginx"
+              />
+              <h6>Nginx</h6>
             </div>
           </div>
           <div class="col-sm-12">
@@ -336,23 +336,12 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/bootstrap.png"
-                alt="bootstrap"
+                data-src="img/technologies/vuejs.png"
+                alt="vuejs"
                 class="lazyload"
-                title="Bootstrap"
+                title="Vue.js"
               />
-              <h6>Bootstrap</h6>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                data-src="img/technologies/angular.png"
-                alt="angular"
-                class="lazyload"
-                title="Angular.js"
-              />
-              <h6>Angular.js</h6>
+              <h6>Vue.js</h6>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -369,12 +358,23 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/vuejs.png"
-                alt="vuejs"
+                data-src="img/technologies/angular.png"
+                alt="angular"
                 class="lazyload"
-                title="Vue.js"
+                title="Angular.js"
               />
-              <h6>Vue.js</h6>
+              <h6>Angular.js</h6>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+            <div class="boxed boxed--border text-center">
+              <img
+                data-src="img/technologies/bootstrap.png"
+                alt="bootstrap"
+                class="lazyload"
+                title="Bootstrap"
+              />
+              <h6>Bootstrap</h6>
             </div>
           </div>
           <div class="col-sm-12">
@@ -403,17 +403,6 @@
                 title="GitLab"
               />
               <h6>GitLab</h6>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                data-src="img/technologies/redis.png"
-                alt="redis"
-                class="lazyload"
-                title="Redis"
-              />
-              <h6>Redis</h6>
             </div>
           </div>
 
