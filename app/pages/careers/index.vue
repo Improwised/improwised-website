@@ -2,7 +2,7 @@
   <div class="main-container careers">
     <section v-if="careers" class="">
       <div class="container">
-        <div class="row build_section">
+        <div class="row">
           <div class="col-lg-6 d-flex align-items-center md-order-2">
             <div>
               <h1>{{ careers.title }}</h1>
