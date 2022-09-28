@@ -26,7 +26,7 @@
     </section>
 
     <section v-if="meetTeam && meetTeam.length" class="bg--secondary">
-      <div class="d-flex flex-wrap align-items-center justify-content-center">
+      <div class="d-flex flex-wrap justify-content-center">
         <div class="col-lg-12 mb-5 text-center">
           <h2 class="m-0">Meet the Team</h2>
         </div>
