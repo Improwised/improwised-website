@@ -72,6 +72,13 @@ export default function (context, inject) {
   const assets = (id) => `${context.$config.DATA_URL}/assets/${id}`;
   urls.assets = assets;
 
+  const link = (id, extension) =>
+    context.store.state.generate
+      ? `/${id}.${extension}`
+      : `${context.$config.DATA_URL}/assets/${id}`;
+  inject("link", link);
+  context.$link = link;
+
   inject("urls", urls);
   context.$urls = urls;
 }

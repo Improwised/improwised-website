@@ -56,7 +56,12 @@
 
                     <a
                       v-if="caseStudie.document"
-                      :href="$urls.assets(caseStudie.document.id)"
+                      :href="
+                        $link(
+                          caseStudie.document.id,
+                          caseStudie.document.type.split('/')[1]
+                        )
+                      "
                       target="_blank"
                     >
                       View Details
@@ -88,8 +93,27 @@ export default {
     },
   },
   layout: "theme",
-  async asyncData({ app, params }) {
+  async asyncData({ app, params, store }) {
     const caseStudies = await app.$axios.$get(app.$urls.caseStudies);
+
+    const ids = [];
+    caseStudies.data.forEach((d) => {
+      const { id } = d.document;
+      ids.push(id);
+    });
+
+    if (
+      store.state.generate &&
+      caseStudies &&
+      caseStudies.data &&
+      caseStudies.data.length
+    ) {
+      try {
+        await app.$download(ids);
+      } catch (error) {
+        console.log("error", error); // eslint-disable-line no-console
+      }
+    }
 
     return { caseStudies: caseStudies.data };
   },
