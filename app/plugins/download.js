@@ -10,7 +10,7 @@ export default function ({ $axios }, inject) {
               responseEncoding: "binary",
             })
             .then(async (res) => {
-              await fs.writeFile(`static/${id}.pdf`, res.data, (err) => {
+              await fs.writeFile(`public/${id}.pdf`, res.data, (err) => {
                 if (err) console.log(err); // eslint-disable-line no-console
                 else {
                   console.log("File written successfully\n"); // eslint-disable-line no-console
