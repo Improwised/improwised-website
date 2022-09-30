@@ -6,7 +6,7 @@ module.exports = {
   mode: "production",
   performance: {
     maxEntrypointSize: 2000000,
-    maxAssetSize: 2000000
+    maxAssetSize: 2000000,
   },
   entry: "./static/bundel.js",
   output: {

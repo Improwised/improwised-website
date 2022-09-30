@@ -38,7 +38,7 @@ export default {
   layout: "theme",
   async asyncData({ app, params, redirect, env }) {
     return redirect("/");
-    const title = app.$titlecase(params && params.slug) || "";
+    const title = app.$titlecase(params && params.slug) || ""; // eslint-disable-line no-unreachable
     const service = await app.$axios.$get(app.$urls.service(title));
 
     return { service: service.data[0] };
