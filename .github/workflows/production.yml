@@ -31,6 +31,8 @@ jobs:
       run: npm run webpack:build
     - name: static generate
       run: npm run generate
+    - name: update CNAME
+    - run: echo "www.improwised.com" > public/CNAME
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
