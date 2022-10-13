@@ -534,7 +534,7 @@ export default {
         },
         {
           property: "og:url",
-          content: process.env.BASE_URL + this.$route.path,
+          content: process.env.BASE_URL + "/",
         },
         {
           property: "og:title",
@@ -576,7 +576,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: process.env.BASE_URL + this.$route.path,
+          href: process.env.BASE_URL + "/",
         },
       ],
     };
