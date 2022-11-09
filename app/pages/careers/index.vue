@@ -29,7 +29,7 @@
               format="webp"
               width="540px"
               height="auto"
-              loading="lazy"
+              loading="eager"
             />
           </div>
         </div>

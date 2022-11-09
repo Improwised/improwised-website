@@ -112,6 +112,7 @@ export default {
     interval: 2000,
   },
 
+
   image: {
     domains: ["data.improwised.com"],
   },

@@ -9,6 +9,8 @@
                 class="logo logo-dark lazyload"
                 alt="Improwised Technologies Pvt Ltd"
                 data-src="/img/logo.png"
+                src="/img/logo.png"
+                loading="eager"
               />
             </a>
           </div>
@@ -42,6 +44,8 @@
                   class="logo logo-dark lazyload"
                   alt="Improwised Technologies Pvt Ltd"
                   data-src="/img/logo.png"
+                  src="/img/logo.png"
+                  loading="eager"
                 />
               </a>
             </div>
