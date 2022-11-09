@@ -236,13 +236,13 @@ export default {
         arrows: true,
         dots: false,
         infinite: true,
+        accessibility: false,
         autoplay: false,
         speed: 2000,
         autoplaySpeed: 500,
         swipeToSlide: true,
         cssEase: "linear",
         slidesToScroll: 4,
-
         adaptiveHeight: true,
         responsive: [
           {
@@ -260,7 +260,6 @@ export default {
               initialSlide: 2,
             },
           },
-
           {
             breakpoint: 600,
             settings: {
