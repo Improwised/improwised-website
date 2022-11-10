@@ -8,7 +8,7 @@
             class="logo lazyload"
             src="/img/logo.png"
             data-src="/img/logo.png"
-            loading="eager"
+            loading="lazy"
           />
           <ul class="list-inline list--hover">
             <li>

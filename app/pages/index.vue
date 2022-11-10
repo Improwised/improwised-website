@@ -100,12 +100,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/go.png"
                 src="img/technologies/go.png"
                 alt="go"
                 title="Go"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Go</h6>
             </div>
@@ -113,12 +112,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/laravel.png"
                 src="img/technologies/laravel.png"
                 alt="laravel"
                 title="Laravel"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Laravel</h6>
             </div>
@@ -126,12 +124,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/node.png"
                 src="img/technologies/node.png"
                 alt="node"
                 title="Node.js"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Node Js</h6>
             </div>
@@ -139,12 +136,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/python.png"
                 src="img/technologies/python.png"
                 alt="python"
                 title="Python"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Python</h6>
             </div>
@@ -159,12 +155,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/postgresql-icon.svg"
                 src="img/technologies/postgresql-icon.svg"
                 alt="postgresql"
                 class="lazyload"
                 title="PostgreSQL"
-                loading="eager"
+                loading="lazy"
               />
               <h6>PostgreSQL</h6>
             </div>
@@ -172,12 +167,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/mariadb-icon.svg"
                 src="img/technologies/mariadb-icon.svg"
                 alt="mariadb"
                 class="lazyload"
                 title="MariaDB"
-                loading="eager"
+                loading="lazy"
               />
               <h6>MariaDB</h6>
             </div>
@@ -185,12 +179,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/mysql-icon.svg"
                 src="img/technologies/mysql-icon.svg"
                 alt="mysql"
                 class="lazyload"
                 title="MySQL"
-                loading="eager"
+                loading="lazy"
               />
               <h6>MySQL</h6>
             </div>
@@ -198,12 +191,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/redis.png"
                 src="img/technologies/redis.png"
                 alt="redis"
                 class="lazyload"
                 title="Redis"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Redis</h6>
             </div>
@@ -211,12 +203,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/mongodb-icon.svg"
                 src="img/technologies/mongodb-icon.svg"
                 alt="mongodb"
                 class="lazyload"
                 title="MongoDB"
-                loading="eager"
+                loading="lazy"
               />
               <h6>MongoDB</h6>
             </div>
@@ -231,12 +222,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/linux.png"
                 src="img/technologies/linux.png"
                 alt="linux"
                 class="lazyload"
                 title="Linux"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Linux</h6>
             </div>
@@ -244,12 +234,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/docker.png"
                 src="img/technologies/docker.png"
                 alt="docker"
                 class="lazyload"
                 title="Docker"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Docker</h6>
             </div>
@@ -257,12 +246,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/kubernetes.svg"
                 src="img/technologies/kubernetes.svg"
                 alt="kubernetes"
                 title="kubernetes"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Kubernetes</h6>
             </div>
@@ -270,12 +258,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/helm.png"
                 src="img/technologies/helm.png"
                 alt="Helm"
                 class="lazyload"
                 title="Helm"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Helm</h6>
             </div>
@@ -283,12 +270,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/terraform.svg"
                 src="img/technologies/terraform.svg"
                 alt="Terraforms"
                 class="lazyload"
                 title="Terraform"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Terraform</h6>
             </div>
@@ -296,12 +282,11 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/nginx.png"
                 src="img/technologies/nginx.png"
                 alt="nginx"
                 class="lazyload"
                 title="nginx"
-                loading="eager"
+                loading="lazy"
               />
               <h6>Nginx</h6>
             </div>
@@ -315,11 +300,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/amazon-web-services-icon.svg"
                 src="img/technologies/amazon-web-services-icon.svg"
                 alt="amazon_web_services"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Amazon Web Services"
               />
               <h6>Amazon Web Services</h6>
@@ -329,11 +313,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/google_cloud_platform.png"
                 src="img/technologies/google_cloud_platform.png"
                 alt="google_cloud_platform"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Google Cloud Platform"
               />
               <h6>Google Cloud Platform</h6>
@@ -342,11 +325,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/digital_ocean.png"
                 src="img/technologies/digital_ocean.png"
                 alt="digital_ocean"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="DigitalOcean"
               />
               <h6>DigitalOcean</h6>
@@ -361,11 +343,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/js.png"
                 src="img/technologies/js.png"
                 alt="js"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="JavaScript"
               />
               <h6>JavaScript</h6>
@@ -374,11 +355,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/vuejs.png"
                 src="img/technologies/vuejs.png"
                 alt="vuejs"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Vue.js"
               />
               <h6>Vue.js</h6>
@@ -387,11 +367,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/react.png"
                 src="img/technologies/react.png"
                 alt="react"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="React"
               />
               <h6>React</h6>
@@ -400,11 +379,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/angular.png"
                 src="img/technologies/angular.png"
                 alt="angular"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Angular.js"
               />
               <h6>Angular.js</h6>
@@ -413,11 +391,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/bootstrap.png"
                 src="img/technologies/bootstrap.png"
                 alt="bootstrap"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Bootstrap"
               />
               <h6>Bootstrap</h6>
@@ -432,11 +409,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/github.png"
                 src="img/technologies/github.png"
                 alt="github"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="Github"
               />
               <h6>Github</h6>
@@ -445,11 +421,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/gitlab.png"
                 src="img/technologies/gitlab.png"
                 alt="gitlab"
                 class="lazyload"
-                loading="eager"
+                loading="lazy"
                 title="GitLab"
               />
               <h6>GitLab</h6>
@@ -459,11 +434,10 @@
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
             <div class="boxed boxed--border text-center">
               <img
-                data-src="img/technologies/circleci-icon.svg"
                 src="img/technologies/circleci-icon.svg"
                 alt="circle ci"
                 title="circle ci"
-                loading="eager"
+                loading="lazy"
                 class="lazyload"
               />
               <h6>Circle ci</h6>

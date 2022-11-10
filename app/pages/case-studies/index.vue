@@ -39,7 +39,7 @@
                         :title="caseStudie.image.title"
                         width="100%"
                         height="245"
-                        loading="eager"
+                        loading="lazy"
                         :format="
                           caseStudie.image.filename_download.split('.')[1]
                         "

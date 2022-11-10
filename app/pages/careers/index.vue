@@ -29,7 +29,7 @@
               format="webp"
               width="540px"
               height="auto"
-              loading="eager"
+              loading="lazy"
             />
           </div>
         </div>
@@ -243,6 +243,7 @@ export default {
         swipeToSlide: true,
         cssEase: "linear",
         slidesToScroll: 4,
+
         adaptiveHeight: true,
         responsive: [
           {
@@ -260,6 +261,7 @@ export default {
               initialSlide: 2,
             },
           },
+
           {
             breakpoint: 600,
             settings: {
