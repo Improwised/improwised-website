@@ -39,7 +39,7 @@
                 :alt="meetTeamData.name"
                 :title="meetTeamData.name"
                 format="jpeg"
-                loading="lazy"
+                loading="eager"
               />
               <div class="testimonial__image m-0 text-center">
                 <h5>{{ meetTeamData.name }}</h5>

@@ -14,12 +14,14 @@
                         v-if="blog.user_created.avatar"
                         :src="$urls.assets(blog.user_created.id)"
                         :alt="blog.user_created.first_name"
+                        loading="lazy"
                         :title="blog.user_created.first_name"
                       />
                       <img
                         v-else
                         src="/img/avatar-round-1.png"
                         alt="User"
+                        loading="lazy"
                         title="User"
                       />
                     </a>
