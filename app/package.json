@@ -64,7 +64,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0",
-    "vue-jest": "^3.0.4",
+    "vue-jest": "^4.0.1",
     "webpack-cli": "^4.9.1"
   }
 }
