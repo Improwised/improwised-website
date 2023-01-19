@@ -27,7 +27,7 @@
                     </a>
                   </div> -->
                   <div class="post-desc w-100">
-                    <a
+                    <!-- <a
                       v-if="
                         blog.user_created.first_name ||
                         blog.user_created.last_name
@@ -36,17 +36,17 @@
                       >{{ blog.user_created.first_name }}
                       {{ blog.user_created.last_name }}</a
                     >
-                    <a v-else href="#"> Improwised Technologies</a>
+                    <a v-else href="#"> Improwised Technologies</a> -->
 
                     <div class="row">
                       <div class="col-sm-6">
-                        Created at {{ blog.date_created | formatDateTime }}
+                        Published Date {{ blog.date_updated | formatDateTime }}
                       </div>
-                      <div class="col-sm-6 text-right">
+                      <!-- <div class="col-sm-6 text-right">
                         Updated at
 
                         {{ blog.date_updated | formatDateTime }}
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
