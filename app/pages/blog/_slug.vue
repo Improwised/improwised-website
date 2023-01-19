@@ -81,7 +81,7 @@
                       network="email"
                       :title="`${blog.title}`"
                       :url="`${baseUrlPath}`"
-                      :description="`${blog.description}`"
+                      :description="`${strippedHtml(blog.description)}`"
                     >
                       <i class="socicon socicon-google icon icon--xs"></i>
                     </ShareNetwork>
@@ -92,7 +92,7 @@
                       network="linkedin"
                       :title="`${blog.title}`"
                       :url="`${baseUrlPath}`"
-                      :description="`${blog.description}`"
+                      :description="`${strippedHtml(blog.description)}`"
                     >
                       <i class="socicon socicon-linkedin icon icon--xs"></i>
                     </ShareNetwork>
@@ -110,7 +110,7 @@
                     <ShareNetwork
                       network="facebook"
                       :title="`${blog.title}`"
-                      :description="`${blog.description}`"
+                      :description="`${strippedHtml(blog.description)}`"
                       :url="`${baseUrlPath}`"
                       :quote="`${blog.title}`"
                       hashtags="blog"
@@ -123,7 +123,7 @@
                       network="whatsapp"
                       :url="`${baseUrlPath}`"
                       :title="`${blog.title}`"
-                      :description="`${blog.description}`"
+                      :description="`${strippedHtml(blog.description)}`"
                     >
                       <i class="socicon socicon-whatsapp icon icon--xs"></i>
                     </ShareNetwork>
@@ -260,6 +260,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    strippedHtml(description) {
+      const regex = /(<([^>]+)>)/gi;
+
+      return description.replace(regex, "");
+    },
   },
 };
 </script>
