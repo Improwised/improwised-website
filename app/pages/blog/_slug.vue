@@ -9,7 +9,7 @@
                 <h1 v-if="blog.title" class="h2">{{ blog.title }}</h1>
                 <div class="show-featured author_block">
                   <div class="post-img">
-                    <a href="#">
+                    <!-- <a href="#">
                       <img
                         v-if="blog.user_created.avatar"
                         :src="$urls.assets(blog.user_created.id)"
@@ -24,7 +24,7 @@
                         loading="lazy"
                         title="User"
                       />
-                    </a>
+                    </a> -->
                   </div>
                   <div class="post-desc w-100">
                     <a
@@ -54,7 +54,7 @@
               <!--end article title-->
               <div>
                 <div v-if="blog.description">
-                  <p>{{ blog.description }}</p>
+                  <p v-html="blog.description"></p>
                 </div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
