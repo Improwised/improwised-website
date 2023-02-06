@@ -30,6 +30,7 @@
     "core-js": "^3.24.1",
     "granim": "^2.0.0",
     "http-serve": "^1.0.1",
+    "jsdom": "^21.1.0",
     "moment": "^2.29.4",
     "nuxt": "^2.15.7",
     "vue-slick-carousel": "^1.0.6",
