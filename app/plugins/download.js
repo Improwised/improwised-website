@@ -51,7 +51,7 @@ export default function ({ $axios, $img }, inject) {
         dom.window.document.querySelector(`img[src="${url}"]`).src=$img(url, { format: 'png' } );
       }
     }
-    return dom.window.document.getElementsByTagName('body')[0].innerHTML;
+    return unescapeHTML(dom.window.document.getElementsByTagName('body')[0].innerHTML);
   });
 
   inject("gist", async (content) => {
