@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container blog-style">
     <section class="space--xs">
       <div class="container">
         <div class="row justify-content-center">
@@ -182,9 +182,9 @@ export default {
     const title = params.slug;
     //  const tagsname = "";
     const blog = await app.$axios.$get(app.$urls.blog(title));
+    blog.data[0].content = app.$unescapeHTML(blog.data[0].content);
     blog.data[0].content = app.$dImage(blog.data[0].content);
     blog.data[0].content = await app.$gist(blog.data[0].content);
-    blog.data[0].content = app.$unescapeHTML(blog.data[0].content);
     const blogList = await app.$axios.$get(app.$urls.blogothers(title));
     return { blog: blog.data[0], blogList: blogList.data };
   },
@@ -260,6 +260,10 @@ export default {
         {
           rel: "canonical",
           href: process.env.BASE_URL + this.$route.path + "/",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css",
         },
       ],
     };

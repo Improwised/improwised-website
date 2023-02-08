@@ -1,6 +1,8 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+const hljs = require('highlight.js');
+
 function unescapeHTML(escapedHTML) {
   return escapedHTML
     .replace(/&lt;/g, "<")
@@ -51,20 +53,18 @@ export default function ({ $axios, $img }, inject) {
         dom.window.document.querySelector(`img[src="${url}"]`).src=$img(url, { format: 'png' } );
       }
     }
-    return unescapeHTML(dom.window.document.getElementsByTagName('body')[0].innerHTML);
+    return dom.window.document.getElementsByTagName('body')[0].innerHTML;
   });
 
   inject("gist", async (content) => {
     const dom = new JSDOM(content);
     var scripts = dom.window.document.getElementsByTagName('script');
-    for(var i = 0; i < scripts.length; i++) {
-      if(scripts[i].src.includes("pastebin")) {
+    for (let i in scripts) {
+      if(scripts[i] !== undefined && scripts[i].src !== undefined && scripts[i].src.includes("pastebin")) {
         try {
-          const { data: sData } = await $axios.get(scripts[i].src);
-          const a = dom.window.document.createElement("div");
-          a.append(sData.replace(`document.write('`, '').replace(`');`, ''));
+          const { data } = await $axios.get(`https://pastebin.com/raw/${scripts[i].src.split('embed_js/')[1]}`);
           const scr = dom.window.document.querySelector(`script[src="${scripts[i].src}"]`);
-          scr.parentNode.append(a);
+          scr.parentNode.append(`<pre><code class="hljs">${hljs.highlightAuto(data).value}</code></pre>`);
         } catch(e) {
           console.log(e);
         }

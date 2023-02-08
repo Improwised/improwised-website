@@ -29,6 +29,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.24.1",
     "granim": "^2.0.0",
+    "highlight.js": "^11.7.0",
     "http-serve": "^1.0.1",
     "jsdom": "^21.1.0",
     "moment": "^2.29.4",
