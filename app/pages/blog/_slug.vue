@@ -40,7 +40,7 @@
 
                     <div class="row">
                       <div class="col-sm-6">
-                        Published Date {{ blog.date_updated | formatDateTime }}
+                        Published On {{ blog.date_updated | formatDateTime }}
                       </div>
                       <!-- <div class="col-sm-6 text-right">
                         Updated at
