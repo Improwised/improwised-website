@@ -301,7 +301,20 @@ export default function (mode) {
     htmlAttrs,
     meta,
     link: _link,
-    script: [{ type: "application/ld+json", json: structuredLdJsonData }],
+    script: [
+      {
+        type: "application/ld+json",
+        json: structuredLdJsonData,
+      },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-33PP6GNTHT",
+        body: true,
+      },
+      {
+        src: "/google-tag.js",
+        body: true,
+      },
+    ],
     // link: _link.concat(mode === "development" ? devLinks : prodLinks),
     // script: mode === "development" ? devScripts : prodScripts,
   };
