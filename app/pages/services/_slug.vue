@@ -17,6 +17,21 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-10 offset-md-1">
+            <div
+              v-if="service.alert_link"
+              class="d-flex align-items-center justify-content-center p-3 rounded mb-5 b1"
+            >
+              <nuxt-img
+                :src="$urls.assets(service.alert_link.id)"
+                :alt="service.alert_link.title"
+                :title="service.alert_link.title"
+                loading="lazy"
+                :format="service.alert_link.filename_download.split('.')[1]"
+                class="m-3"
+              />
+              <div v-html="service.alert_description" />
+            </div>
+            
             <article class="markdown-body">
               <div v-html="service.content_html" />
             </article>
@@ -109,3 +124,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.b1 {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+}
+</style>
