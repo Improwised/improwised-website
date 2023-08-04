@@ -19,7 +19,7 @@
           <div class="col-xs-12 col-md-10 offset-md-1">
             <div
               v-if="service.alert_link"
-              class="d-flex align-items-center justify-content-center p-3 rounded mb-5 b1"
+              class="d-flex align-items-center justify-content-center p-3 rounded mb-5 b1 alert"
             >
               <nuxt-img
                 :src="$urls.assets(service.alert_link.id)"
@@ -31,7 +31,7 @@
               />
               <div v-html="service.alert_description" />
             </div>
-            
+
             <article class="markdown-body">
               <div v-html="service.content_html" />
             </article>
@@ -127,7 +127,16 @@ export default {
 
 <style>
 .b1 {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+  box-shadow: rgba(230, 230, 250, 0.3) 0 1px 2px 0,
+    rgba(230, 230, 250, 0.15) 0 2px 6px 2px;
+}
+
+.alert {
+  background-color: #e6e6fa;
+  color: black;
+}
+
+.alert a {
+  color: #8a2be2;
 }
 </style>
