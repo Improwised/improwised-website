@@ -54,7 +54,7 @@
               <!--end article title-->
               <div class="blogdesc">
                 <div v-if="blog.description">
-                  <p>{{ sanitizedDescription }}</p>
+                  <div v-html="blog.description"></div>
                 </div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
@@ -267,13 +267,6 @@ export default {
         },
       ],
     };
-  },
-
-  computed: {
-    sanitizedDescription() {
-      // Replace <p> tags with an empty string
-      return this.blog.description.replace(/<\/?p>/g, "");
-    },
   },
   methods: {
     strippedHtml(description) {
