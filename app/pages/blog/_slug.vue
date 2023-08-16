@@ -54,7 +54,7 @@
               <!--end article title-->
               <div class="blogdesc">
                 <div v-if="blog.description">
-                  <p v-html="blog.description"></p>
+                  <div v-html="blog.description"></div>
                 </div>
                 <div v-if="blog.content" v-html="blog.content"></div>
               </div>
