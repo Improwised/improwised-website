@@ -95,7 +95,7 @@
                     class="btn btn--primary type--uppercase"
                     disabled="disabled"
                   >
-                    Send Enquiry
+                    Send Inquiry
                   </button>
                 </div>
               </form>
