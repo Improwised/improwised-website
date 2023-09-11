@@ -37,7 +37,7 @@ const urls = {
     `/items/careers?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 
   caseStudies:
-    "/items/case-studies?filter[status][_eq]=published&fields=*.*&sort=title",
+    "/items/case-studies?filter[status][_eq]=published&fields=*.*&sort=-date_created",
 
   aboutUs: "/items/about_us?filter[status][_eq]=published&fields=*.*",
 
@@ -53,12 +53,12 @@ const urls = {
   simpleHiringProcess: `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=simple-hiring-process&fields[]=*.*,tags.tags_id.name`,
   coreValues: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_eq]=2&sort=sort,-id&limit=3&fields[]=*.*`,
   meetTeam: `/items/team?filter[status][_eq]=published&fields=*.*&sort=sort,id`,
-  blogs: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_neq]=2&sort=sort,-id&limit=6&fields[]=*.*,tags.*`,
+  blogs: `/items/blog?filter[status][_eq]=published&filter[tags][tags_id][_neq]=2&sort=-date_created&limit=6&fields[]=*.*,tags.*`,
   blog: (title) =>
     `/items/blog?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*,tags.tags_id.name,users.user_created.first_name,users.user_created.last_name`,
   blogothers: (title) =>
-    `/items/blog?filter[status][_eq]=published&sort=sort,-id&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
-  blogPageData: `/items/blog?filter[status][_eq]=published&sort=sort,-id&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
+    `/items/blog?filter[status][_eq]=published&sort=-date_created&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
+  blogPageData: `/items/blog?filter[status][_eq]=published&sort=-date_created&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
   gallery: `/items/gallery?filter[status][_eq]=published&fields[]=*.*&sort=sort,-id`,
 };
 
