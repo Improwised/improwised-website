@@ -106,7 +106,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Go</h1>
+              <h1 class="h6 remove-height">Go</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -118,7 +118,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Laravel</h1>
+              <h1 class="h6 remove-height">Laravel</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -130,7 +130,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Node Js</h1>
+              <h1 class="h6 remove-height">Node Js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -142,7 +142,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Python</h1>
+              <h1 class="h6 remove-height">Python</h1>
             </div>
           </div>
 
@@ -161,7 +161,7 @@
                 title="PostgreSQL"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">PostgreSQL</h1>
+              <h1 class="h6 remove-height">PostgreSQL</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -173,7 +173,7 @@
                 title="MariaDB"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">MariaDB</h1>
+              <h1 class="h6 remove-height">MariaDB</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -185,7 +185,7 @@
                 title="MySQL"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">MySQL</h1>
+              <h1 class="h6 remove-height">MySQL</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -197,7 +197,7 @@
                 title="Redis"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Redis</h1>
+              <h1 class="h6 remove-height">Redis</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -209,7 +209,7 @@
                 title="MongoDB"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">MongoDB</h1>
+              <h1 class="h6 remove-height">MongoDB</h1>
             </div>
           </div>
 
@@ -228,7 +228,7 @@
                 title="Linux"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Linux</h1>
+              <h1 class="h6 remove-height">Linux</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -240,7 +240,7 @@
                 title="Docker"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Docker</h1>
+              <h1 class="h6 remove-height">Docker</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -252,7 +252,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Kubernetes</h1>
+              <h1 class="h6 remove-height">Kubernetes</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -264,7 +264,7 @@
                 title="Helm"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Helm</h1>
+              <h1 class="h6 remove-height">Helm</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -276,7 +276,7 @@
                 title="Terraform"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Terraform</h1>
+              <h1 class="h6 remove-height">Terraform</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -288,7 +288,7 @@
                 title="nginx"
                 loading="lazy"
               />
-              <h1 class="h6" style="line-height: 1.5">Nginx</h1>
+              <h1 class="h6 remove-height">Nginx</h1>
             </div>
           </div>
           <div class="col-sm-12">
@@ -306,7 +306,7 @@
                 loading="lazy"
                 title="Amazon Web Services"
               />
-              <h1 class="h6" style="line-height: 1.5">Amazon Web Services</h1>
+              <h1 class="h6 remove-height">Amazon Web Services</h1>
             </div>
           </div>
 
@@ -319,7 +319,7 @@
                 loading="lazy"
                 title="Google Cloud Platform"
               />
-              <h1 class="h6" style="line-height: 1.5">Google Cloud Platform</h1>
+              <h1 class="h6 remove-height">Google Cloud Platform</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -331,7 +331,7 @@
                 loading="lazy"
                 title="DigitalOcean"
               />
-              <h1 class="h6" style="line-height: 1.5">DigitalOcean</h1>
+              <h1 class="h6 remove-height">DigitalOcean</h1>
             </div>
           </div>
           <div class="col-sm-12">
@@ -349,7 +349,7 @@
                 loading="lazy"
                 title="JavaScript"
               />
-              <h1 class="h6" style="line-height: 1.5">JavaScript</h1>
+              <h1 class="h6 remove-height">JavaScript</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -361,7 +361,7 @@
                 loading="lazy"
                 title="Vue.js"
               />
-              <h1 class="h6" style="line-height: 1.5">Vue.js</h1>
+              <h1 class="h6 remove-height">Vue.js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -373,7 +373,7 @@
                 loading="lazy"
                 title="React"
               />
-              <h1 class="h6" style="line-height: 1.5">React</h1>
+              <h1 class="h6 remove-height">React</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -385,7 +385,7 @@
                 loading="lazy"
                 title="Angular.js"
               />
-              <h1 class="h6" style="line-height: 1.5">Angular.js</h1>
+              <h1 class="h6 remove-height">Angular.js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -397,7 +397,7 @@
                 loading="lazy"
                 title="Bootstrap"
               />
-              <h1 class="h6" style="line-height: 1.5">Bootstrap</h1>
+              <h1 class="h6 remove-height">Bootstrap</h1>
             </div>
           </div>
           <div class="col-sm-12">
@@ -415,7 +415,7 @@
                 loading="lazy"
                 title="Github"
               />
-              <h1 class="h6" style="line-height: 1.5">Github</h1>
+              <h1 class="h6 remove-height">Github</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -427,7 +427,7 @@
                 loading="lazy"
                 title="GitLab"
               />
-              <h1 class="h6" style="line-height: 1.5">GitLab</h1>
+              <h1 class="h6 remove-height">GitLab</h1>
             </div>
           </div>
 
@@ -440,7 +440,7 @@
                 loading="lazy"
                 class="lazyload"
               />
-              <h1 class="h6" style="line-height: 1.5">Circle ci</h1>
+              <h1 class="h6 remove-height">Circle ci</h1>
             </div>
           </div>
         </div>

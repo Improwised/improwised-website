@@ -9415,3 +9415,7 @@ footer.footer-7 {
 .feature .h5 {
   margin: 0;
 }
+
+.remove-height{
+  line-height: 1.5;
+}
