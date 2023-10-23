@@ -28,9 +28,7 @@
       </vue-typed-js>
       <p class="lead">Your remote technology team.</p>
       <a class="btn btn--primary type--uppercase inner-link" href="/contact"
-        ><span class="btn__text" style="color: #000">
-          Get in touch with us
-        </span>
+        ><span class="btn__text"> Get in touch with us </span>
       </a>
     </div>
   </div>
