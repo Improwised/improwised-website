@@ -331,7 +331,9 @@
                 loading="lazy"
                 title="DigitalOcean"
               />
-              <h3 class="h6 remove-height">DigitalOcean</h3>
+              <h3 class="h6 digitalocean-height" style="line-height: 3">
+                DigitalOcean
+              </h3>
             </div>
           </div>
           <div class="col-sm-12">
@@ -349,7 +351,7 @@
                 loading="lazy"
                 title="JavaScript"
               />
-              <h3>JavaScript</h3>
+              <h3 class="h6 remove-height">JavaScript</h3>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
