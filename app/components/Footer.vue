@@ -7,6 +7,8 @@
             alt="Improwised Technologies Pvt Ltd"
             class="logo lazyload"
             src="/img/logo.png"
+            height="27"
+            width="75"
             loading="lazy"
           />
           <ul class="list-inline list--hover">

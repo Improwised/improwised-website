@@ -22,7 +22,12 @@
     <div v-else>
       <link rel="stylesheet" href="/dist/index.min.css" lazyload />
     </div>
-    <a id="start" rel="nofollow" href="javscript:void(0);"></a>
+    <a
+      id="start"
+      aria-label="start point of page"
+      rel="nofollow"
+      href="javscript:void(0);"
+    ></a>
     <Navigation />
     <nuxt />
     <Footer />
