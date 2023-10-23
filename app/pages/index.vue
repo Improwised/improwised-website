@@ -39,7 +39,7 @@
                 :class="`icon icon--lg color--primary icon-Optimization`"
               ></i>
               <a :href="`/services/${service.slug}`">
-                <h4>{{ service.title }}</h4>
+                <h1 class="h4">{{ service.title }}</h1>
               </a>
               <p>{{ service.short_description }}</p>
             </div>
@@ -69,7 +69,7 @@
               <i v-else :class="`icon icon-Gears icon--lg`"></i>
 
               <div class="feature__body">
-                <h5>{{ whyus.title }}</h5>
+                <h1 class="h5">{{ whyus.title }}</h1>
                 <div v-html="whyus.description"></div>
               </div>
             </div>
@@ -92,7 +92,7 @@
         </div>
         <div class="row text-center justify-content-center">
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Backend</strong></h3>
+            <h1 class="mb-0 h3"><strong>Backend</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -106,7 +106,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h6>Go</h6>
+              <h1 class="h6" style="line-height: 1.5">Go</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -118,7 +118,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h6>Laravel</h6>
+              <h1 class="h6" style="line-height: 1.5">Laravel</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -130,7 +130,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h6>Node Js</h6>
+              <h1 class="h6" style="line-height: 1.5">Node Js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -142,12 +142,12 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h6>Python</h6>
+              <h1 class="h6" style="line-height: 1.5">Python</h1>
             </div>
           </div>
 
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Databases</strong></h3>
+            <h1 class="mb-0 h3"><strong>Databases</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -161,7 +161,7 @@
                 title="PostgreSQL"
                 loading="lazy"
               />
-              <h6>PostgreSQL</h6>
+              <h1 class="h6" style="line-height: 1.5">PostgreSQL</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -173,7 +173,7 @@
                 title="MariaDB"
                 loading="lazy"
               />
-              <h6>MariaDB</h6>
+              <h1 class="h6" style="line-height: 1.5">MariaDB</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -185,7 +185,7 @@
                 title="MySQL"
                 loading="lazy"
               />
-              <h6>MySQL</h6>
+              <h1 class="h6" style="line-height: 1.5">MySQL</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -197,7 +197,7 @@
                 title="Redis"
                 loading="lazy"
               />
-              <h6>Redis</h6>
+              <h1 class="h6" style="line-height: 1.5">Redis</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -209,12 +209,12 @@
                 title="MongoDB"
                 loading="lazy"
               />
-              <h6>MongoDB</h6>
+              <h1 class="h6" style="line-height: 1.5">MongoDB</h1>
             </div>
           </div>
 
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Infrastructure</strong></h3>
+            <h1 class="mb-0 h3"><strong>Infrastructure</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -228,7 +228,7 @@
                 title="Linux"
                 loading="lazy"
               />
-              <h6>Linux</h6>
+              <h1 class="h6" style="line-height: 1.5">Linux</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -240,7 +240,7 @@
                 title="Docker"
                 loading="lazy"
               />
-              <h6>Docker</h6>
+              <h1 class="h6" style="line-height: 1.5">Docker</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -252,7 +252,7 @@
                 class="lazyload"
                 loading="lazy"
               />
-              <h6>Kubernetes</h6>
+              <h1 class="h6" style="line-height: 1.5">Kubernetes</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -264,7 +264,7 @@
                 title="Helm"
                 loading="lazy"
               />
-              <h6>Helm</h6>
+              <h1 class="h6" style="line-height: 1.5">Helm</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -276,7 +276,7 @@
                 title="Terraform"
                 loading="lazy"
               />
-              <h6>Terraform</h6>
+              <h1 class="h6" style="line-height: 1.5">Terraform</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -288,11 +288,11 @@
                 title="nginx"
                 loading="lazy"
               />
-              <h6>Nginx</h6>
+              <h1 class="h6" style="line-height: 1.5">Nginx</h1>
             </div>
           </div>
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Cloud</strong></h3>
+            <h1 class="mb-0 h3"><strong>Cloud</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -306,7 +306,7 @@
                 loading="lazy"
                 title="Amazon Web Services"
               />
-              <h6>Amazon Web Services</h6>
+              <h1 class="h6" style="line-height: 1.5">Amazon Web Services</h1>
             </div>
           </div>
 
@@ -319,7 +319,7 @@
                 loading="lazy"
                 title="Google Cloud Platform"
               />
-              <h6>Google Cloud Platform</h6>
+              <h1 class="h6" style="line-height: 1.5">Google Cloud Platform</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -331,11 +331,11 @@
                 loading="lazy"
                 title="DigitalOcean"
               />
-              <h6>DigitalOcean</h6>
+              <h1 class="h6" style="line-height: 1.5">DigitalOcean</h1>
             </div>
           </div>
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Frontend</strong></h3>
+            <h1 class="mb-0 h3"><strong>Frontend</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -349,7 +349,7 @@
                 loading="lazy"
                 title="JavaScript"
               />
-              <h6>JavaScript</h6>
+              <h1 class="h6" style="line-height: 1.5">JavaScript</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -361,7 +361,7 @@
                 loading="lazy"
                 title="Vue.js"
               />
-              <h6>Vue.js</h6>
+              <h1 class="h6" style="line-height: 1.5">Vue.js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -373,7 +373,7 @@
                 loading="lazy"
                 title="React"
               />
-              <h6>React</h6>
+              <h1 class="h6" style="line-height: 1.5">React</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -385,7 +385,7 @@
                 loading="lazy"
                 title="Angular.js"
               />
-              <h6>Angular.js</h6>
+              <h1 class="h6" style="line-height: 1.5">Angular.js</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -397,11 +397,11 @@
                 loading="lazy"
                 title="Bootstrap"
               />
-              <h6>Bootstrap</h6>
+              <h1 class="h6" style="line-height: 1.5">Bootstrap</h1>
             </div>
           </div>
           <div class="col-sm-12">
-            <h3 class="mb-0"><strong>Other</strong></h3>
+            <h1 class="mb-0 h3"><strong>Other</strong></h1>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
@@ -415,7 +415,7 @@
                 loading="lazy"
                 title="Github"
               />
-              <h6>Github</h6>
+              <h1 class="h6" style="line-height: 1.5">Github</h1>
             </div>
           </div>
           <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
@@ -427,7 +427,7 @@
                 loading="lazy"
                 title="GitLab"
               />
-              <h6>GitLab</h6>
+              <h1 class="h6" style="line-height: 1.5">GitLab</h1>
             </div>
           </div>
 
@@ -440,7 +440,7 @@
                 loading="lazy"
                 class="lazyload"
               />
-              <h6>Circle ci</h6>
+              <h1 class="h6" style="line-height: 1.5">Circle ci</h1>
             </div>
           </div>
         </div>
@@ -471,7 +471,7 @@
                   &ldquo;{{ testimonial.quote }}&rdquo;
                 </div>
                 <div class="testimonial-detail clearfix">
-                  <h4 class="testimonial-name">{{ testimonial.author }}</h4>
+                  <h1 class="testimonial-name h4">{{ testimonial.author }}</h1>
                   <span>{{ testimonial.author_designation }}</span>
                 </div>
               </div>
@@ -497,7 +497,7 @@
           </div>
           <div class="col-sm-3 text-right text-center-xs">
             <a class="btn btn--primary type--uppercase" href="/contact">
-              <span class="btn__text"> Contact Us </span>
+              <span class="btn__text" style="color: #000"> Contact Us </span>
             </a>
           </div>
           <!-- </div> -->

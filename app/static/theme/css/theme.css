@@ -9407,3 +9407,11 @@ footer.footer-7 {
   line-height: 20px;
 }
 .markdown-body  * { font-family: 'Helvetica', sans-serif; }
+
+.feature .h4 {
+  margin-bottom: 0.342105263157895em;
+}
+
+.feature .h5 {
+  margin: 0;
+}
