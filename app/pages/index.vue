@@ -331,9 +331,7 @@
                 loading="lazy"
                 title="DigitalOcean"
               />
-              <h3 class="h6 digitalocean-height" style="line-height: 3">
-                DigitalOcean
-              </h3>
+              <h3 class="h6 digitalocean-height">DigitalOcean</h3>
             </div>
           </div>
           <div class="col-sm-12">
