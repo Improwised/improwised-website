@@ -180,11 +180,8 @@ export default {
   layout: "theme",
   async asyncData({ app, params }) {
     const title = params.slug;
-    //  const tagsname = "";
     const blog = await app.$axios.$get(app.$urls.blog(title));
-    blog.data[0].content = app.$unescapeHTML(blog.data[0].content);
     blog.data[0].content = app.$dImage(blog.data[0].content);
-    blog.data[0].content = await app.$gist(blog.data[0].content);
     const blogList = await app.$axios.$get(app.$urls.blogothers(title));
     return { blog: blog.data[0], blogList: blogList.data };
   },
@@ -264,6 +261,16 @@ export default {
         {
           rel: "stylesheet",
           href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css",
+        },
+      ],
+      script: [
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",
+          body: true,
+        },
+        {
+          src: "/js/hljs.js",
+          body: true,
         },
       ],
     };
