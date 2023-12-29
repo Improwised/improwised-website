@@ -25,25 +25,25 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    # Runs a single command using the runners shell
-    - name: install node_modules
-      run: npm install
-    - name: copy env
-      run: cp .env.staging .env
-    - name: webpack build
-      run: npm run webpack:build
-    - name: static generate
-      run: npm run generate
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./app/public
-    - name: lighthouse-ci
-      run: |
-        npm install -g @lhci/cli@0.10.x
-        lhci autorun
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      # Runs a single command using the runners shell
+      - name: install node_modules
+        run: npm install
+      - name: copy env
+        run: cp .env.staging .env
+      - name: webpack build
+        run: npm run webpack:build
+      - name: static generate
+        run: npm run generate
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/public
+      - name: lighthouse-ci
+        run: |
+          npm install -g @lhci/cli@0.10.x
+          lhci autorun
