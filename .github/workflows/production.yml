@@ -41,8 +41,4 @@ jobs:
       with:
         personal_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
         external_repository: improwised/website
-        publish_dir: ./app/public
-    - name: lighthouse-ci
-      run: |
-        npm install -g @lhci/cli@0.10.x
-        lhci autorun            
+        publish_dir: ./app/public            

@@ -43,3 +43,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./app/public
+    - name: lighthouse-ci
+      run: |
+        npm install -g @lhci/cli@0.10.x
+        lhci autorun
