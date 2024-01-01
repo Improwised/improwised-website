@@ -55,6 +55,8 @@ jobs:
       - name: setup-chrome
         uses: browser-actions/setup-chrome@v1
 
+      - run: sudo apt install -y libnss3  
+
       - name: lighthouse-ci
         run: |
           npm install -g @lhci/cli@0.13.x
