@@ -27,25 +27,25 @@ jobs:
         timeout-minutes: 5
       
       
-      - name: setup-node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache-dependency-path: ./app/package-lock.json
-        timeout-minutes: 5
+      # - name: setup-node
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16
+      #     cache-dependency-path: ./app/package-lock.json
+      #   timeout-minutes: 5
 
 
-      - name: install node_modules
-        run: npm install
+      # - name: install node_modules
+      #   run: npm install
 
-      - name: copy env
-        run: cp .env.staging .env
+      # - name: copy env
+      #   run: cp .env.staging .env
 
-      - name: webpack build
-        run: npm run webpack:build
+      # - name: webpack build
+      #   run: npm run webpack:build
 
-      - name: static generate
-        run: npm run generate
+      # - name: static generate
+      #   run: npm run generate
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
