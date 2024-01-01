@@ -13,15 +13,14 @@ module.exports = {
             },
         },
         collect: {
-            "numberOfRuns": 3,
+            "numberOfRuns": 1,
             "chromePath": "/opt/hostedtoolcache/chromium/122.0.6218.0/x64/chrome",
             "url": [
-                "https://www.improwised.com/",
-                "https://www.improwised.com/about-improwised/",
-                "https://www.improwised.com/case-studies/",
-                "https://www.improwised.com/contact/",
-                "https://www.improwised.com/careers/"
-
+                "https://www.improwised.com/"
+                // "https://www.improwised.com/about-improwised/",
+                // "https://www.improwised.com/case-studies/",
+                // "https://www.improwised.com/contact/",
+                // "https://www.improwised.com/careers/"
             ],
         },
         upload: {
