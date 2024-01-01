@@ -56,9 +56,11 @@ jobs:
 
       - name: setup-chrome
         uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 122
 
 
       - name: lighthouse-ci
         run: |
-          npm install -g @lhci/cli@0.13.x
+          sudo npm install -g @lhci/cli@0.13.x
           lhci autorun --config ../.lighthouserc.js
