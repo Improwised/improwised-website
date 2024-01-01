@@ -27,10 +27,8 @@ jobs:
         timeout-minutes: 5
       
       - name: check working-directory
-        run: |
-          pwd
-          ls -la
-
+        uses: browser-actions/setup-chrome@v1
+      
       - name: setup-node
         uses: actions/setup-node@v3
         with:
