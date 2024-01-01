@@ -26,6 +26,11 @@ jobs:
         uses: docker/setup-buildx-action@v3
         timeout-minutes: 5
       
+      - name: check working-directory
+        run: |
+          pwd
+          ls -la
+          
       - name: setup-node
         uses: actions/setup-node@v3
         with:
@@ -34,10 +39,6 @@ jobs:
           cache-dependency-path: package-lock.json
         timeout-minutes: 5
 
-      - name: check working-directory
-        run: |
-          pwd
-          ls -la
 
       - name: install node_modules
         run: npm install
