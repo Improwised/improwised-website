@@ -30,13 +30,13 @@ jobs:
         run: |
           pwd
           ls -la
-          
+
       - name: setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: ./app/package-lock.json
         timeout-minutes: 5
 
 
@@ -58,7 +58,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./app/public
 
-      # - name: lighthouse-ci
-      #   run: |
-      #     npm install -g @lhci/cli@0.10.x
-      #     lhci autorun
+      - name: lighthouse-ci
+        run: |
+          npm install -g @lhci/cli@0.10.x
+          lhci autorun
