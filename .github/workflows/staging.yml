@@ -52,8 +52,8 @@ jobs:
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
       #     publish_dir: ./app/public
-      - run: sudo apt install -y libnss3
-        
+      - run: sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
+
       - name: setup-chrome
         uses: browser-actions/setup-chrome@v1
 
