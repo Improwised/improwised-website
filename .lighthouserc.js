@@ -13,7 +13,7 @@ module.exports = {
             },
         },
         collect: {
-            "numberOfRuns": 5,
+            "numberOfRuns": 3,
             "chromePath": "/opt/hostedtoolcache/chromium/122.0.6218.0/x64/chrome",
             "url": [
                 "https://www.improwised.com/",
