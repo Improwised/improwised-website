@@ -16,7 +16,7 @@ module.exports = {
             "numberOfRuns": 1,
             "headful": false,
             "chromePath": process.env.CHROME_PATH ,
-            "staticDistDir": './public',
+            "staticDistDir": './',
         },
         upload: {
             target: 'lhci',
