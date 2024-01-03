@@ -16,7 +16,13 @@ module.exports = {
             "numberOfRuns": 1,
             "headful": false,
             "chromePath": "/opt/hostedtoolcache/chromium/122.0.6218.0/x64/chrome",
-            "staticDistDir": './app/public',
+            "url": [
+                "https://www.improwised.com/"
+                // "https://www.improwised.com/about-improwised/",
+                // "https://www.improwised.com/case-studies/",
+                // "https://www.improwised.com/contact/",
+                // "https://www.improwised.com/careers/"
+            ],
         },
         upload: {
             target: 'lhci',
