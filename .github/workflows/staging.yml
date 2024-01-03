@@ -12,7 +12,6 @@ jobs:
   # This workflow contains a single job called "greet"
   build:
     runs-on: self-hosted
-
     defaults:
       run:
         shell: bash
