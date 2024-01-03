@@ -14,7 +14,7 @@ module.exports = {
         },
         collect: {
             "numberOfRuns": 1,
-            "headful": false,
+            "headful": true,
             "chromePath": process.env.CHROME_PATH ,
             "staticDistDir": './public',
         },
