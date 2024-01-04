@@ -67,3 +67,5 @@ jobs:
         run: |
           sudo npm install -g @lhci/cli@0.13.x
           lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!" 
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_APP_TOKEN }}  

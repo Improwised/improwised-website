@@ -1,7 +1,7 @@
 module.exports = {
     ci: {
         assert: {
-        //  "preset": "lighthouse:recommended",    
+         "preset": "lighthouse:recommended",    
             assertions: {
                 "offscreen-images": "off",  // audit will not check images which not visible to users.
                 "uses-webp-images": "off",  // audit will not check webp images
