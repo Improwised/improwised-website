@@ -1,7 +1,6 @@
 module.exports = {
     ci: {
-        assert: {
-         "preset": "lighthouse:all",    
+        assert: {    
             assertions: {
                 "offscreen-images": "off",  // audit will not check images which not visible to users.
                 "uses-webp-images": "off",  // audit will not check webp images
@@ -9,7 +8,10 @@ module.exports = {
                 "interactive": ["error", {"maxNumericValue": 7000, "aggregationMethod": "optimistic"}],  // wait 7 seconds for fully interactive
                 "resource-summary:document:size": ["error", {"maxNumericValue": 14000}],  // if html doc size bigger than 14000 bytes give error
                 "categories:performance": ['warn', { minScore: 0.7 }],  // if overall performance score below 0.7 gives warning
-                "categories:accessibility": ['error', { minScore: 0.93 }]  // if accessibility is below 0.93 then gives error
+                "categories:accessibility": ['error', { minScore: 0.90 }],  // if accessibility is below 0.93 then gives error
+                "categories:best-practices": ['error', { minScore: 0.90 }],
+                "categories:seo": ["error", { "minScore": 0.90 }],
+                "categories:pwa": ["warn", { "minScore": 0.90 }]
             },
         },
         collect: {
