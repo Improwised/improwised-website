@@ -19,6 +19,9 @@ module.exports = {
             "headful": false,
             "chromePath": process.env.CHROME_PATH ,
             "staticDistDir": './public',
+            "settings": {
+                "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
+            }
         },
         upload: {
             target: 'lhci',
