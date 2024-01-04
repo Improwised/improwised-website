@@ -14,15 +14,6 @@ module.exports = {
                 "categories:pwa": ["warn", { "minScore": 0.90 }]
             },
         },
-        collect: {
-            "numberOfRuns": 1,
-            "headful": false,
-            "chromePath": process.env.CHROME_PATH ,
-            "staticDistDir": './public',
-            "settings": {
-                "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
-            }
-        },
         upload: {
             target: 'lhci',
             serverBaseUrl: 'http://164.52.192.158:30011',
