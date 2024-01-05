@@ -47,11 +47,11 @@ jobs:
       - name: static generate
         run: npm run generate
 
-      - name: upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-context
-          path: ./   
+      # - name: upload artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: build-context
+      #     path: ./   
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
@@ -87,11 +87,31 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
         timeout-minutes: 5
-        
-      - name: download artifacts
-        uses: actions/download-artifact@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        timeout-minutes: 5
+      
+      
+      - name: setup-node
+        uses: actions/setup-node@v3
         with:
-          name: build-context
+          node-version: 16
+          cache-dependency-path: ./app/package-lock.json
+        timeout-minutes: 5
+
+
+      - name: install node_modules
+        run: npm install
+
+      - name: copy env
+        run: cp .env.staging .env
+
+      - name: webpack build
+        run: npm run webpack:build
+
+      - name: static generate
+        run: npm run generate
       
       - run: sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev libasound2 -y
       - name: setup-chrome
