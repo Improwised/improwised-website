@@ -47,7 +47,11 @@ jobs:
       - name: static generate
         run: npm run generate
 
-      - run: ls -la   
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-context
+          path: ./   
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
@@ -66,12 +70,42 @@ jobs:
       - name: install lighthouse-ci 
         run: sudo npm install -g @lhci/cli@0.13.x
 
-      - name: lighthouse-ci for mobile
-        run: lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!"
-        env:
-          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_APP_TOKEN }}
-
       - name: lighthouse-ci for desktop    
         run: lhci autorun --config ../.lighthouserc.js --collect.settings.preset=desktop --upload.target=temporary-public-storage || echo "LHCI failed!" 
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_APP_TOKEN }}  
+
+  lighthouse-score:
+    needs: build
+    runs-on: self-hosted
+    defaults:
+      run:
+        shell: bash
+        working-directory: app
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+        timeout-minutes: 5
+        
+      - name: download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-context
+      
+      - run: sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev libasound2 -y
+      - name: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+        id: setup-chrome
+        with:
+          chrome-version: 122
+
+      - run: echo "CHROME_PATH=${{ steps.setup-chrome.outputs.chrome-path }}" >> $GITHUB_ENV
+
+      - name: install lighthouse-ci 
+        run: sudo npm install -g @lhci/cli@0.13.x
+
+      - name: lighthouse-ci for mobile
+        run: lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!"
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_APP_TOKEN }}
