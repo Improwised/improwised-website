@@ -97,54 +97,10 @@
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/go.png"
-                alt="go"
-                title="Go"
-                class="lazyload"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Go</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/laravel.png"
-                alt="laravel"
-                title="Laravel"
-                class="lazyload"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Laravel</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/node.png"
-                alt="node"
-                title="Node.js"
-                class="lazyload"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Node Js</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/python.png"
-                alt="python"
-                title="Python"
-                class="lazyload"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Python</h3>
-            </div>
-          </div>
+          <Tool image="img/technologies/go.png" name="Go" />
+          <Tool image="img/technologies/laravel.png" name="Laravel" />
+          <Tool image="img/technologies/node.png" name="Node Js" />
+          <Tool image="img/technologies/python.png" name="Python" />
 
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Databases</strong></h2>
@@ -152,66 +108,14 @@
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/postgresql-icon.svg"
-                alt="postgresql"
-                class="lazyload"
-                title="PostgreSQL"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">PostgreSQL</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/mariadb-icon.svg"
-                alt="mariadb"
-                class="lazyload"
-                title="MariaDB"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">MariaDB</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/mysql-icon.svg"
-                alt="mysql"
-                class="lazyload"
-                title="MySQL"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">MySQL</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/redis.png"
-                alt="redis"
-                class="lazyload"
-                title="Redis"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Redis</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/mongodb-icon.svg"
-                alt="mongodb"
-                class="lazyload"
-                title="MongoDB"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">MongoDB</h3>
-            </div>
-          </div>
+          <Tool
+            image="img/technologies/postgresql-icon.svg"
+            name="PostgreSQL"
+          />
+          <Tool image="img/technologies/mariadb-icon.svg" name="MariaDB" />
+          <Tool image="img/technologies/mysql-icon.svg" name="MySQL" />
+          <Tool image="img/technologies/redis.png" name="Redis" />
+          <Tool image="img/technologies/mongodb-icon.svg" name="MongoDB" />
 
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Infrastructure</strong></h2>
@@ -219,230 +123,55 @@
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/linux.png"
-                alt="linux"
-                class="lazyload"
-                title="Linux"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Linux</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/docker.png"
-                alt="docker"
-                class="lazyload"
-                title="Docker"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Docker</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/kubernetes.svg"
-                alt="kubernetes"
-                title="kubernetes"
-                class="lazyload"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Kubernetes</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/helm.png"
-                alt="Helm"
-                class="lazyload"
-                title="Helm"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Helm</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/terraform.svg"
-                alt="Terraforms"
-                class="lazyload"
-                title="Terraform"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Terraform</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/nginx.png"
-                alt="nginx"
-                class="lazyload"
-                title="nginx"
-                loading="lazy"
-              />
-              <h3 class="h6 remove-height">Nginx</h3>
-            </div>
-          </div>
+          <Tool image="img/technologies/linux.png" name="Linux" />
+          <Tool image="img/technologies/docker.png" name="Docker" />
+          <Tool image="img/technologies/kubernetes.svg" name="Kubernetes" />
+          <Tool image="img/technologies/helm.png" name="Helm" />
+          <Tool image="img/technologies/terraform.svg" name="Terraform" />
+          <Tool image="img/technologies/nginx.png" name="Nginx" />
+
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Cloud</strong></h2>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/amazon-web-services-icon.svg"
-                alt="amazon_web_services"
-                class="lazyload"
-                loading="lazy"
-                title="Amazon Web Services"
-              />
-              <h3 class="h6 remove-height">Amazon Web Services</h3>
-            </div>
-          </div>
 
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/google_cloud_platform.png"
-                alt="google_cloud_platform"
-                class="lazyload"
-                loading="lazy"
-                title="Google Cloud Platform"
-              />
-              <h3 class="h6 remove-height">Google Cloud Platform</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/digital_ocean.png"
-                alt="digital_ocean"
-                class="lazyload"
-                loading="lazy"
-                title="DigitalOcean"
-              />
-              <h3 class="h6 digitalocean-height">DigitalOcean</h3>
-            </div>
-          </div>
+          <Tool
+            image="img/technologies/amazon-web-services-icon.svg"
+            name="Amazon Web Services"
+          />
+          <Tool
+            image="img/technologies/google_cloud_platform.png"
+            name="Google Cloud Platform"
+          />
+          <Tool
+            image="img/technologies/digital_ocean.png"
+            name="DigitalOcean"
+            :is-digital-ocean="true"
+          />
+
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Frontend</strong></h2>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/js.png"
-                alt="js"
-                class="lazyload"
-                loading="lazy"
-                title="JavaScript"
-              />
-              <h3 class="h6 remove-height">JavaScript</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/vuejs.png"
-                alt="vuejs"
-                class="lazyload"
-                loading="lazy"
-                title="Vue.js"
-              />
-              <h3 class="h6 remove-height">Vue.js</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/react.png"
-                alt="react"
-                class="lazyload"
-                loading="lazy"
-                title="React"
-              />
-              <h3 class="h6 remove-height">React</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/angular.png"
-                alt="angular"
-                class="lazyload"
-                loading="lazy"
-                title="Angular.js"
-              />
-              <h3 class="h6 remove-height">Angular.js</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/bootstrap.png"
-                alt="bootstrap"
-                class="lazyload"
-                loading="lazy"
-                title="Bootstrap"
-              />
-              <h3 class="h6 remove-height">Bootstrap</h3>
-            </div>
-          </div>
+          <Tool image="img/technologies/js.png" name="JavaScript" />
+          <Tool image="img/technologies/vuejs.png" name="Vue.js" />
+          <Tool image="img/technologies/react.png" name="React" />
+          <Tool image="img/technologies/angular.png" name="Angular.js" />
+          <Tool image="img/technologies/bootstrap.png" name="Bootstrap" />
+
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Other</strong></h2>
             <div class="dlab-separator-outer">
               <div class="dlab-separator style-liner"></div>
             </div>
           </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/github.png"
-                alt="github"
-                class="lazyload"
-                loading="lazy"
-                title="Github"
-              />
-              <h3 class="h6 remove-height">Github</h3>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/gitlab.png"
-                alt="gitlab"
-                class="lazyload"
-                loading="lazy"
-                title="GitLab"
-              />
-              <h3 class="h6 remove-height">GitLab</h3>
-            </div>
-          </div>
-
-          <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
-            <div class="boxed boxed--border text-center">
-              <img
-                src="img/technologies/circleci-icon.svg"
-                alt="circle ci"
-                title="circle ci"
-                loading="lazy"
-                class="lazyload"
-              />
-              <h3 class="h6 remove-height">Circle ci</h3>
-            </div>
-          </div>
+          <Tool image="img/technologies/github.png" name="Github" />
+          <Tool image="img/technologies/gitlab.png" name="GitLab" />
+          <Tool image="img/technologies/circleci-icon.svg" name="Circle ci" />
         </div>
       </div>
     </section>
@@ -513,11 +242,13 @@
 import constants from "@/config/constants";
 import HomeTyped from "@/components/HomeTyped.vue";
 import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
+import Tool from "@/components/common/Tool.vue";
 
 export default {
   components: {
     HomeTyped,
     HomeCallToActionGranim,
+    Tool,
   },
   layout: "theme",
   async asyncData({ app, params, payload }) {
