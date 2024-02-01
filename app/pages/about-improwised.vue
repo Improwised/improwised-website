@@ -88,13 +88,7 @@
           <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <div class="cta">
               <h2>Want to know more about us?</h2>
-              <a
-                class="btn btn--primary type--uppercase"
-                href="/contact"
-                title="contact"
-              >
-                <span class="btn__text"> Get in Touch </span>
-              </a>
+              <Button text="Get in Touch" redirect="/contact" />
             </div>
           </div>
         </div>
@@ -107,9 +101,11 @@
 
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import Button from "@/components/common/Button.vue";
 export default {
   components: {
     Breadcrumb,
+    Button,
   },
   layout: "theme",
   async asyncData({ app, params }) {

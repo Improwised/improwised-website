@@ -59,14 +59,7 @@
           <div class="col-lg-12">
             <br /><br />
             <div class="text-block">
-              <a
-                class="btn btn--primary type--uppercase"
-                target="_blank"
-                rel="noopener"
-                :href="job.apply_link"
-              >
-                <span class="btn__text"> Apply </span>
-              </a>
+              <Button text="Apply" :redirect="job.apply_link" />
             </div>
           </div>
         </div>
@@ -84,12 +77,10 @@
                 Got what it takes to work with us? Great! Send us a link to your
                 resumé or portfolio to become part of our talent pool.
               </p>
-              <a
-                class="btn btn--primary type--uppercase"
-                href="mailto:careers@improwised.com?subject=Dropped Resume to get job"
-              >
-                <span class="btn__text"> Drop your resume here </span>
-              </a>
+              <Button
+                text="Drop your resume here"
+                redirect="mailto:careers@improwised.com?subject=Dropped Resume to get job"
+              />
             </div>
           </div>
         </div>
@@ -101,10 +92,12 @@
 </template>
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import Button from "@/components/common/Button.vue";
 
 export default {
   components: {
     Breadcrumb,
+    Button,
   },
   layout: "theme",
   async asyncData({ app, params }) {

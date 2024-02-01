@@ -7,9 +7,7 @@
             <div>
               <h1>{{ careers.title }}</h1>
               <div class="lead" v-html="careers.description"></div>
-              <a class="btn btn--primary type--uppercase" href="/careers/jobs">
-                <span class="btn__text">Job Openings</span>
-              </a>
+              <Button text="Job Openings" redirect="/careers/jobs" />
               <span class="block type--fine-print">
                 If you don't find your role, we will still hear you,
                 <a
@@ -162,7 +160,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="mb-5">Our Blog</h2>
+            <div class="text-center">
+              <h2 class="mb-5">Our Blog</h2>
+            </div>
             <!-- <p class="mb-5">Read our blog from our company</p> -->
           </div>
         </div>
@@ -180,12 +180,14 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 import Tinybox from "vue-tinybox";
 import Blog from "@/components/Blog.vue";
+import Button from "@/components/common/Button.vue";
 
 export default {
   components: {
     Tinybox,
     VueSlickCarousel,
     Blog,
+    Button,
   },
   filters: {
     truncate(text, length, suffix) {
