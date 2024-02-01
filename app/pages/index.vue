@@ -148,7 +148,6 @@
           <Tool
             image="img/technologies/digital_ocean.png"
             name="DigitalOcean"
-            :is-digital-ocean="true"
           />
 
           <div class="col-sm-12">

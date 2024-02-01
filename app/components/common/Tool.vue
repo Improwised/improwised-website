@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6">
+  <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6 tool">
     <div class="boxed boxed--border text-center">
       <img
         :src="image"
@@ -8,8 +8,7 @@
         class="lazyload"
         loading="lazy"
       />
-      <h3 v-if="isDigitalOcean" class="h6 digitalocean-height">{{ name }}</h3>
-      <h3 v-else class="h6 remove-height">{{ name }}</h3>
+      <h3 class="h6 remove-height">{{ name }}</h3>
     </div>
   </div>
 </template>
@@ -25,9 +24,12 @@ export default {
       type: String,
       require: true,
     },
-    isDigitalOcean: {
-      type: Boolean,
-    },
   },
 };
 </script>
+
+<style scoped>
+.tool {
+  display: grid;
+}
+</style>
