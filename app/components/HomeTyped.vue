@@ -27,15 +27,21 @@
         </div>
       </vue-typed-js>
       <p class="lead">Your remote technology team.</p>
-      <a class="btn btn--primary type--uppercase inner-link" href="/contact"
-        ><span class="btn__text"> Get in touch with us </span>
-      </a>
+
+      <div class="text-center">
+        <Button text="Get in touch with us" />
+      </div>
     </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
 import VueTypedJs from "vue-typed-js";
+import Button from "@/components/common/Button.vue";
 Vue.use(VueTypedJs);
-export default {};
+export default {
+  components: {
+    Button,
+  },
+};
 </script>
