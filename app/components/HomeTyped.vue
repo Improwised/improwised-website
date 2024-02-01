@@ -27,10 +27,7 @@
         </div>
       </vue-typed-js>
       <p class="lead">Your remote technology team.</p>
-
-      <div class="text-center">
-        <Button text="Get in touch with us" />
-      </div>
+      <Button text="Get in touch with us" redirect="/contact" />
     </div>
   </div>
 </template>

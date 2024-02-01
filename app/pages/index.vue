@@ -223,12 +223,10 @@
               We will do our best to answer you within 24 hours or less.
             </h2>
           </div>
-          <Button text="Contact Us" />
-          <!-- <div class="col-sm-3 text-right text-center-xs">
-            <a class="btn btn--primary type--uppercase" href="/contact">
-              <span class="btn__text"> Contact Us </span>
-            </a>
-          </div> -->
+          <div class="col-sm-3 text-right text-center-xs">
+            <Button text="Contact Us" redirect="/contact" />
+          </div>
+
           <!-- </div> -->
         </div>
         <!--end of row-->

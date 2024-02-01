@@ -41,12 +41,10 @@
                 Got what it takes to work with us? Great! Send us a link to your
                 resumé or portfolio to become part of our talent pool.
               </p>
-              <a
-                class="btn btn--primary type--uppercase"
-                href="mailto:careers@improwised.com?subject=Dropped Resume to get job"
-              >
-                <span class="btn__text"> Drop your resume here </span>
-              </a>
+              <Button
+                text="Drop your resume here"
+                redirect="mailto:careers@improwised.com?subject=Dropped Resume to get job"
+              />
             </div>
           </div>
         </div>
@@ -57,10 +55,12 @@
 
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import Button from "@/components/common/Button.vue";
 
 export default {
   components: {
     Breadcrumb,
+    Button,
   },
   layout: "theme",
   async asyncData({ app, params }) {

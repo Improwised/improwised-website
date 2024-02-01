@@ -88,9 +88,7 @@
           <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <div class="cta">
               <h2>Want to know more about us?</h2>
-              <div class="text-center">
-                <Button text="Get in Touch" />
-              </div>
+              <Button text="Get in Touch" redirect="/contact" />
             </div>
           </div>
         </div>
