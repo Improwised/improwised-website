@@ -97,6 +97,7 @@ export default {
     dir: "public",
     fallback: false,
     interval: 2000,
+    subFolders: false
   },
 
 
