@@ -15,7 +15,7 @@
           }}</span>
           <a
             v-if="blogs.content && blogs.content.length"
-            :href="`/blog/${blogs.slug}`"
+            :href="`/blog/${blogs.slug}/`"
             class="float-right blog_sub_details_right"
           >
             Read More

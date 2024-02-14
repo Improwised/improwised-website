@@ -38,7 +38,7 @@
                 v-else
                 :class="`icon icon--lg color--primary icon-Optimization`"
               ></i>
-              <a :href="`/services/${service.slug}`">
+              <a :href="`/services/${service.slug}/`">
                 <h2 class="h4">{{ service.title }}</h2>
               </a>
               <p>{{ service.short_description }}</p>

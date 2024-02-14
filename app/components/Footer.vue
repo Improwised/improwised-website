@@ -13,7 +13,7 @@
           />
           <ul class="list-inline list--hover">
             <li>
-              <a href="/contact">
+              <a href="/contact/">
                 <span>Contact Us</span>
               </a>
             </li>

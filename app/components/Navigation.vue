@@ -60,7 +60,7 @@
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/about-improwised">About Us</a>
+                  <a href="/about-improwised/">About Us</a>
                 </li>
                 <li class="dropdown">
                   <span class="dropdown__trigger">Services</span>
@@ -78,7 +78,7 @@
                               v-for="(service, index) in $store.state.services"
                               :key="index"
                             >
-                              <a :href="`/services/${service.slug}`">
+                              <a :href="`/services/${service.slug}/`">
                                 {{ service.title }}
                               </a>
                             </li>
@@ -92,16 +92,16 @@
                   <!--end dropdown container-->
                 </li>
                 <li>
-                  <a href="/case-studies">Case Studies</a>
+                  <a href="/case-studies/">Case Studies</a>
                 </li>
                 <li>
-                  <a href="/careers">Careers</a>
+                  <a href="/careers/">Careers</a>
                 </li>
                 <li>
-                  <a href="/blog">Blogs</a>
+                  <a href="/blog/">Blogs</a>
                 </li>
                 <li>
-                  <a href="/contact">Contact Us</a>
+                  <a href="/contact/">Contact Us</a>
                 </li>
               </ul>
             </div>

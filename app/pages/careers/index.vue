@@ -46,7 +46,7 @@
               <div class="lead" v-html="whoWeAre.description"></div>
               <a
                 v-if="whoWeAre.content && whoWeAre.content.length"
-                :href="`/blog/${whoWeAre.slug}`"
+                :href="`/blog/${whoWeAre.slug}/`"
               >
                 <span class="btn__text"> Read More </span>
               </a>
@@ -95,7 +95,7 @@
               <div class="lead" v-html="whatWeDo.description"></div>
               <a
                 v-if="whatWeDo.content && whoWeAre.content.length"
-                :href="`/blog/${whatWeDo.slug}`"
+                :href="`/blog/${whatWeDo.slug}/`"
               >
                 <span class="btn__text"> Read More </span>
               </a>
