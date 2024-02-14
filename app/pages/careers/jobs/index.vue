@@ -25,7 +25,7 @@
               <h5 class="mt-15px">{{ job.title }}</h5>
               <p class="mb-0">{{ job.experience }}</p>
               <p v-if="job.pay_range" class="mb-1">{{ job.pay_range }}</p>
-              <a :href="`/careers/jobs/${job.slug}`"> View &amp; Apply</a>
+              <a :href="`/careers/jobs/${job.slug}/`"> View &amp; Apply</a>
             </div>
           </div>
         </div>

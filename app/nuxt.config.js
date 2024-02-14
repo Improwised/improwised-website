@@ -96,8 +96,7 @@ export default {
   generate: {
     dir: "public",
     fallback: false,
-    interval: 2000,
-    subFolders: false
+    interval: 2000
   },
 
 
