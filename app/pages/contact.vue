@@ -27,7 +27,7 @@
                         rel="noopener"
                         class="font-weight-normal"
                       >
-                        Career</a
+                        Careers</a
                       >
                       page.
                     </span>
