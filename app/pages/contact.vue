@@ -12,10 +12,36 @@
               </p>
             </div>
           </div>
+          <div class="row mt-5 space--xs">
+            <div class="col-sm-12">
+              <div
+                class="d-flex align-items-center justify-content-center p-3 rounded b1 alert"
+              >
+                <div>
+                  <h5>
+                    <span style="font-weight: 400">
+                      For inquiries related to job & internship, please visit
+                      <a
+                        href="/careers/"
+                        target="_blank"
+                        rel="noopener"
+                        class="font-weight-normal"
+                      >
+                        Career</a
+                      >
+                      page.
+                    </span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!--end of row-->
         </div>
         <!--end of container-->
       </section>
+
       <section>
         <div class="container">
           <div class="row">
@@ -201,3 +227,19 @@ export default {
   },
 };
 </script>
+
+<style>
+.b1 {
+  box-shadow: rgba(230, 230, 250, 0.3) 0 1px 2px 0,
+    rgba(230, 230, 250, 0.15) 0 2px 6px 2px;
+}
+
+.alert {
+  background-color: #e6e6fa;
+  color: black;
+}
+
+.alert a {
+  color: #8a2be2;
+}
+</style>
