@@ -22,7 +22,7 @@
                     <span style="font-weight: 400">
                       For inquiries related to job & internship, please visit
                       <a
-                        href="/career/"
+                        href="/careers/"
                         target="_blank"
                         rel="noopener"
                         class="font-weight-normal"
