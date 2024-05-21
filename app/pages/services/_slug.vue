@@ -41,14 +41,44 @@
       </div>
       <!--end of container-->
     </section>
+
+    <section
+      class="space--xs imagebg"
+      data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
+    >
+      <HomeCallToActionGranim />
+
+      <div class="container">
+        <div class="row">
+          <!-- <div class="cta cta--horizontal text-center-xs"> -->
+          <div class="col-sm-9 d-flex align-items-center">
+            <h2 class="lead m-0">
+              We will do our best to answer you within 24 hours or less.
+            </h2>
+          </div>
+          <div class="col-sm-3 text-right text-center-xs">
+            <Button text="Contact Us" redirect="/contact" />
+          </div>
+
+          <!-- </div> -->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
   </div>
 </template>
 
 <script>
 import Breadcrumb from "@/components/breadcrumb.vue";
+import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
+import Button from "@/components/common/Button.vue";
+
 export default {
   components: {
     Breadcrumb,
+    HomeCallToActionGranim,
+    Button,
   },
   layout: "theme",
   async asyncData({ app, params }) {
