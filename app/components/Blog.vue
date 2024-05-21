@@ -4,6 +4,8 @@
       v-for="(blogs, index) in blogList"
       :key="index"
       class="col-lg-4 col-md-6 mb-1"
+      style="cursor: pointer"
+      @click="navigateToBlog(blogs.slug, blogs.content)"
     >
       <article class="feature feature-3 blog-feature boxed boxed--border m-1">
         <div class="feature__body">
@@ -13,13 +15,6 @@
           <span class="font-14 blog_sub_details_left">{{
             blogs.date_created | formatDateTime
           }}</span>
-          <a
-            v-if="blogs.content && blogs.content.length"
-            :href="`/blog/${blogs.slug}/`"
-            class="float-right blog_sub_details_right"
-          >
-            Read More
-          </a>
         </div>
       </article>
     </div>
@@ -32,6 +27,13 @@ export default {
     blogList: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    navigateToBlog(slug, content) {
+      if (content && content.length) {
+        window.location.href = `/blog/${slug}/`;
+      }
     },
   },
 };
