@@ -9,9 +9,11 @@
       <article class="feature feature-3 blog-feature boxed boxed--border m-1">
         <div class="feature__body">
           <h4>
-            <a :href="`/blog/${blogs.slug}`" class="blog-title">{{
-              blogs.title
-            }}</a>
+            <a
+              :href="`/blog/${blogs.slug}`"
+              class="blog-title text-dark font-weight-normal"
+              >{{ blogs.title }}</a
+            >
           </h4>
           <p class="pb-5" v-html="blogs.description"></p>
 
@@ -34,10 +36,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.blog-title {
-  color: inherit;
-  font-weight: normal;
-}
-</style>
