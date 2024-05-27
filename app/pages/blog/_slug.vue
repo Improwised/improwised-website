@@ -7,7 +7,7 @@
             <article v-if="blog">
               <div class="position-relative">
                 <div
-                  class="background-image position-absolute w-100 h-100 bg-opacity"
+                  class="background-image position-absolute w-100 h-100"
                 ></div>
                 <Header
                   :title="blog.title"
@@ -318,6 +318,6 @@ export default {
 .background-image {
   background-image: url("/img/blog-bk-1.png");
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 </style>
