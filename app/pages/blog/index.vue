@@ -53,6 +53,11 @@ export default {
     return { blogList: blogList.data };
   },
   head() {
+    const image = this.$img("/img/blog-bk-1.png", {
+      format: "webp",
+      height: "400px",
+    });
+
     const blogTitle = "Blogs - Improwised Technologies Pvt. Ltd.";
     const blogDescription = "Our Blog";
     return {
@@ -84,7 +89,7 @@ export default {
         },
         {
           property: "og:image",
-          content: process.env.BASE_URL + "/img/logo.png",
+          content: process.env.BASE_URL + image,
         },
         {
           property: "twitter:card",
@@ -108,7 +113,7 @@ export default {
         },
         {
           property: "twitter:image",
-          content: process.env.BASE_URL + "/img/logo.png",
+          content: process.env.BASE_URL + image,
         },
       ],
       link: [
