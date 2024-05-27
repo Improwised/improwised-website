@@ -12,61 +12,11 @@
                 <Header
                   :title="blog.title"
                   :image="$urls.assets(blog.image.id)"
-                  :avtar="blog.user_created.avatar"
-                  :first-name="blog.user_created.first_name"
-                  :last-name="blog.user_created.last_name"
                   :date-time="blog.date_created | formatDateTime"
-                  :time-to-read="blog.time_to_read"
-                  :creator="true"
-                  :authors="blog.authors"
                 />
               </div>
 
-              <div class="show-featured author_block">
-                <!-- <div class="post-img">
-                     <a href="#">
-                      <img
-                        v-if="blog.user_created.avatar"
-                        :src="$urls.assets(blog.user_created.id)"
-                        :alt="blog.user_created.first_name"
-                        loading="lazy"
-                        :title="blog.user_created.first_name"
-                      />
-                      <img
-                        v-else
-                        src="/img/avatar-round-1.png"
-                        alt="User"
-                        loading="lazy"
-                        title="User"
-                      />
-                    </a>
-                  </div> -->
-                <div class="post-desc w-100">
-                  <!-- <a
-                      v-if="
-                        blog.user_created.first_name ||
-                        blog.user_created.last_name
-                      "
-                      href="#"
-                      >{{ blog.user_created.first_name }}
-                      {{ blog.user_created.last_name }}</a
-                    >
-                    <a v-else href="#"> Improwised Technologies</a> -->
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      Published On {{ blog.date_updated | formatDateTime }}
-                    </div>
-                    <!-- <div class="col-sm-6 text-right">
-                        Updated at
-
-                        {{ blog.date_updated | formatDateTime }}
-                      </div> -->
-                  </div>
-                </div>
-              </div>
-              <!--end article title-->
-              <div class="blogdesc">
+              <div class="container blogdesc">
                 <div v-if="blog.description">
                   <div v-html="blog.description"></div>
                 </div>

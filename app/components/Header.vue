@@ -4,8 +4,7 @@
       <div class="col-md-6 d-flex align-items-center justify-content-center">
         <div>
           <h1 class="h2 mb-0">{{ title }}</h1>
-          {{ dateTime }} |
-          {{ timeToRead }}
+          {{ dateTime }}
         </div>
       </div>
       <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -35,9 +34,6 @@ export default {
       required: true,
     },
     dateTime: {
-      type: String,
-    },
-    timeToRead: {
       type: String,
     },
   },
