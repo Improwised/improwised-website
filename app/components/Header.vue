@@ -7,7 +7,9 @@
           {{ dateTime }}
         </div>
       </div>
-      <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div
+        class="col-md-6 mt-4 d-flex align-items-center justify-content-center"
+      >
         <nuxt-img
           v-if="image"
           :src="image"

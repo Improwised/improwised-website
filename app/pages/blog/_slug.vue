@@ -1,13 +1,13 @@
 <template>
   <div class="main-container blog-style">
-    <section class="space--xs">
-      <div class="container">
+    <section class="space--xs pt-0">
+      <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-md-12">
             <article v-if="blog">
               <div class="position-relative">
                 <div
-                  class="background-image position-absolute w-100 h-100"
+                  class="background-image position-absolute w-100 h-100 p-4"
                 ></div>
                 <Header
                   :title="blog.title"
@@ -266,8 +266,7 @@ export default {
 
 <style scoped>
 .background-image {
-  background-image: url("/img/blog-bk-1.png");
-  z-index: -1;
   opacity: 0.1;
+  background: url("/img/blog-bk-1.png") center / cover no-repeat;
 }
 </style>
