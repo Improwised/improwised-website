@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row m-1">
     <div
       v-for="(blogs, index) in blogList"
       :key="index"

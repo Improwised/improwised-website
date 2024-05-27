@@ -2,7 +2,7 @@
   <!--  -->
   <div class="main-container case-studies">
     <section class="text-center heroUnit">
-      <div class="container">
+      <div class="container m-4">
         <div class="row">
           <div class="col-sm-10 col-md-8">
             <h1>Our Blog</h1>
