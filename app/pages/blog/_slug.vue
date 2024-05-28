@@ -15,84 +15,85 @@
                   :date-time="blog.date_created | formatDateTime"
                 />
               </div>
-
-              <div class="container blogdesc mt-5">
-                <div v-if="blog.description">
-                  <div v-html="blog.description"></div>
+              <div class="container">
+                <div class="blogdesc mt-5">
+                  <div v-if="blog.description">
+                    <div v-html="blog.description"></div>
+                  </div>
+                  <div v-if="blog.content" v-html="blog.content"></div>
                 </div>
-                <div v-if="blog.content" v-html="blog.content"></div>
-              </div>
-              <hr />
-              <div class="article__share mt-0">
-                <h4>
-                  <span class="text-muted font-20">
-                    <span v-for="(blogtag, index) in blog.tags" :key="index">
-                      <span class="badge badge-secondary">
-                        {{ blogtag.tags_id.name }}</span
-                      >
-                      <span v-if="index + 1 < blog.tags.length"> </span>
-                      <!-- <span v-if="index + 1 < blog.tags.length">, </span> -->
+                <hr />
+                <div class="article__share mt-0">
+                  <h4>
+                    <span class="text-muted font-20">
+                      <span v-for="(blogtag, index) in blog.tags" :key="index">
+                        <span class="badge badge-secondary">
+                          {{ blogtag.tags_id.name }}</span
+                        >
+                        <span v-if="index + 1 < blog.tags.length"> </span>
+                        <!-- <span v-if="index + 1 < blog.tags.length">, </span> -->
+                      </span>
                     </span>
-                  </span>
-                </h4>
-              </div>
-              <hr />
-              <div class="article__share mt-0">
-                <ul class="social-list list-inline list--hover blog_social">
-                  <!-- <span class="h4 d-inline"> Share : </span> -->
-                  <li class="list-inline-item mr-0">
-                    <ShareNetwork
-                      network="email"
-                      :title="`${blog.title}`"
-                      :url="`${baseUrlPath}`"
-                      :description="`${strippedHtml(blog.description)}`"
-                    >
-                      <i class="socicon socicon-google icon icon--xs"></i>
-                    </ShareNetwork>
-                  </li>
+                  </h4>
+                </div>
+                <hr />
+                <div class="article__share mt-0">
+                  <ul class="social-list list-inline list--hover blog_social">
+                    <!-- <span class="h4 d-inline"> Share : </span> -->
+                    <li class="list-inline-item mr-0">
+                      <ShareNetwork
+                        network="email"
+                        :title="`${blog.title}`"
+                        :url="`${baseUrlPath}`"
+                        :description="`${strippedHtml(blog.description)}`"
+                      >
+                        <i class="socicon socicon-google icon icon--xs"></i>
+                      </ShareNetwork>
+                    </li>
 
-                  <li class="list-inline-item mr-0">
-                    <ShareNetwork
-                      network="linkedin"
-                      :title="`${blog.title}`"
-                      :url="`${baseUrlPath}`"
-                      :description="`${strippedHtml(blog.description)}`"
-                    >
-                      <i class="socicon socicon-linkedin icon icon--xs"></i>
-                    </ShareNetwork>
-                  </li>
-                  <li class="list-inline-item mr-0">
-                    <ShareNetwork
-                      network="twitter"
-                      :title="`${blog.title}`"
-                      :url="`${baseUrlPath}`"
-                    >
-                      <i class="socicon socicon-twitter icon icon--xs"></i>
-                    </ShareNetwork>
-                  </li>
-                  <li class="list-inline-item mr-0">
-                    <ShareNetwork
-                      network="facebook"
-                      :title="`${blog.title}`"
-                      :description="`${strippedHtml(blog.description)}`"
-                      :url="`${baseUrlPath}`"
-                      :quote="`${blog.title}`"
-                      hashtags="blog"
-                    >
-                      <i class="socicon socicon-facebook icon icon--xs"></i>
-                    </ShareNetwork>
-                  </li>
-                  <li class="list-inline-item mr-0">
-                    <ShareNetwork
-                      network="whatsapp"
-                      :url="`${baseUrlPath}`"
-                      :title="`${blog.title}`"
-                      :description="`${strippedHtml(blog.description)}`"
-                    >
-                      <i class="socicon socicon-whatsapp icon icon--xs"></i>
-                    </ShareNetwork>
-                  </li>
-                </ul>
+                    <li class="list-inline-item mr-0">
+                      <ShareNetwork
+                        network="linkedin"
+                        :title="`${blog.title}`"
+                        :url="`${baseUrlPath}`"
+                        :description="`${strippedHtml(blog.description)}`"
+                      >
+                        <i class="socicon socicon-linkedin icon icon--xs"></i>
+                      </ShareNetwork>
+                    </li>
+                    <li class="list-inline-item mr-0">
+                      <ShareNetwork
+                        network="twitter"
+                        :title="`${blog.title}`"
+                        :url="`${baseUrlPath}`"
+                      >
+                        <i class="socicon socicon-twitter icon icon--xs"></i>
+                      </ShareNetwork>
+                    </li>
+                    <li class="list-inline-item mr-0">
+                      <ShareNetwork
+                        network="facebook"
+                        :title="`${blog.title}`"
+                        :description="`${strippedHtml(blog.description)}`"
+                        :url="`${baseUrlPath}`"
+                        :quote="`${blog.title}`"
+                        hashtags="blog"
+                      >
+                        <i class="socicon socicon-facebook icon icon--xs"></i>
+                      </ShareNetwork>
+                    </li>
+                    <li class="list-inline-item mr-0">
+                      <ShareNetwork
+                        network="whatsapp"
+                        :url="`${baseUrlPath}`"
+                        :title="`${blog.title}`"
+                        :description="`${strippedHtml(blog.description)}`"
+                      >
+                        <i class="socicon socicon-whatsapp icon icon--xs"></i>
+                      </ShareNetwork>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </article>
             <div v-else>
