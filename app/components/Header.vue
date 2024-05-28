@@ -8,7 +8,7 @@
         </div>
       </div>
       <div
-        class="col-md-6 mt-4 mb-3 d-flex align-items-center justify-content-center"
+        class="col-md-6 mt-5 mb-5 py-4 d-flex align-items-center justify-content-center"
       >
         <nuxt-img
           v-if="image"
