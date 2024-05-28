@@ -1,58 +1,22 @@
 <template>
   <div class="main-container blog-style">
-    <section class="space--xs">
-      <div class="container">
+    <section class="space--xs pt-0">
+      <div class="container-fluid p-0">
         <div class="row justify-content-center">
           <div class="col-md-12">
             <article v-if="blog">
-              <div class="article__title text-left">
-                <h1 v-if="blog.title" class="h2">{{ blog.title }}</h1>
-                <div class="show-featured author_block">
-                  <!-- <div class="post-img">
-                     <a href="#">
-                      <img
-                        v-if="blog.user_created.avatar"
-                        :src="$urls.assets(blog.user_created.id)"
-                        :alt="blog.user_created.first_name"
-                        loading="lazy"
-                        :title="blog.user_created.first_name"
-                      />
-                      <img
-                        v-else
-                        src="/img/avatar-round-1.png"
-                        alt="User"
-                        loading="lazy"
-                        title="User"
-                      />
-                    </a>
-                  </div> -->
-                  <div class="post-desc w-100">
-                    <!-- <a
-                      v-if="
-                        blog.user_created.first_name ||
-                        blog.user_created.last_name
-                      "
-                      href="#"
-                      >{{ blog.user_created.first_name }}
-                      {{ blog.user_created.last_name }}</a
-                    >
-                    <a v-else href="#"> Improwised Technologies</a> -->
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        Published On {{ blog.date_updated | formatDateTime }}
-                      </div>
-                      <!-- <div class="col-sm-6 text-right">
-                        Updated at
-
-                        {{ blog.date_updated | formatDateTime }}
-                      </div> -->
-                    </div>
-                  </div>
-                </div>
+              <div class="position-relative">
+                <div
+                  class="background-image position-absolute w-100 h-100"
+                ></div>
+                <Header
+                  :title="blog.title"
+                  :image="$urls.assets(blog.image.id)"
+                  :date-time="blog.date_created | formatDateTime"
+                />
               </div>
-              <!--end article title-->
-              <div class="blogdesc">
+
+              <div class="container blogdesc mt-5">
                 <div v-if="blog.description">
                   <div v-html="blog.description"></div>
                 </div>
@@ -164,9 +128,12 @@
 
 <script>
 import Blog from "@/components/Blog.vue";
+import Header from "@/components/Header.vue";
+
 export default {
   components: {
     Blog,
+    Header,
   },
   filters: {
     truncate(text, length, suffix) {
@@ -197,8 +164,20 @@ export default {
     }
   },
   head() {
+    const image =
+      this.blog?.image?.id &&
+      this.$img(this.$urls.assets(this.blog.image.id), {
+        format: "webp",
+        height: "400px",
+      });
+
+    const title = `${this.blog && this.blog.seo_title} | Improwised Technology`;
+    const description = `${
+      this.blog && this.blog.seo_description
+    } | Improwised Technology`;
+
     return {
-      title: (this.blog && this.blog.seo_title) || "",
+      title: title || "",
       meta: [
         {
           name: "description",
@@ -206,7 +185,7 @@ export default {
         },
         {
           name: "title",
-          content: (this.blog && this.blog.seo_title) || "",
+          content: title || "",
         },
         {
           property: "og:type",
@@ -218,15 +197,15 @@ export default {
         },
         {
           property: "og:title",
-          content: (this.blog && this.blog.seo_title) || "",
+          content: title || "",
         },
         {
           property: "og:description",
-          content: (this.blog && this.blog.seo_description) || "",
+          content: description || "",
         },
         {
           property: "og:image",
-          content: process.env.BASE_URL + "/img/logo.png",
+          content: process.env.BASE_URL + image,
         },
         {
           property: "twitter:card",
@@ -242,15 +221,15 @@ export default {
         },
         {
           property: "twitter:title",
-          content: (this.blog && this.blog.seo_title) || "",
+          content: title || "",
         },
         {
           property: "twitter:description",
-          content: (this.blog && this.blog.seo_description) || "",
+          content: description || "",
         },
         {
           property: "twitter:image",
-          content: process.env.BASE_URL + "/img/logo.png",
+          content: process.env.BASE_URL + image,
         },
       ],
       link: [
@@ -284,3 +263,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.background-image {
+  opacity: 0.1;
+  box-shadow: 0 5px 15px 0;
+  background: url("/img/blog-bk-1.png") center / cover no-repeat;
+}
+</style>
