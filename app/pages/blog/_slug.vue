@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container blog-style">
     <section class="space--xs pt-0">
       <div class="container-fluid p-0">
         <div class="row justify-content-center">
