@@ -1,13 +1,13 @@
 <template>
-  <div class="main-container blog-style">
+  <div class="main-container">
     <section class="space--xs pt-0">
-      <div class="container-fluid">
+      <div class="container-fluid p-0">
         <div class="row justify-content-center">
           <div class="col-md-12">
             <article v-if="blog">
               <div class="position-relative">
                 <div
-                  class="background-image position-absolute w-100 h-100 p-4"
+                  class="background-image position-absolute w-100 h-100"
                 ></div>
                 <Header
                   :title="blog.title"
@@ -16,7 +16,7 @@
                 />
               </div>
 
-              <div class="container blogdesc">
+              <div class="container blogdesc mt-5">
                 <div v-if="blog.description">
                   <div v-html="blog.description"></div>
                 </div>
@@ -267,6 +267,7 @@ export default {
 <style scoped>
 .background-image {
   opacity: 0.1;
+  box-shadow: 0 5px 15px 0;
   background: url("/img/blog-bk-1.png") center / cover no-repeat;
 }
 </style>
