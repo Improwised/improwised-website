@@ -60,6 +60,9 @@ const urls = {
     `/items/blog?filter[status][_eq]=published&sort=-date_created&limit=3&fields[]=*.*&filter[slug][_neq]=${title}&filter[tags][tags_id][_neq]=2`,
   blogPageData: `/items/blog?filter[status][_eq]=published&sort=-date_created&fields[]=*.*&filter[tags][tags_id][_neq]=2`,
   gallery: `/items/gallery?filter[status][_eq]=published&fields[]=*.*&sort=sort,-id`,
+
+  privacypolicy: `/items/privacy_policy`,
+  termsofuse: `/items/terms`,
 };
 
 export default function (context, inject) {

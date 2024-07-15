@@ -17,6 +17,16 @@
                 <span>Contact Us</span>
               </a>
             </li>
+            <li>
+              <a href="/privacy-policy/">
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+            <li>
+              <a href="/terms-of-use/">
+                <span>Terms Of Use</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="col-sm-6 text-right text-center-xs">
