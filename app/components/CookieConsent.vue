@@ -41,7 +41,7 @@ export default {
 <style>
 .consent {
   bottom: 0;
-  position: sticky;
+  position: fixed;
   max-width: 443px;
   background-color: white;
   border-radius: 0 15px 0 0;
