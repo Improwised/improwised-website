@@ -31,6 +31,7 @@
     <Navigation />
     <nuxt />
     <Footer />
+    <CookieConsent />
     <backToTop />
     <script src="/theme/js/jquery-3.1.1.min.js"></script>
     <script src="/theme/js/scripts.js"></script>
@@ -41,12 +42,14 @@
 <script>
 import Navigation from "@/components/Navigation.vue";
 import Footer from "@/components/Footer.vue";
+import CookieConsent from "@/components/CookieConsent.vue";
 import backToTop from "@/components/backToTop.vue";
 
 export default {
   components: {
     Navigation,
     Footer,
+    CookieConsent,
     backToTop,
   },
   mounted() {
