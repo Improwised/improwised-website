@@ -139,12 +139,10 @@
 
           <Tool
             image="img/technologies/amazon-web-services-icon.svg"
-            name="Amazon Web Services"
+            name="AWS"
           />
-          <Tool
-            image="img/technologies/google_cloud_platform.png"
-            name="Google Cloud Platform"
-          />
+          <Tool image="img/technologies/google_cloud_platform.png" name="GCP" />
+          <Tool image="img/technologies/azure.svg" name="Azure" />
           <Tool
             image="img/technologies/digital_ocean.png"
             name="DigitalOcean"
