@@ -26,21 +26,27 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
+        timeout-minutes: 2
+        
       - name: install node_modules
         run: npm install
-
+        timeout-minutes: 2
+        
       - name: copy env
         run: cp .env.staging .env
-
+        timeout-minutes: 1
+        
       - name: webpack build
         run: npm run webpack:build
-
+        timeout-minutes: 2
+        
       - name: static generate
         run: npm run generate
-
+        timeout-minutes: 5
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./app/public
+        timeout-minutes: 5
