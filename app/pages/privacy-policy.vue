@@ -38,7 +38,6 @@ export default {
 
 .privacypolicy * {
   line-height: 1.25 !important;
-  font-size: 14px;
 }
 
 .privacypolicy ul,
@@ -54,5 +53,9 @@ div.privacypolicy li {
 
 div.privacypolicy p {
   margin-bottom: 10px;
+}
+
+div.privacypolicy table {
+  border-collapse: collapse;
 }
 </style>
