@@ -79,6 +79,12 @@ jobs:
       - name: lighthouse-ci for mobile
         run: lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!"
         
+      - name: Comment PR with lighthouse-ci report
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            report available at http://164.52.192.158:30011
+          comment_tag: live_site_url
   # lighthouse-score:
   #   needs: build
   #   runs-on: self-hosted
