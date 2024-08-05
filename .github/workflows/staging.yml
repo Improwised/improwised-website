@@ -81,14 +81,21 @@ jobs:
       # - name: lighthouse-ci for mobile
       #   run: lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!"
         
-      - run: echo "PR_NUMBER= ${{ github.event.pull_request.number }}"
+      - name: Get Pull Request Number
+        id: pr
+        run: echo "pull_request_number=$(gh pr view --json number -q .number || echo "")" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo ${{ steps.pr.outputs.pull_request_number }}
+      
       - name: Comment PR with lighthouse-ci report
         uses: thollander/actions-comment-pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
             report available at http://164.52.192.158:30011/app/projects/improwised-website/dashboard
-          pr_number: ${{ github.event.pull_request.number }}
+          pr_number: ${{ steps.pr.outputs.pull_request_number }}
           comment_tag: live_site_url
   # lighthouse-score:
   #   needs: build
