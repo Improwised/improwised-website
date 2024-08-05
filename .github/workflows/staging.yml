@@ -85,7 +85,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
             report available at http://164.52.192.158:30011
-          pr_number: ${{github.event.number}}
+          pr_number: 198
           comment_tag: live_site_url
   # lighthouse-score:
   #   needs: build
