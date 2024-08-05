@@ -81,29 +81,29 @@ jobs:
       # - name: lighthouse-ci for mobile
       #   run: lhci autorun --config ../.lighthouserc.js || echo "LHCI failed!"
         
-      - name: Get Pull Request Number
-        id: pr
-        run: echo "pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")" >> $GITHUB_OUTPUT
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Get Pull Request Number
+      #   id: pr
+      #   run: echo "pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")" >> $GITHUB_OUTPUT
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: echo ${{ steps.pr.outputs.pull_request_number }}
+      # - run: echo ${{ steps.pr.outputs.pull_request_number }}
 
-      - uses: jwalton/gh-find-current-pr@master
-        id: findPr
+      # - uses: jwalton/gh-find-current-pr@master
+      #   id: findPr
 
-      - run: echo "Your PR is ${PR}"
-        if: success() && steps.findPr.outputs.number
-        env:
-          PR: ${{ steps.findPr.outputs.pr }}      
-      - name: Comment PR with lighthouse-ci report
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: |
-            report available at http://164.52.192.158:30011/app/projects/improwised-website/dashboard
-          pr_number: ${{ steps.findPr.outputs.pr }}
-          comment_tag: live_site_url
+      # - run: echo "Your PR is ${PR}"
+      #   if: success() && steps.findPr.outputs.number
+      #   env:
+      #     PR: ${{ steps.findPr.outputs.pr }}      
+      # - name: Comment PR with lighthouse-ci report
+      #   uses: thollander/actions-comment-pull-request@v2
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     message: |
+      #       report available at http://164.52.192.158:30011/app/projects/improwised-website/dashboard
+      #     pr_number: ${{ steps.findPr.outputs.pr }}
+      #     comment_tag: live_site_url
   # lighthouse-score:
   #   needs: build
   #   runs-on: self-hosted
