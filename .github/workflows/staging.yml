@@ -33,7 +33,6 @@ jobs:
           cache-dependency-path: ./app/package-lock.json
         timeout-minutes: 5
 
-
       - name: install node_modules
         run: npm install
 
@@ -45,6 +44,8 @@ jobs:
 
       - name: static generate
         run: npm run generate
+
+
 
 
 ######################
