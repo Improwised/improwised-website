@@ -26,7 +26,6 @@ jobs:
         uses: docker/setup-buildx-action@v3
         timeout-minutes: 5
       
-      
       - name: setup-node
         uses: actions/setup-node@v3
         with:
@@ -46,6 +45,8 @@ jobs:
 
       - name: static generate
         run: npm run generate
+
+
 ######################
       # - name: upload artifacts
       #   uses: actions/upload-artifact@v4
