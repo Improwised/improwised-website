@@ -82,6 +82,7 @@ jobs:
       - name: Comment PR with lighthouse-ci report
         uses: thollander/actions-comment-pull-request@v2
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
             report available at http://164.52.192.158:30011
           comment_tag: live_site_url
