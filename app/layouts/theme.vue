@@ -20,7 +20,7 @@
       />
     </div>
     <div v-else>
-      <link rel="stylesheet" href="/dist/index.min.css" lazyload />
+      <link rel="stylesheet" href="/dist/index.min.css?v=1" lazyload />
     </div>
     <a
       id="start"

@@ -13,7 +13,7 @@
               </h1>
               <p class="lead">
                 Boost developer efficiency with platform engineering, delivering
-                scalable internal platforms across cloud-native, hybrid, and
+                scalable internal developer platforms across cloud-native, hybrid, and
                 multicloud architectures.
               </p>
               <Button text="Contact Us" redirect="/contact" />
