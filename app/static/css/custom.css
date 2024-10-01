@@ -553,7 +553,7 @@ img.img-dim {
 
 @supports (gap: 1px) {
   .hero-bk::before {
-    background-image: url("../img/a9.webp");
+    background-image: url("../img/a9.png");
   }
 }
 
