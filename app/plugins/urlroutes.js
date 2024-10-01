@@ -22,9 +22,9 @@ Vue.filter("formatDateTime", function (value) {
 });
 
 const urls = {
-  services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=title`,
+  services: `/items/services?filter[status][_eq]=published&fields=*.*&sort=order`,
   servicesListWithTitleOnly:
-    "/items/services?filter[status][_eq]=published&fields=title,slug&sort=title",
+    "/items/services?filter[status][_eq]=published&fields=title,slug&sort=order",
   service: (title) =>
     `/items/services?filter[status][_eq]=published&filter[slug][_eq]=${title}&single=1&fields=*.*`,
 

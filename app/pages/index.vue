@@ -1,14 +1,37 @@
 <template>
   <div class="main-container">
-    <section class="text-center">
-      <div class="container">
-        <div class="row">
-          <HomeTyped />
+    <div class="hero-bk">
+      <Navigation />
+      <div class="container py-5">
+        <div class="row align-items-center justify-content-around">
+          <div
+            class="col-md-6 col-12 d-flex align-items-center justify-content-center"
+          >
+            <div>
+              <h1 class="" style="font-size: 44px">
+                Empowering Developers, Accelerating Delivery
+              </h1>
+              <p class="lead">
+                Boost developer efficiency with platform engineering, delivering
+                scalable internal platforms across cloud-native, hybrid, and
+                multicloud architectures.
+              </p>
+              <Button text="Contact Us" redirect="/contact" />
+              <br />
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 d-flex align-items-center justify-content-center"
+          >
+            <nuxt-img
+              src="/img/l13.svg"
+              alt="Platform Engineers"
+              class="img-dim"
+            />
+          </div>
         </div>
-        <!--end of row-->
       </div>
-      <!--end of container-->
-    </section>
+    </div>
 
     <section
       v-if="services && services.length"
@@ -22,28 +45,30 @@
           </div>
         </div>
         <div class="row">
-          <div
-            v-for="(service, index) in services"
-            :key="index"
-            class="col-md-6 col-sm-12"
-          >
+          <template v-for="(service, index) in services">
             <div
-              class="feature feature-3 boxed boxed--lg boxed--border text-center"
+              v-if="service.title !== 'Web Development'"
+              :key="index"
+              class="col-md-6 col-sm-12"
             >
-              <i
-                v-if="service.icon"
-                :class="`icon icon--lg color--primary ${service.icon}`"
-              ></i>
-              <i
-                v-else
-                :class="`icon icon--lg color--primary icon-Optimization`"
-              ></i>
-              <a :href="`/services/${service.slug}/`">
-                <h2 class="h4">{{ service.title }}</h2>
-              </a>
-              <p>{{ service.short_description }}</p>
+              <div
+                class="feature feature-3 boxed boxed--lg boxed--border text-center"
+              >
+                <i
+                  v-if="service.icon"
+                  :class="`icon icon--lg color--primary ${service.icon}`"
+                ></i>
+                <i
+                  v-else
+                  :class="`icon icon--lg color--primary icon-Optimization`"
+                ></i>
+                <a :href="`/services/${service.slug}/`">
+                  <h2 class="h4">{{ service.title }}</h2>
+                </a>
+                <p>{{ service.short_description }}</p>
+              </div>
             </div>
-          </div>
+          </template>
         </div>
         <!--end of row-->
       </div>
@@ -147,6 +172,7 @@
             image="img/technologies/digital_ocean.png"
             name="DigitalOcean"
           />
+          <Tool image="img/technologies/oracle-cloud.svg" name="Oracle Cloud" />
 
           <div class="col-sm-12">
             <h2 class="mb-0 h3"><strong>Frontend</strong></h2>
@@ -235,15 +261,16 @@
 </template>
 
 <script>
+import Navigation from "@/components/Navigation.vue";
+
 import constants from "@/config/constants";
-import HomeTyped from "@/components/HomeTyped.vue";
 import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
 import Tool from "@/components/common/Tool.vue";
 import Button from "@/components/common/Button.vue";
 
 export default {
   components: {
-    HomeTyped,
+    Navigation,
     HomeCallToActionGranim,
     Tool,
     Button,

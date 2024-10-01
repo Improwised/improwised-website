@@ -32,7 +32,9 @@
     <!--end bar-->
     <nav
       id="menu1"
-      class="bar bar--sm bar-1 hidden-xs hiddem-sm navigation-style"
+      :class="`bar bar--sm bar-1 hidden-xs hiddem-sm ${
+        $route.name === 'index' ? '' : 'navigation-style'
+      }`"
       data-scroll-class="366px:pos-fixed"
     >
       <div class="container">
@@ -74,14 +76,18 @@
                           class="dropdown__content col-lg-3 col-md-4 col-sm-6"
                         >
                           <ul class="menu-vertical">
-                            <li
+                            <template
                               v-for="(service, index) in $store.state.services"
-                              :key="index"
                             >
-                              <a :href="`/services/${service.slug}/`">
-                                {{ service.title }}
-                              </a>
-                            </li>
+                              <li
+                                v-if="service.title !== 'Web Development'"
+                                :key="index"
+                              >
+                                <a :href="`/services/${service.slug}/`">
+                                  {{ service.title }}
+                                </a>
+                              </li>
+                            </template>
                           </ul>
                         </div>
                         <!--end dropdown content-->
