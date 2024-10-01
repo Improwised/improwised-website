@@ -28,7 +28,7 @@
       rel="nofollow"
       href="javscript:void(0);"
     ></a>
-    <Navigation />
+    <Navigation v-if="$route.name !== 'index'" />
     <nuxt />
     <Footer />
     <CookieConsent />

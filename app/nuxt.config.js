@@ -96,7 +96,12 @@ export default {
   generate: {
     dir: "public",
     fallback: false,
-    interval: 2000
+    interval: 2000,
+    routes() {
+      return [{
+        route: '/services/web-software-development/'
+      }]
+    }
   },
 
 

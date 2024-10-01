@@ -13,35 +13,31 @@
       </div>
       <!--end of container-->
     </section>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-10 offset-md-1">
-            <div
-              v-if="service.alert_link"
-              class="d-flex align-items-center justify-content-center p-3 rounded mb-5 b1 alert"
-            >
-              <nuxt-img
-                :src="$urls.assets(service.alert_link.id)"
-                :alt="service.alert_link.title"
-                :title="service.alert_link.title"
-                loading="lazy"
-                :format="service.alert_link.filename_download.split('.')[1]"
-                class="m-3"
-              />
-              <div v-html="service.alert_description" />
-            </div>
-
-            <article class="markdown-body">
-              <div v-html="service.content_html" />
-            </article>
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <div
+            v-if="service.alert_link"
+            class="d-flex align-items-center justify-content-center p-3 rounded mb-5 b1 alert"
+          >
+            <nuxt-img
+              :src="$urls.assets(service.alert_link.id)"
+              :alt="service.alert_link.title"
+              :title="service.alert_link.title"
+              loading="lazy"
+              :format="service.alert_link.filename_download.split('.')[1]"
+              class="m-3"
+            />
+            <div v-html="service.alert_description" />
           </div>
-        </div>
-        <!--end of row-->
-      </div>
-      <!--end of container-->
-    </section>
 
+          <article class="markdown-body">
+            <div v-html="service.content_html" />
+          </article>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
     <section
       class="space--xs imagebg"
       data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"
