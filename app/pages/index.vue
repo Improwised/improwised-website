@@ -1,7 +1,6 @@
 <template>
   <div class="main-container">
-    <div class="hero-bk">
-      <Navigation />
+    <div>
       <div class="container py-5">
         <div class="row align-items-center justify-content-around">
           <div
@@ -13,8 +12,8 @@
               </h1>
               <p class="lead">
                 Boost developer efficiency with platform engineering, delivering
-                scalable internal developer platforms across cloud-native, hybrid, and
-                multicloud architectures.
+                scalable internal developer platforms across cloud-native,
+                hybrid, and multicloud architectures.
               </p>
               <Button text="Contact Us" redirect="/contact" />
               <br />
@@ -261,8 +260,6 @@
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue";
-
 import constants from "@/config/constants";
 import HomeCallToActionGranim from "@/components/HomeCallToActionGranim.vue";
 import Tool from "@/components/common/Tool.vue";
@@ -270,7 +267,6 @@ import Button from "@/components/common/Button.vue";
 
 export default {
   components: {
-    Navigation,
     HomeCallToActionGranim,
     Tool,
     Button,

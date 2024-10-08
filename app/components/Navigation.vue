@@ -32,9 +32,7 @@
     <!--end bar-->
     <nav
       id="menu1"
-      :class="`bar bar--sm bar-1 hidden-xs hiddem-sm ${
-        $route.name === 'index' ? '' : 'navigation-style'
-      }`"
+      class="bar bar--sm bar-1 hidden-xs hiddem-sm navigation-style"
       data-scroll-class="366px:pos-fixed"
     >
       <div class="container">
