@@ -53,14 +53,17 @@
               <div
                 class="feature feature-3 boxed boxed--lg boxed--border text-center"
               >
-                <i
-                  v-if="service.icon"
-                  :class="`icon icon--lg color--primary ${service.icon}`"
-                ></i>
-                <i
+                <div
+                  v-if="service.iconsvg"
+                  class="svg"
+                  v-html="service.iconsvg"
+                ></div>
+                <nuxt-img
                   v-else
-                  :class="`icon icon--lg color--primary icon-Optimization`"
-                ></i>
+                  src="/img/fonts/Cloud-Infrastructure-Services.svg"
+                  :alt="service.title"
+                  :title="service.title"
+                />
                 <a :href="`/services/${service.slug}/`">
                   <h2 class="h4">{{ service.title }}</h2>
                 </a>
@@ -89,9 +92,17 @@
         <div v-if="whyUs && whyUs.length" class="row">
           <div v-for="(whyus, index) in whyUs" :key="index" class="col-sm-6">
             <div class="feature feature-5 boxed boxed--sm boxed--border">
-              <i v-if="whyus.icon" :class="`icon ${whyus.icon} icon--lg`"></i>
-              <i v-else :class="`icon icon-Gears icon--lg`"></i>
-
+              <div
+                v-if="whyus.iconsvg"
+                class="svg"
+                v-html="whyus.iconsvg"
+              ></div>
+              <nuxt-img
+                v-else
+                src="/img/fonts/Proactively-transparent.svg"
+                :alt="whyus.title"
+                :title="whyus.title"
+              />
               <div class="feature__body">
                 <h2 class="h5">{{ whyus.title }}</h2>
                 <div v-html="whyus.description"></div>

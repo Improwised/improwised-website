@@ -31,28 +31,40 @@
         </div>
         <div class="col-sm-6 text-right text-center-xs">
           <ul class="social-list list-inline list--hover">
-            <li>
+            <li class="icon-container">
               <a
                 href="https://www.facebook.com/improwised"
                 title="Improwised Technologies facebook page"
               >
-                <i class="socicon socicon-facebook icon icon--xs"></i>
+                <img
+                  src="/img/fonts/facebook.svg"
+                  alt="facebook"
+                  title="facebook"
+                />
               </a>
             </li>
-            <li>
+            <li class="icon-container">
               <a
                 href="https://twitter.com/improwised"
                 title="Improwised Technologies twitter account"
               >
-                <i class="socicon socicon-twitter icon icon--xs"></i>
+                <img
+                  src="/img/fonts/twitter.svg"
+                  alt="twitter"
+                  title="twitter"
+                />
               </a>
             </li>
-            <li>
+            <li class="icon-container">
               <a
                 href="https://www.linkedin.com/company/improwised-technologies/"
                 title="Improwised Technologies linkedin page"
               >
-                <i class="socicon socicon-linkedin icon icon--xs"></i>
+                <img
+                  src="/img/fonts/linkedin.svg"
+                  alt="linkedin"
+                  title="linkedin"
+                />
               </a>
             </li>
           </ul>

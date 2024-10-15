@@ -47,7 +47,12 @@
                         :url="`${baseUrlPath}`"
                         :description="`${strippedHtml(blog.description)}`"
                       >
-                        <i class="socicon socicon-google icon icon--xs"></i>
+                        <nuxt-img
+                          src="/img/fonts/google-blue.svg"
+                          alt="google"
+                          class="pb-1"
+                          title="google"
+                        />
                       </ShareNetwork>
                     </li>
 
@@ -58,7 +63,12 @@
                         :url="`${baseUrlPath}`"
                         :description="`${strippedHtml(blog.description)}`"
                       >
-                        <i class="socicon socicon-linkedin icon icon--xs"></i>
+                        <nuxt-img
+                          src="/img/fonts/linkedin-blue.svg"
+                          alt="linkedin"
+                          class="pb-1"
+                          title="linkedin"
+                        />
                       </ShareNetwork>
                     </li>
                     <li class="list-inline-item mr-0">
@@ -67,7 +77,12 @@
                         :title="`${blog.title}`"
                         :url="`${baseUrlPath}`"
                       >
-                        <i class="socicon socicon-twitter icon icon--xs"></i>
+                        <nuxt-img
+                          src="/img/fonts/twitter-blue.svg"
+                          alt="twitter"
+                          class="pb-1"
+                          title="twitter"
+                        />
                       </ShareNetwork>
                     </li>
                     <li class="list-inline-item mr-0">
@@ -79,7 +94,12 @@
                         :quote="`${blog.title}`"
                         hashtags="blog"
                       >
-                        <i class="socicon socicon-facebook icon icon--xs"></i>
+                        <nuxt-img
+                          src="/img/fonts/facebook-blue.svg"
+                          alt="facebook"
+                          class="pb-1"
+                          title="facebook"
+                        />
                       </ShareNetwork>
                     </li>
                     <li class="list-inline-item mr-0">
@@ -89,7 +109,12 @@
                         :title="`${blog.title}`"
                         :description="`${strippedHtml(blog.description)}`"
                       >
-                        <i class="socicon socicon-whatsapp icon icon--xs"></i>
+                        <nuxt-img
+                          src="/img/fonts/whatsapp-blue.svg"
+                          alt="whatsapp"
+                          class="pb-1"
+                          title="whatsapp"
+                        />
                       </ShareNetwork>
                     </li>
                   </ul>
@@ -166,7 +191,7 @@ export default {
   },
   head() {
     const image =
-      this.blog?.image?.id &&
+      this.blog.image.id &&
       this.$img(this.$urls.assets(this.blog.image.id), {
         format: "webp",
         height: "400px",
