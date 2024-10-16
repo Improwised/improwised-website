@@ -7,7 +7,7 @@
             class="col-md-6 col-12 d-flex align-items-center justify-content-center"
           >
             <div>
-              <h1 class="homeTitle">
+              <h1 class="" style="font-size: 44px">
                 Empowering Developers, Accelerating Delivery
               </h1>
               <p class="lead homeLead">
@@ -376,20 +376,5 @@ export default {
 <style>
 .svg {
   display: contents;
-}
-
-.homeTitle {
-  font-size: 44px;
-}
-@media (max-width: 767px) {
-  .homeTitle {
-    font-size: 26px;
-  }
-
-  .homeLead {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.5;
-  }
 }
 </style>
