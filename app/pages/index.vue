@@ -374,8 +374,11 @@ export default {
 </script>
 
 <style>
-.homeTitle
-{
+.svg {
+  display: contents;
+}
+
+.homeTitle {
   font-size: 44px;
 }
 @media (max-width: 767px) {
