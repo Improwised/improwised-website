@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-3 col-md-2 col-xs-6 col-lg-2 col-6 tool">
     <div class="boxed boxed--border text-center">
-      <img
+      <nuxt-img
         :src="image"
         :alt="name"
         :title="name"

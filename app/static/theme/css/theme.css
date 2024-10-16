@@ -5823,15 +5823,7 @@ body.dropdowns--hover .nav-sidebar-column .dropdown:hover > .dropdown__container
 .imagebg .icon {
   color: #fff;
 }
-p .material-icons {
-  font-size: 1em;
-}
-p .material-icons:first-child {
-  margin-right: 0.30952381em;
-}
-.material-icons {
-  font-family: 'Material Icons' !important;
-}
+
 .icon-circle {
   position: relative;
   display: inline-block;
