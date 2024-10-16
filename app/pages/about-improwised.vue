@@ -53,8 +53,14 @@
                   :title="meetTeamData.name"
                   target="_blank"
                   class="teamicon"
-                  ><i class="socicon socicon-linkedin icon icon--small pt-2"></i
-                ></a>
+                >
+                  <nuxt-img
+                    class="social-icon"
+                    src="/img/fonts/linkedin-small.svg"
+                    alt="linkedin"
+                    title="linkedin"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -185,3 +191,12 @@ export default {
   },
 };
 </script>
+<style>
+.testimonial-2 .testimonial__image .social-icon {
+  margin-bottom: 1px;
+  margin-top: 5px;
+  max-height: none;
+  float: none;
+  margin-right: 0;
+}
+</style>

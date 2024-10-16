@@ -21,7 +21,7 @@
               data-toggle-class="#menu1;hidden-xs"
               title="toggle menu for small screen"
             >
-              <i class="icon icon--sm stack-interface stack-menu"></i>
+              <img src="/img/fonts/menu.svg" alt="menu" title="menu" />
             </a>
           </div>
         </div>

@@ -81,21 +81,6 @@ const devLinks = [
     type: "text/css",
   },
   {
-    href: "/css/stack-interface.css",
-    rel: "stylesheet",
-    type: "text/css",
-  },
-  {
-    href: "/css/socicon.css",
-    rel: "stylesheet",
-    type: "text/css",
-  },
-  {
-    href: "/css/iconsmind.css",
-    rel: "stylesheet",
-    type: "text/css",
-  },
-  {
     href: "/css/theme.css",
     rel: "stylesheet",
     type: "text/css",

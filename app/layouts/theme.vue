@@ -2,13 +2,6 @@
   <div>
     <div v-if="$config.MODE === 'development'">
       <link href="/theme/css/bootstrap.css" rel="stylesheet" type="text/css" />
-      <link
-        href="/theme/css/stack-interface.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-      <link href="/theme/css/socicon.css" rel="stylesheet" type="text/css" />
-      <link href="/theme/css/iconsmind.css" rel="stylesheet" type="text/css" />
       <link href="/theme/css/theme.css" rel="stylesheet" type="text/css" />
 
       <link href="/css/custom.css" rel="stylesheet" type="text/css" />
