@@ -338,8 +338,12 @@ export default {
           content: process.env.BASE_URL + "/img/logo.png",
         },
         {
-          property: "twitter:card",
-          content: "summary",
+          property: "twitter:title",
+          content: constants.title,
+        },
+        {
+          property: "twitter:description",
+          content: constants.description,
         },
         {
           property: "twitter:site",
@@ -350,12 +354,8 @@ export default {
           content: "@improwised",
         },
         {
-          property: "twitter:title",
-          content: constants.title,
-        },
-        {
-          property: "twitter:description",
-          content: constants.description,
+          property: "twitter:card",
+          content: "summary",
         },
         {
           property: "twitter:image",

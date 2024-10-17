@@ -1,11 +1,12 @@
 <template>
   <div :class="`p-3 consent ${isConsentShow ? 'd-block' : 'd-none'}`">
-    <h5 class="m-0 p-0">Cookies</h5>
+    <h3 class="m-0 p-0 h5">Cookies</h3>
     <div class="">
       We use cookies to improve your experience on our website and to analyze
       site traffic. By continuing to browse our site, you consent to our use of
       cookies. For more information, please see our
-      <a href="/privacy-policy">privacy policy</a>. <br />
+      <a href="/privacy-policy" class="color--primary-1">privacy policy</a>.
+      <br />
       <button
         class="mt-2 consent-button btn btn--primary px-3"
         @click="hideConsent"

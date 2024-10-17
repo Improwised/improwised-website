@@ -149,11 +149,6 @@ const _link = [
     lazyload: true,
   },
   {
-    href: "https://fonts.googleapis.com/icon?family=Material+Icons&display=swap",
-    rel: "stylesheet",
-    lazyload: true,
-  },
-  {
     rel: "apple-touch-icon",
     sizes: "57x57",
     href: "/img/favicon/apple-touch-icon-57x57.png",

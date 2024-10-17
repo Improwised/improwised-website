@@ -6,7 +6,7 @@
     data-scroll-class="100vh:active"
     title="click & go to top of the page"
   >
-    <img src="/img/fonts/up-open-big.svg" alt="backToTop" title="backToTop" />
+    <nuxt-img src="/img/fonts/up-open-big.svg" alt="backToTop" title="backToTop" />
   </a>
 </template>
 <script>

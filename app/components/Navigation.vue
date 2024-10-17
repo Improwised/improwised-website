@@ -5,7 +5,7 @@
         <div class="row display_flex">
           <div class="col col-sm-2 col-md-6 align_self_center">
             <a href="/">
-              <img
+              <nuxt-img
                 class="logo logo-dark lazyload"
                 alt="Improwised Technologies Pvt Ltd"
                 src="/img/logo.png"
@@ -21,7 +21,7 @@
               data-toggle-class="#menu1;hidden-xs"
               title="toggle menu for small screen"
             >
-              <img src="/img/fonts/menu.svg" alt="menu" title="menu" />
+              <nuxt-img src="/img/fonts/menu.svg" alt="menu" title="menu" />
             </a>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div class="col-xs-6 col-md-5 col-sm-3 hidden-xs logo-style">
             <div class="bar__module">
               <a href="/">
-                <img
+                <nuxt-img
                   class="logo logo-dark lazyload"
                   alt="Improwised Technologies Pvt Ltd"
                   src="/img/logo.png"

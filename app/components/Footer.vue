@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <img
+          <nuxt-img
             alt="Improwised Technologies Pvt Ltd"
             class="logo lazyload"
             src="/img/logo.png"
@@ -36,7 +36,7 @@
                 href="https://www.facebook.com/improwised"
                 title="Improwised Technologies facebook page"
               >
-                <img
+                <nuxt-img
                   src="/img/fonts/facebook.svg"
                   alt="facebook"
                   title="facebook"
@@ -48,7 +48,7 @@
                 href="https://twitter.com/improwised"
                 title="Improwised Technologies twitter account"
               >
-                <img
+                <nuxt-img
                   src="/img/fonts/twitter.svg"
                   alt="twitter"
                   title="twitter"
@@ -60,7 +60,7 @@
                 href="https://www.linkedin.com/company/improwised-technologies/"
                 title="Improwised Technologies linkedin page"
               >
-                <img
+                <nuxt-img
                   src="/img/fonts/linkedin.svg"
                   alt="linkedin"
                   title="linkedin"

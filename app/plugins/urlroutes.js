@@ -1,5 +1,5 @@
 import Vue from "vue";
-const moment = require("moment");
+// const moment = require("moment");
 
 export function titlecase(value) {
   if (!value) return value;
@@ -18,7 +18,15 @@ export function slugify(value) {
 Vue.filter("formatDateTime", function (value) {
   if (!value) return "-";
 
-  return `${moment(value).local().format("ddd, MMM DD, YYYY")}`;
+  const date = new Date(value);
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
+
+  return new Intl.DateTimeFormat("en-US", options).format(date);
 });
 
 const urls = {
