@@ -11,9 +11,10 @@
                 Empowering Developers, Accelerating Delivery
               </h1>
               <p class="lead homeLead">
-                Boost developer efficiency with platform engineering, delivering
-                scalable internal developer platforms across cloud-native,
-                hybrid, and multicloud architectures.
+                Boost developer efficiency with
+                <strong>Platform Engineering</strong> , delivering scalable
+                internal developer platforms across cloud-native, hybrid, and
+                multicloud architectures.
               </p>
               <Button text="Contact Us" redirect="/contact" />
               <br />
