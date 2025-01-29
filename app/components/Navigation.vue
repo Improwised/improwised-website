@@ -67,7 +67,7 @@
                     <div class="container">
                       <div class="row">
                         <div
-                          class="dropdown__content col-lg-3 col-md-4 col-sm-6"
+                          class="dropdown__content col-lg-4 col-md-4 col-sm-6"
                         >
                           <ul class="menu-vertical">
                             <template
